@@ -10,7 +10,7 @@ bases = [f for f in base_dir.glob("*.sqlite")] + [f for f in base_dir.glob("*.db
 
 def inspect_db(db_path):
     print("="*80)
-    print(f"📘 Base de données : {db_path.name}")
+    print(f"Base de données : {db_path.name}")
     print("="*80)
     
     try:
@@ -22,11 +22,11 @@ def inspect_db(db_path):
         tables = [t[0] for t in cursor.fetchall()]
         
         if not tables:
-            print("⚠️ Aucune table trouvée.")
+            print("Aucune table trouvée.")
             return
         
         for table in tables:
-            print(f"\n🧩 Table : {table}")
+            print(f"\nTable : {table}")
             # Structure
             cursor.execute(f"PRAGMA table_info({table});")
             columns = cursor.fetchall()
@@ -41,7 +41,7 @@ def inspect_db(db_path):
             print(f"Nombre d’enregistrements : {count}")
             
     except Exception as e:
-        print(f"❌ Erreur sur {db_path.name} : {e}")
+        print(f"Erreur sur {db_path.name} : {e}")
     finally:
         conn.close()
 

@@ -110,4 +110,4 @@ for article in data:
 conn.commit()
 conn.close()
 
-print(f"✅ Base SQLite créée avec succès : {db_file}")
+print(f"Base SQLite créée avec succès : {db_file}")

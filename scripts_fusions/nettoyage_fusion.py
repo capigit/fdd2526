@@ -14,7 +14,7 @@ def normalize_text(s):
     s = unicodedata.normalize('NFD', s).encode('ascii', 'ignore').decode('utf-8')
     return s
 
-print("🔹 Nettoyage des articles...")
+print("Nettoyage des articles...")
 
 # 1. Normalisation des colonnes textuelles
 cur.execute("SELECT id, title, publisher, published_in, doi FROM articles")
@@ -62,7 +62,7 @@ AND doi = ''
 conn.commit()
 
 # 3. Nettoyage des mots-clés
-print("🔹 Nettoyage des keywords...")
+print("Nettoyage des keywords...")
 cur.execute("SELECT id, keyword FROM keywords")
 rows = cur.fetchall()
 
@@ -74,7 +74,7 @@ for row in rows:
 conn.commit()
 
 # 4. Nettoyage des auteurs
-print("🔹 Nettoyage des auteurs...")
+print("Nettoyage des auteurs...")
 cur.execute("SELECT id, name FROM authors")
 rows = cur.fetchall()
 
@@ -89,5 +89,5 @@ conn.commit()
 cur.execute("DELETE FROM authors WHERE name = ''")
 conn.commit()
 
-print("\n✅ Nettoyage et dédoublonnage terminés !")
+print("\nNettoyage et dédoublonnage terminés !")
 conn.close()

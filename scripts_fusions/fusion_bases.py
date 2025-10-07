@@ -93,10 +93,10 @@ def insert_with_source(table, data, source):
 for base_name in bases:
     db_path = base_dir / base_name
     if not db_path.exists():
-        print(f"⚠️ Base manquante : {base_name}")
+        print(f"Base manquante : {base_name}")
         continue
 
-    print(f"\n🔹 Fusion de {base_name}...")
+    print(f"\nFusion de {base_name}...")
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
@@ -139,5 +139,5 @@ for base_name in bases:
     conn.close()
     fusion_conn.commit()
 
-print("\n✅ Fusion terminée avec succès !")
+print("\nFusion terminée avec succès !")
 fusion_conn.close()

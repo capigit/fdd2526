@@ -7,7 +7,7 @@ json_path = Path("source/IEEE_artificial_intelligence_1825.json")
 db_path = Path("bd/ieee_ai_articles.db")
 
 # --- Chargement du JSON ---
-print("📥 Chargement du fichier JSON...")
+print("Chargement du fichier JSON...")
 with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS keywords (
 """)
 
 # --- Insertion des données ---
-print("💾 Insertion des articles...")
+print("Insertion des articles...")
 for item in data:
     details = item.get("Details", {})
     issn = item.get("issn_info", {})
@@ -85,4 +85,4 @@ for item in data:
 # --- Validation ---
 conn.commit()
 conn.close()
-print(f"✅ Base SQLite créée : {db_path}")
+print(f"Base SQLite créée : {db_path}")

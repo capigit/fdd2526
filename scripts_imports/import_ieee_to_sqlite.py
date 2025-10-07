@@ -84,4 +84,4 @@ for item in data:
 conn.commit()
 conn.close()
 
-print("✅ Importation terminée : ieee_llm_articles.db créé avec succès !")
+print("Importation terminée : ieee_llm_articles.db créé avec succès !")
