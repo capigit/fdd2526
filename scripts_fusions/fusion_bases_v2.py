@@ -133,5 +133,5 @@ for base_name in bases:
     conn.close()
     fusion_conn.commit()
 
-print("\n✅ Fusion terminée sans erreur de clé unique !")
+print("\nFusion terminée sans erreur de clé unique !")
 fusion_conn.close()
