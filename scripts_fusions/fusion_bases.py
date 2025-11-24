@@ -7,7 +7,7 @@ import shutil
 base_dir = Path("bd")
 fusion_path = base_dir / "fusion_ieee.db"
 
-# === Supprimer l’ancienne base fusionnée si elle existe ===
+# === Suppression de l’ancienne base fusionnée si elle existe ===
 if fusion_path.exists():
     os.remove(fusion_path)
 
@@ -64,7 +64,7 @@ CREATE TABLE keywords (
 
 fusion_conn.commit()
 
-# === Bases à fusionner ===
+# === Bases de données à fusionner ===
 bases = [
     "ieee_ai_articles.db",
     "ieee_llm_articles.db",
@@ -126,7 +126,7 @@ for base_name in bases:
         for row in cur.fetchall():
             insert_with_source("labs", dict(row), base_name)
     except:
-        pass  # certaines bases n'ont pas de table labs
+        pass
 
     # KEYWORDS
     try:

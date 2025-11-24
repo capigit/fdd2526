@@ -3,7 +3,7 @@ import sqlite3
 from pathlib import Path
 
 # --- Chemins relatifs ---
-json_path = Path("source/IEEE_artificial_intelligence_1825.json")
+json_path = Path("bdSource/IEEE_artificial_intelligence_1825.json")
 db_path = Path("bd/ieee_ai_articles.db")
 
 # --- Chargement du JSON ---
@@ -82,7 +82,7 @@ for item in data:
         for kw in kwlist:
             cur.execute("INSERT INTO keywords (article_id, type, keyword) VALUES (?, ?, ?)", (article_id, ktype, kw))
 
-# --- Validation ---
+# Sauvegarde et fermeture
 conn.commit()
 conn.close()
 print(f"Base SQLite créée : {db_path}")

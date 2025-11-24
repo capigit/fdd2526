@@ -76,7 +76,7 @@ def normalize_date_columns(article):
 
 
 def insert_with_source(table, data, source):
-    # On ignore 'id' pour laisser SQLite auto-générer
+    # Auto gestion de l'id' par SQLite
     data.pop("id", None)
     cols = ", ".join(data.keys()) + ", source"
     placeholders = ", ".join(["?"] * (len(data) + 1))

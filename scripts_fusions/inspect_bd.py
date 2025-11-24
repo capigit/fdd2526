@@ -2,10 +2,9 @@ import os
 import sqlite3
 from pathlib import Path
 
-# Dossier contenant les bases
 base_dir = Path("bd/")
 
-# Liste tous les fichiers .sqlite ou .db
+# Liste de tous les fichiers .sqlite ou .db
 bases = [f for f in base_dir.glob("*.sqlite")] + [f for f in base_dir.glob("*.db")]
 
 def inspect_db(db_path):
@@ -46,7 +45,7 @@ def inspect_db(db_path):
         conn.close()
 
 
-# Parcours des bases
+# Parcours des bases de données
 if not bases:
     print("Aucune base .sqlite ou .db trouvée dans le dossier.")
 else:

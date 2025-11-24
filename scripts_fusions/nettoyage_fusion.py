@@ -1,7 +1,7 @@
 import sqlite3
 import unicodedata
 
-# === Connexion à la base fusionnée ===
+# === Connexion à la base de donnée fusionnée ===
 db_path = "./bd/fusion_ieee.db"
 conn = sqlite3.connect(db_path)
 cur = conn.cursor()
@@ -35,7 +35,7 @@ for row in rows:
 conn.commit()
 
 # 2. Suppression des doublons (même DOI ou même titre)
-print("🧹 Suppression des doublons...")
+print("Suppression des doublons...")
 
 cur.execute("""
 DELETE FROM articles

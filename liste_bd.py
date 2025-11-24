@@ -1,8 +1,7 @@
 import os
 import sqlite3
 
-# Dossier contenant les bases de données
-BASE_DIR = "bd"  # <-- à adapter si besoin
+BASE_DIR = "bd"
 
 def lister_tables(db_path):
     """Retourne la liste des tables d'une base SQLite donnée."""
@@ -23,7 +22,7 @@ def parcourir_bases(base_dir):
         for file in files:
             if file.endswith(".db"):
                 db_path = os.path.join(root, file)
-                print(f"\n📂 Base de données : {db_path}")
+                print(f"\nBase de données : {db_path}")
                 tables = lister_tables(db_path)
                 if tables:
                     for t in tables:

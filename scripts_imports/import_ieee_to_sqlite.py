@@ -2,7 +2,7 @@ import json
 import sqlite3
 from pathlib import Path
 
-# Charger le JSON
+# Chargement du fichier JSON
 json_path = Path("IEEE_llm_Journals_1825.json")
 if not json_path.exists():
     raise FileNotFoundError("Le fichier JSON est introuvable dans le dossier du projet.")

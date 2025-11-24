@@ -4,10 +4,10 @@ from pathlib import Path
 
 # chemins
 base_dir = Path(__file__).parent
-json_file = base_dir / "source" / "IEEE_NLP_Journals_1825.json"
+json_file = base_dir / "bdSource" / "IEEE_NLP_Journals_1825.json"
 db_file = base_dir / "bd" / "ieee_nlp.db"
 
-# Charger le JSON
+# Chargement du fichier JSON
 with open(json_file, "r", encoding="utf-8") as f:
     data = json.load(f)
 
@@ -15,7 +15,7 @@ with open(json_file, "r", encoding="utf-8") as f:
 conn = sqlite3.connect(db_file)
 cur = conn.cursor()
 
-# Créer les tables principales
+# Création des tables principales
 cur.executescript("""
 CREATE TABLE IF NOT EXISTS articles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS keywords (
 );
 """)
 
-# Insérer les données
+# Insértion des données
 for article in data:
     details = article.get("Details", {})
     issn = article.get("issn_info", {})
@@ -104,7 +104,7 @@ for article in data:
         for kw in key_list:
             cur.execute("INSERT INTO keywords (article_id, type, keyword) VALUES (?, ?, ?)", (article_id, key_type, kw))
 
-# Sauvegarder et fermer
+# Sauvegarde et fermeture
 conn.commit()
 conn.close()
 
