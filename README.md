@@ -1,4 +1,4 @@
-# FDD - Framework for Data-Driven Discovery
+# FDD - Fouille de Données
 
 ## 📌 Titre du Projet
 
@@ -586,7 +586,7 @@ print(f"\nNombre de composantes connexes : {num_components}")
 ## 📜 Licence et Crédits
 
 ### Licence
-Ce projet est fourni à titre de travail universitaire/recherche. Voir le fichier `LICENSE` (si présent) pour les détails spécifiques.
+Ce projet est fourni à titre de travail universitaire/recherche. Voir le fichier `LICENSE` pour les details.
 
 ### Données Sources
 - **Fournisseur** : IEEE (Institut des Ingénieurs Électriciens et Électroniciens)
@@ -595,8 +595,7 @@ Ce projet est fourni à titre de travail universitaire/recherche. Voir le fichie
 - **Conditions d'utilisation** : Conformes aux conditions d'utilisation d'IEEE. Usage éducatif/recherche uniquement.
 
 ### Auteurs et Contributeurs
-- **Auteur principal** : Equipe FDD
-- **Organisation** : Université/Projet académique
+- **Auteur principal** : Equipe FDD2526
 - **Dépôt GitHub** : https://github.com/capigit/fdd2526
 
 ### Remerciements
@@ -609,7 +608,6 @@ Ce projet est fourni à titre de travail universitaire/recherche. Voir le fichie
 Pour toute question ou contribution, veuillez :
 1. Ouvrir une issue sur GitHub
 2. Soumettre une pull request avec vos améliorations
-3. Contacter l'équipe via [email/contact]
 
 ---
 
@@ -625,11 +623,6 @@ Pour toute question ou contribution, veuillez :
 - [K-means Clustering Explained](https://scikit-learn.org/stable/modules/clustering.html#k-means)
 - [TF-IDF for Text Analysis](https://scikit-learn.org/stable/modules/feature_extraction.html#tfidf-term-weighting)
 - [Community Detection in Graphs](https://python-louvain.readthedocs.io/)
-
-### Outils Complémentaires
-- **Gephi** (https://gephi.org/) : Visualisation et analyse de réseaux
-- **Jupyter Notebook** : Exploration interactive de données
-- **VS Code** : Éditeur de code recommandé
 
 ### Configuration VS Code (Optionnel)
 
@@ -681,7 +674,3 @@ R : Partiellement. Nous utilisons `random_state=42` pour K-Means, mais la détec
 R : Créez un fichier JSON au format IEEE (ou créez un script d'import personnalisé) et ajoutez-le à `bdSource/`.
 
 ---
-
-**Bonne exploration ! 🚀**
-
-Pour toute question non couverte, consultez les notebooks Jupyter ou ouvrez une issue GitHub.
