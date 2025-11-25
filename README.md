@@ -69,7 +69,6 @@ unidecode       # Suppression des accents et normalization de texte
 
 ```bash
 # Windows (PowerShell)
-cd "G:\Mon Drive\Projets"
 git clone https://github.com/capigit/fdd2526.git
 cd FDD
 ```
@@ -537,7 +536,6 @@ print(f"\nNombre de composantes connexes : {num_components}")
 3. **Gestion des Données**
    - Gardez les fichiers bruts dans `bdSource/` intact
    - Générez les résultats dans des fichiers séparés (`outputs/`)
-   - Versionnez les petits fichiers CSV, ignorez les gros fichiers (.db, .gexf)
 
 4. **Performance**
    - Pour de grandes tables, utilisez les index SQLite
