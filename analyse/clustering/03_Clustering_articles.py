@@ -1,16 +1,26 @@
-import joblib
+import pickle
 from sklearn.cluster import KMeans
+import pandas as pd
 
-df_features, X_final, tfidf, encoder = joblib.load('G:/Mon Drive/Projets/FDD/analyse/clustering/features.pkl')
+def main():
+    # Chargement features
+    data = pickle.load(open("analyse/clustering/features.pkl", "rb"))
+    X_tfidf = data["tfidf"]
+    df_features = data["features"]
 
-# Clustering K-means
-K = 5
-kmeans = KMeans(n_clusters=K, random_state=42, n_init=10)
-df_features['cluster'] = kmeans.fit_predict(X_final)
+    # On peut combiner TF-IDF et features numériques si voulu
+    import numpy as np
+    X_numeric = df_features[['nb_auteurs']].to_numpy()
+    X = np.hstack([X_tfidf, X_numeric])
 
-# Sauvegarde
-import joblib
-joblib.dump((df_features, kmeans), 'G:/Mon Drive/Projets/FDD/analyse/clustering/kmeans_articles.pkl')
+    # KMeans
+    kmeans = KMeans(n_clusters=50, random_state=42)
+    labels = kmeans.fit_predict(X)
+    df_features['cluster'] = labels
 
-# Nombre d'articles par cluster
-print(df_features.groupby('cluster').size())
+    # Export CSV
+    df_features[['article_id', 'cluster']].to_csv("analyse/clustering/clusters_articles.csv", index=False)
+    print("Clustering articles terminé et exporté.")
+
+if __name__ == "__main__":
+    main()

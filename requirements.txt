@@ -3,3 +3,4 @@ wordcloud
 scikit-learn
 networkx
 python-louvain
+pyvis
