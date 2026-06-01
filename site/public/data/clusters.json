@@ -1,0 +1,2492 @@
+[
+  {
+    "cluster": "3",
+    "label": "Prediction and evaluation",
+    "description": "Prediction and evaluation regroupe 777 articles, avec une presence dominante de China.",
+    "size": 777,
+    "avgAuthors": 5.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 1551
+      },
+      {
+        "term": "machine",
+        "count": 700
+      },
+      {
+        "term": "deep",
+        "count": 621
+      },
+      {
+        "term": "models",
+        "count": 490
+      },
+      {
+        "term": "data",
+        "count": 399
+      },
+      {
+        "term": "feature",
+        "count": 360
+      },
+      {
+        "term": "neural",
+        "count": 353
+      },
+      {
+        "term": "extraction",
+        "count": 321
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "detection",
+      "image",
+      "predictive"
+    ]
+  },
+  {
+    "cluster": "25",
+    "label": "Reinforcement and control",
+    "description": "Reinforcement and control regroupe 520 articles, avec une presence dominante de China.",
+    "size": 520,
+    "avgAuthors": 2.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 1367
+      },
+      {
+        "term": "machine",
+        "count": 689
+      },
+      {
+        "term": "deep",
+        "count": 355
+      },
+      {
+        "term": "models",
+        "count": 329
+      },
+      {
+        "term": "algorithms",
+        "count": 304
+      },
+      {
+        "term": "data",
+        "count": 268
+      },
+      {
+        "term": "feature",
+        "count": 171
+      },
+      {
+        "term": "training",
+        "count": 159
+      }
+    ],
+    "signalTerms": [
+      "reinforcement",
+      "predictive",
+      "detection",
+      "vector"
+    ]
+  },
+  {
+    "cluster": "22",
+    "label": "Wireless communications",
+    "description": "Wireless communications regroupe 500 articles, avec une presence dominante de China.",
+    "size": 500,
+    "avgAuthors": 5.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 541
+      },
+      {
+        "term": "artificial",
+        "count": 424
+      },
+      {
+        "term": "intelligence",
+        "count": 411
+      },
+      {
+        "term": "machine",
+        "count": 212
+      },
+      {
+        "term": "data",
+        "count": 174
+      },
+      {
+        "term": "deep",
+        "count": 164
+      },
+      {
+        "term": "networks",
+        "count": 163
+      },
+      {
+        "term": "systems",
+        "count": 161
+      }
+    ],
+    "signalTerms": [
+      "networks",
+      "optimization",
+      "reinforcement",
+      "internet",
+      "computing",
+      "communication"
+    ]
+  },
+  {
+    "cluster": "36",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 462 articles, avec une presence dominante de China.",
+    "size": 462,
+    "avgAuthors": 4.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 1306
+      },
+      {
+        "term": "deep",
+        "count": 874
+      },
+      {
+        "term": "neural",
+        "count": 467
+      },
+      {
+        "term": "networks",
+        "count": 390
+      },
+      {
+        "term": "feature",
+        "count": 329
+      },
+      {
+        "term": "extraction",
+        "count": 305
+      },
+      {
+        "term": "models",
+        "count": 241
+      },
+      {
+        "term": "convolutional",
+        "count": 217
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "convolutional",
+      "image",
+      "network"
+    ]
+  },
+  {
+    "cluster": "8",
+    "label": "Prediction and evaluation",
+    "description": "Prediction and evaluation regroupe 427 articles, avec une presence dominante de China.",
+    "size": 427,
+    "avgAuthors": 4.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 1224
+      },
+      {
+        "term": "machine",
+        "count": 864
+      },
+      {
+        "term": "models",
+        "count": 344
+      },
+      {
+        "term": "data",
+        "count": 312
+      },
+      {
+        "term": "algorithms",
+        "count": 268
+      },
+      {
+        "term": "feature",
+        "count": 194
+      },
+      {
+        "term": "analysis",
+        "count": 166
+      },
+      {
+        "term": "support",
+        "count": 160
+      }
+    ],
+    "signalTerms": [
+      "support",
+      "vector",
+      "predictive",
+      "machines"
+    ]
+  },
+  {
+    "cluster": "32",
+    "label": "Wireless communications",
+    "description": "Wireless communications regroupe 424 articles, avec une presence dominante de China.",
+    "size": 424,
+    "avgAuthors": 4.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 654
+      },
+      {
+        "term": "systems",
+        "count": 275
+      },
+      {
+        "term": "machine",
+        "count": 246
+      },
+      {
+        "term": "deep",
+        "count": 226
+      },
+      {
+        "term": "artificial",
+        "count": 204
+      },
+      {
+        "term": "intelligence",
+        "count": 169
+      },
+      {
+        "term": "models",
+        "count": 154
+      },
+      {
+        "term": "internet",
+        "count": 135
+      }
+    ],
+    "signalTerms": [
+      "internet",
+      "reinforcement",
+      "detection",
+      "communication",
+      "things",
+      "networks",
+      "neural",
+      "security"
+    ]
+  },
+  {
+    "cluster": "48",
+    "label": "Prediction and evaluation",
+    "description": "Prediction and evaluation regroupe 393 articles, avec une presence dominante de China.",
+    "size": 393,
+    "avgAuthors": 6.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 1370
+      },
+      {
+        "term": "machine",
+        "count": 609
+      },
+      {
+        "term": "deep",
+        "count": 414
+      },
+      {
+        "term": "models",
+        "count": 362
+      },
+      {
+        "term": "data",
+        "count": 297
+      },
+      {
+        "term": "algorithms",
+        "count": 206
+      },
+      {
+        "term": "detection",
+        "count": 183
+      },
+      {
+        "term": "modeling",
+        "count": 180
+      }
+    ],
+    "signalTerms": [
+      "detection",
+      "predictive",
+      "networks"
+    ]
+  },
+  {
+    "cluster": "33",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 383 articles, avec une presence dominante de China.",
+    "size": 383,
+    "avgAuthors": 2.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "artificial",
+        "count": 363
+      },
+      {
+        "term": "intelligence",
+        "count": 352
+      },
+      {
+        "term": "models",
+        "count": 260
+      },
+      {
+        "term": "learning",
+        "count": 239
+      },
+      {
+        "term": "language",
+        "count": 176
+      },
+      {
+        "term": "systems",
+        "count": 166
+      },
+      {
+        "term": "analysis",
+        "count": 157
+      },
+      {
+        "term": "data",
+        "count": 154
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "processing",
+      "natural",
+      "internet",
+      "things",
+      "security"
+    ]
+  },
+  {
+    "cluster": "35",
+    "label": "Security and privacy",
+    "description": "Security and privacy regroupe 360 articles, avec une presence dominante de China.",
+    "size": 360,
+    "avgAuthors": 7.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 363
+      },
+      {
+        "term": "artificial",
+        "count": 297
+      },
+      {
+        "term": "intelligence",
+        "count": 273
+      },
+      {
+        "term": "machine",
+        "count": 212
+      },
+      {
+        "term": "models",
+        "count": 202
+      },
+      {
+        "term": "data",
+        "count": 138
+      },
+      {
+        "term": "modeling",
+        "count": 134
+      },
+      {
+        "term": "networks",
+        "count": 113
+      }
+    ],
+    "signalTerms": [
+      "networks",
+      "optimization",
+      "neural",
+      "security",
+      "predictive"
+    ]
+  },
+  {
+    "cluster": "12",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 359 articles, avec une presence dominante de China.",
+    "size": 359,
+    "avgAuthors": 8.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 1416
+      },
+      {
+        "term": "deep",
+        "count": 601
+      },
+      {
+        "term": "machine",
+        "count": 511
+      },
+      {
+        "term": "models",
+        "count": 266
+      },
+      {
+        "term": "feature",
+        "count": 224
+      },
+      {
+        "term": "algorithms",
+        "count": 209
+      },
+      {
+        "term": "neural",
+        "count": 206
+      },
+      {
+        "term": "networks",
+        "count": 205
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "detection",
+      "image"
+    ]
+  },
+  {
+    "cluster": "24",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 336 articles, avec une presence dominante de China.",
+    "size": 336,
+    "avgAuthors": 4.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "intelligence",
+        "count": 354
+      },
+      {
+        "term": "artificial",
+        "count": 342
+      },
+      {
+        "term": "models",
+        "count": 333
+      },
+      {
+        "term": "learning",
+        "count": 262
+      },
+      {
+        "term": "language",
+        "count": 257
+      },
+      {
+        "term": "data",
+        "count": 235
+      },
+      {
+        "term": "analysis",
+        "count": 181
+      },
+      {
+        "term": "processing",
+        "count": 175
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "processing",
+      "natural",
+      "predictive"
+    ]
+  },
+  {
+    "cluster": "13",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 333 articles, avec une presence dominante de China.",
+    "size": 333,
+    "avgAuthors": 10.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 1291
+      },
+      {
+        "term": "deep",
+        "count": 540
+      },
+      {
+        "term": "machine",
+        "count": 448
+      },
+      {
+        "term": "models",
+        "count": 245
+      },
+      {
+        "term": "artificial",
+        "count": 237
+      },
+      {
+        "term": "intelligence",
+        "count": 215
+      },
+      {
+        "term": "feature",
+        "count": 195
+      },
+      {
+        "term": "data",
+        "count": 190
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "detection"
+    ]
+  },
+  {
+    "cluster": "46",
+    "label": "Optimization and scheduling",
+    "description": "Optimization and scheduling regroupe 302 articles, avec une presence dominante de China.",
+    "size": 302,
+    "avgAuthors": 3.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "artificial",
+        "count": 416
+      },
+      {
+        "term": "intelligence",
+        "count": 406
+      },
+      {
+        "term": "learning",
+        "count": 179
+      },
+      {
+        "term": "data",
+        "count": 127
+      },
+      {
+        "term": "models",
+        "count": 122
+      },
+      {
+        "term": "systems",
+        "count": 108
+      },
+      {
+        "term": "modeling",
+        "count": 101
+      },
+      {
+        "term": "analysis",
+        "count": 83
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "optimization",
+      "networks",
+      "computational",
+      "computing",
+      "software"
+    ]
+  },
+  {
+    "cluster": "26",
+    "label": "AI for health",
+    "description": "AI for health regroupe 298 articles, avec une presence dominante de China.",
+    "size": 298,
+    "avgAuthors": 6.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "artificial",
+        "count": 434
+      },
+      {
+        "term": "intelligence",
+        "count": 403
+      },
+      {
+        "term": "learning",
+        "count": 216
+      },
+      {
+        "term": "models",
+        "count": 147
+      },
+      {
+        "term": "machine",
+        "count": 134
+      },
+      {
+        "term": "data",
+        "count": 124
+      },
+      {
+        "term": "systems",
+        "count": 117
+      },
+      {
+        "term": "networks",
+        "count": 90
+      }
+    ],
+    "signalTerms": [
+      "networks",
+      "neural",
+      "optimization",
+      "power",
+      "predictive",
+      "medical"
+    ]
+  },
+  {
+    "cluster": "1",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 293 articles, avec une presence dominante de China.",
+    "size": 293,
+    "avgAuthors": 9.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 447
+      },
+      {
+        "term": "artificial",
+        "count": 262
+      },
+      {
+        "term": "intelligence",
+        "count": 232
+      },
+      {
+        "term": "machine",
+        "count": 201
+      },
+      {
+        "term": "models",
+        "count": 180
+      },
+      {
+        "term": "deep",
+        "count": 174
+      },
+      {
+        "term": "neural",
+        "count": 124
+      },
+      {
+        "term": "networks",
+        "count": 120
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "image"
+    ]
+  },
+  {
+    "cluster": "9",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 292 articles, avec une presence dominante de China.",
+    "size": 292,
+    "avgAuthors": 3.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 632
+      },
+      {
+        "term": "deep",
+        "count": 424
+      },
+      {
+        "term": "neural",
+        "count": 297
+      },
+      {
+        "term": "networks",
+        "count": 220
+      },
+      {
+        "term": "feature",
+        "count": 166
+      },
+      {
+        "term": "extraction",
+        "count": 141
+      },
+      {
+        "term": "convolutional",
+        "count": 133
+      },
+      {
+        "term": "image",
+        "count": 122
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "convolutional",
+      "image",
+      "network",
+      "recognition"
+    ]
+  },
+  {
+    "cluster": "10",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 283 articles, avec une presence dominante de China.",
+    "size": 283,
+    "avgAuthors": 7.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 545
+      },
+      {
+        "term": "deep",
+        "count": 269
+      },
+      {
+        "term": "machine",
+        "count": 182
+      },
+      {
+        "term": "feature",
+        "count": 180
+      },
+      {
+        "term": "extraction",
+        "count": 154
+      },
+      {
+        "term": "neural",
+        "count": 139
+      },
+      {
+        "term": "analysis",
+        "count": 134
+      },
+      {
+        "term": "models",
+        "count": 126
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "detection",
+      "convolutional",
+      "network"
+    ]
+  },
+  {
+    "cluster": "49",
+    "label": "Prediction and evaluation",
+    "description": "Prediction and evaluation regroupe 257 articles, avec une presence dominante de China.",
+    "size": 257,
+    "avgAuthors": 3.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 619
+      },
+      {
+        "term": "machine",
+        "count": 454
+      },
+      {
+        "term": "algorithms",
+        "count": 278
+      },
+      {
+        "term": "classification",
+        "count": 117
+      },
+      {
+        "term": "analysis",
+        "count": 92
+      },
+      {
+        "term": "feature",
+        "count": 90
+      },
+      {
+        "term": "detection",
+        "count": 89
+      },
+      {
+        "term": "data",
+        "count": 78
+      }
+    ],
+    "signalTerms": [
+      "detection",
+      "support",
+      "vector",
+      "machines",
+      "prediction"
+    ]
+  },
+  {
+    "cluster": "15",
+    "label": "Neural architectures",
+    "description": "Neural architectures regroupe 248 articles, avec une presence dominante de China.",
+    "size": 248,
+    "avgAuthors": 0.94,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 338
+      },
+      {
+        "term": "artificial",
+        "count": 162
+      },
+      {
+        "term": "intelligence",
+        "count": 156
+      },
+      {
+        "term": "machine",
+        "count": 146
+      },
+      {
+        "term": "models",
+        "count": 122
+      },
+      {
+        "term": "deep",
+        "count": 120
+      },
+      {
+        "term": "data",
+        "count": 97
+      },
+      {
+        "term": "networks",
+        "count": 87
+      }
+    ],
+    "signalTerms": [
+      "networks",
+      "neural"
+    ]
+  },
+  {
+    "cluster": "40",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 232 articles, avec une presence dominante de China.",
+    "size": 232,
+    "avgAuthors": 8.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "artificial",
+        "count": 320
+      },
+      {
+        "term": "intelligence",
+        "count": 303
+      },
+      {
+        "term": "learning",
+        "count": 270
+      },
+      {
+        "term": "models",
+        "count": 177
+      },
+      {
+        "term": "data",
+        "count": 138
+      },
+      {
+        "term": "machine",
+        "count": 129
+      },
+      {
+        "term": "networks",
+        "count": 111
+      },
+      {
+        "term": "systems",
+        "count": 107
+      }
+    ],
+    "signalTerms": [
+      "networks",
+      "language",
+      "communication",
+      "processing",
+      "neural",
+      "optimization"
+    ]
+  },
+  {
+    "cluster": "42",
+    "label": "Prediction and evaluation",
+    "description": "Prediction and evaluation regroupe 227 articles, avec une presence dominante de China.",
+    "size": 227,
+    "avgAuthors": 3.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 509
+      },
+      {
+        "term": "models",
+        "count": 386
+      },
+      {
+        "term": "machine",
+        "count": 253
+      },
+      {
+        "term": "data",
+        "count": 243
+      },
+      {
+        "term": "modeling",
+        "count": 128
+      },
+      {
+        "term": "predictive",
+        "count": 126
+      },
+      {
+        "term": "deep",
+        "count": 118
+      },
+      {
+        "term": "training",
+        "count": 93
+      }
+    ],
+    "signalTerms": [
+      "predictive",
+      "computational",
+      "prediction",
+      "accuracy",
+      "transfer",
+      "adaptation"
+    ]
+  },
+  {
+    "cluster": "0",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 221 articles, avec une presence dominante de China.",
+    "size": 221,
+    "avgAuthors": 2.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 483
+      },
+      {
+        "term": "deep",
+        "count": 335
+      },
+      {
+        "term": "neural",
+        "count": 323
+      },
+      {
+        "term": "networks",
+        "count": 267
+      },
+      {
+        "term": "convolutional",
+        "count": 116
+      },
+      {
+        "term": "feature",
+        "count": 110
+      },
+      {
+        "term": "artificial",
+        "count": 109
+      },
+      {
+        "term": "network",
+        "count": 105
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "convolutional",
+      "network",
+      "recognition",
+      "image"
+    ]
+  },
+  {
+    "cluster": "4",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 199 articles, avec une presence dominante de China.",
+    "size": 199,
+    "avgAuthors": 13.62,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 698
+      },
+      {
+        "term": "deep",
+        "count": 264
+      },
+      {
+        "term": "machine",
+        "count": 250
+      },
+      {
+        "term": "artificial",
+        "count": 208
+      },
+      {
+        "term": "intelligence",
+        "count": 181
+      },
+      {
+        "term": "models",
+        "count": 163
+      },
+      {
+        "term": "neural",
+        "count": 123
+      },
+      {
+        "term": "networks",
+        "count": 116
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "language",
+      "detection"
+    ]
+  },
+  {
+    "cluster": "45",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 189 articles, avec une presence dominante de China.",
+    "size": 189,
+    "avgAuthors": 12.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 944
+      },
+      {
+        "term": "deep",
+        "count": 412
+      },
+      {
+        "term": "machine",
+        "count": 357
+      },
+      {
+        "term": "artificial",
+        "count": 215
+      },
+      {
+        "term": "intelligence",
+        "count": 198
+      },
+      {
+        "term": "models",
+        "count": 191
+      },
+      {
+        "term": "feature",
+        "count": 155
+      },
+      {
+        "term": "neural",
+        "count": 143
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "detection",
+      "networks"
+    ]
+  },
+  {
+    "cluster": "43",
+    "label": "Computer vision",
+    "description": "Computer vision regroupe 183 articles, avec une presence dominante de China.",
+    "size": 183,
+    "avgAuthors": 6.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 401
+      },
+      {
+        "term": "deep",
+        "count": 264
+      },
+      {
+        "term": "neural",
+        "count": 236
+      },
+      {
+        "term": "networks",
+        "count": 200
+      },
+      {
+        "term": "recognition",
+        "count": 120
+      },
+      {
+        "term": "feature",
+        "count": 120
+      },
+      {
+        "term": "extraction",
+        "count": 113
+      },
+      {
+        "term": "convolutional",
+        "count": 105
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "recognition",
+      "convolutional",
+      "detection",
+      "network"
+    ]
+  },
+  {
+    "cluster": "14",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 137 articles, avec une presence dominante de China.",
+    "size": 137,
+    "avgAuthors": 3.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "language",
+        "count": 236
+      },
+      {
+        "term": "processing",
+        "count": 158
+      },
+      {
+        "term": "natural",
+        "count": 150
+      },
+      {
+        "term": "models",
+        "count": 146
+      },
+      {
+        "term": "learning",
+        "count": 100
+      },
+      {
+        "term": "analysis",
+        "count": 88
+      },
+      {
+        "term": "large",
+        "count": 61
+      },
+      {
+        "term": "modeling",
+        "count": 58
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "processing",
+      "natural",
+      "large",
+      "text",
+      "sentiment"
+    ]
+  },
+  {
+    "cluster": "34",
+    "label": "Reinforcement and control",
+    "description": "Reinforcement and control regroupe 132 articles, avec une presence dominante de China.",
+    "size": 132,
+    "avgAuthors": 3.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 355
+      },
+      {
+        "term": "reinforcement",
+        "count": 225
+      },
+      {
+        "term": "deep",
+        "count": 153
+      },
+      {
+        "term": "systems",
+        "count": 64
+      },
+      {
+        "term": "optimization",
+        "count": 59
+      },
+      {
+        "term": "control",
+        "count": 58
+      },
+      {
+        "term": "algorithms",
+        "count": 50
+      },
+      {
+        "term": "machine",
+        "count": 41
+      }
+    ],
+    "signalTerms": [
+      "reinforcement",
+      "optimization",
+      "control",
+      "planning",
+      "traffic",
+      "autonomous",
+      "networks"
+    ]
+  },
+  {
+    "cluster": "18",
+    "label": "AI for health",
+    "description": "AI for health regroupe 123 articles, avec une presence dominante de China.",
+    "size": 123,
+    "avgAuthors": 11.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 189
+      },
+      {
+        "term": "intelligence",
+        "count": 104
+      },
+      {
+        "term": "artificial",
+        "count": 100
+      },
+      {
+        "term": "models",
+        "count": 94
+      },
+      {
+        "term": "machine",
+        "count": 81
+      },
+      {
+        "term": "deep",
+        "count": 62
+      },
+      {
+        "term": "data",
+        "count": 54
+      },
+      {
+        "term": "neural",
+        "count": 50
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "predictive",
+      "detection",
+      "imaging"
+    ]
+  },
+  {
+    "cluster": "37",
+    "label": "Reinforcement and control",
+    "description": "Reinforcement and control regroupe 121 articles, avec une presence dominante de China.",
+    "size": 121,
+    "avgAuthors": 4.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 227
+      },
+      {
+        "term": "optimization",
+        "count": 189
+      },
+      {
+        "term": "algorithms",
+        "count": 108
+      },
+      {
+        "term": "deep",
+        "count": 86
+      },
+      {
+        "term": "reinforcement",
+        "count": 73
+      },
+      {
+        "term": "machine",
+        "count": 70
+      },
+      {
+        "term": "models",
+        "count": 59
+      },
+      {
+        "term": "artificial",
+        "count": 49
+      }
+    ],
+    "signalTerms": [
+      "optimization",
+      "reinforcement",
+      "swarm",
+      "networks",
+      "particle",
+      "neural",
+      "management"
+    ]
+  },
+  {
+    "cluster": "39",
+    "label": "Neural architectures",
+    "description": "Neural architectures regroupe 119 articles, avec une presence dominante de China.",
+    "size": 119,
+    "avgAuthors": 6.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 328
+      },
+      {
+        "term": "machine",
+        "count": 244
+      },
+      {
+        "term": "support",
+        "count": 177
+      },
+      {
+        "term": "vector",
+        "count": 173
+      },
+      {
+        "term": "machines",
+        "count": 142
+      },
+      {
+        "term": "feature",
+        "count": 84
+      },
+      {
+        "term": "deep",
+        "count": 77
+      },
+      {
+        "term": "extraction",
+        "count": 68
+      }
+    ],
+    "signalTerms": [
+      "support",
+      "vector",
+      "machines",
+      "neural",
+      "networks"
+    ]
+  },
+  {
+    "cluster": "47",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 109 articles, avec une presence dominante de China.",
+    "size": 109,
+    "avgAuthors": 5.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "language",
+        "count": 174
+      },
+      {
+        "term": "models",
+        "count": 146
+      },
+      {
+        "term": "learning",
+        "count": 111
+      },
+      {
+        "term": "processing",
+        "count": 107
+      },
+      {
+        "term": "natural",
+        "count": 102
+      },
+      {
+        "term": "analysis",
+        "count": 69
+      },
+      {
+        "term": "large",
+        "count": 65
+      },
+      {
+        "term": "data",
+        "count": 56
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "processing",
+      "natural",
+      "large",
+      "social",
+      "transformers",
+      "sentiment"
+    ]
+  },
+  {
+    "cluster": "11",
+    "label": "AI for health",
+    "description": "AI for health regroupe 103 articles, avec une presence dominante de China.",
+    "size": 103,
+    "avgAuthors": 6.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 177
+      },
+      {
+        "term": "image",
+        "count": 169
+      },
+      {
+        "term": "deep",
+        "count": 106
+      },
+      {
+        "term": "imaging",
+        "count": 79
+      },
+      {
+        "term": "feature",
+        "count": 72
+      },
+      {
+        "term": "segmentation",
+        "count": 72
+      },
+      {
+        "term": "extraction",
+        "count": 66
+      },
+      {
+        "term": "modeling",
+        "count": 38
+      }
+    ],
+    "signalTerms": [
+      "image",
+      "imaging",
+      "segmentation",
+      "neural",
+      "networks",
+      "medical",
+      "cancer"
+    ]
+  },
+  {
+    "cluster": "29",
+    "label": "Wireless communications",
+    "description": "Wireless communications regroupe 98 articles, avec une presence dominante de China.",
+    "size": 98,
+    "avgAuthors": 6.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 397
+      },
+      {
+        "term": "reinforcement",
+        "count": 213
+      },
+      {
+        "term": "deep",
+        "count": 168
+      },
+      {
+        "term": "machine",
+        "count": 53
+      },
+      {
+        "term": "training",
+        "count": 49
+      },
+      {
+        "term": "systems",
+        "count": 44
+      },
+      {
+        "term": "optimization",
+        "count": 37
+      },
+      {
+        "term": "artificial",
+        "count": 36
+      }
+    ],
+    "signalTerms": [
+      "reinforcement",
+      "optimization",
+      "networks",
+      "control",
+      "power",
+      "scheduling",
+      "q-learning"
+    ]
+  },
+  {
+    "cluster": "6",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 98 articles, avec une presence dominante de China.",
+    "size": 98,
+    "avgAuthors": 6.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "language",
+        "count": 209
+      },
+      {
+        "term": "learning",
+        "count": 174
+      },
+      {
+        "term": "natural",
+        "count": 143
+      },
+      {
+        "term": "processing",
+        "count": 134
+      },
+      {
+        "term": "models",
+        "count": 113
+      },
+      {
+        "term": "data",
+        "count": 76
+      },
+      {
+        "term": "machine",
+        "count": 74
+      },
+      {
+        "term": "deep",
+        "count": 63
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "natural",
+      "processing",
+      "large",
+      "software",
+      "nlp",
+      "text"
+    ]
+  },
+  {
+    "cluster": "30",
+    "label": "Wireless communications",
+    "description": "Wireless communications regroupe 90 articles, avec une presence dominante de USA.",
+    "size": 90,
+    "avgAuthors": 3.0,
+    "topCountry": "USA",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 157
+      },
+      {
+        "term": "communication",
+        "count": 118
+      },
+      {
+        "term": "deep",
+        "count": 73
+      },
+      {
+        "term": "machine",
+        "count": 72
+      },
+      {
+        "term": "wireless",
+        "count": 69
+      },
+      {
+        "term": "mobile",
+        "count": 60
+      },
+      {
+        "term": "networks",
+        "count": 54
+      },
+      {
+        "term": "network",
+        "count": 48
+      }
+    ],
+    "signalTerms": [
+      "communication",
+      "wireless",
+      "mobile",
+      "networks",
+      "network",
+      "resource",
+      "management",
+      "optimization"
+    ]
+  },
+  {
+    "cluster": "41",
+    "label": "IoT and smart systems",
+    "description": "IoT and smart systems regroupe 74 articles, avec une presence dominante de China.",
+    "size": 74,
+    "avgAuthors": 3.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 126
+      },
+      {
+        "term": "internet",
+        "count": 112
+      },
+      {
+        "term": "things",
+        "count": 111
+      },
+      {
+        "term": "machine",
+        "count": 67
+      },
+      {
+        "term": "artificial",
+        "count": 51
+      },
+      {
+        "term": "intelligence",
+        "count": 45
+      },
+      {
+        "term": "deep",
+        "count": 40
+      },
+      {
+        "term": "data",
+        "count": 39
+      }
+    ],
+    "signalTerms": [
+      "internet",
+      "things",
+      "detection",
+      "security",
+      "smart",
+      "networks",
+      "computer",
+      "iot"
+    ]
+  },
+  {
+    "cluster": "19",
+    "label": "Prediction and evaluation",
+    "description": "Prediction and evaluation regroupe 67 articles, avec une presence dominante de China.",
+    "size": 67,
+    "avgAuthors": 16.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 335
+      },
+      {
+        "term": "deep",
+        "count": 144
+      },
+      {
+        "term": "machine",
+        "count": 117
+      },
+      {
+        "term": "intelligence",
+        "count": 84
+      },
+      {
+        "term": "artificial",
+        "count": 78
+      },
+      {
+        "term": "models",
+        "count": 55
+      },
+      {
+        "term": "feature",
+        "count": 51
+      },
+      {
+        "term": "extraction",
+        "count": 43
+      }
+    ],
+    "signalTerms": [
+      "networks",
+      "neural",
+      "image",
+      "transfer",
+      "predictive"
+    ]
+  },
+  {
+    "cluster": "28",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 63 articles, avec une presence dominante de China.",
+    "size": 63,
+    "avgAuthors": 17.62,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 238
+      },
+      {
+        "term": "deep",
+        "count": 102
+      },
+      {
+        "term": "machine",
+        "count": 98
+      },
+      {
+        "term": "artificial",
+        "count": 82
+      },
+      {
+        "term": "intelligence",
+        "count": 77
+      },
+      {
+        "term": "data",
+        "count": 61
+      },
+      {
+        "term": "models",
+        "count": 57
+      },
+      {
+        "term": "analysis",
+        "count": 39
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "networks",
+      "processing",
+      "neural"
+    ]
+  },
+  {
+    "cluster": "27",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 50 articles, avec une presence dominante de China.",
+    "size": 50,
+    "avgAuthors": 15.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 191
+      },
+      {
+        "term": "intelligence",
+        "count": 77
+      },
+      {
+        "term": "machine",
+        "count": 77
+      },
+      {
+        "term": "artificial",
+        "count": 75
+      },
+      {
+        "term": "deep",
+        "count": 74
+      },
+      {
+        "term": "models",
+        "count": 65
+      },
+      {
+        "term": "data",
+        "count": 42
+      },
+      {
+        "term": "language",
+        "count": 32
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "networks",
+      "processing",
+      "natural",
+      "communication"
+    ]
+  },
+  {
+    "cluster": "20",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 45 articles, avec une presence dominante de China.",
+    "size": 45,
+    "avgAuthors": 12.0,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 109
+      },
+      {
+        "term": "machine",
+        "count": 51
+      },
+      {
+        "term": "neural",
+        "count": 37
+      },
+      {
+        "term": "networks",
+        "count": 35
+      },
+      {
+        "term": "recognition",
+        "count": 30
+      },
+      {
+        "term": "deep",
+        "count": 30
+      },
+      {
+        "term": "quantum",
+        "count": 25
+      },
+      {
+        "term": "reinforcement",
+        "count": 24
+      }
+    ],
+    "signalTerms": [
+      "neural",
+      "networks",
+      "recognition",
+      "quantum",
+      "reinforcement",
+      "text",
+      "communication",
+      "network"
+    ]
+  },
+  {
+    "cluster": "17",
+    "label": "AI for health",
+    "description": "AI for health regroupe 37 articles, avec une presence dominante de China.",
+    "size": 37,
+    "avgAuthors": 19.65,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 120
+      },
+      {
+        "term": "machine",
+        "count": 53
+      },
+      {
+        "term": "deep",
+        "count": 52
+      },
+      {
+        "term": "models",
+        "count": 42
+      },
+      {
+        "term": "artificial",
+        "count": 38
+      },
+      {
+        "term": "intelligence",
+        "count": 33
+      },
+      {
+        "term": "imaging",
+        "count": 31
+      },
+      {
+        "term": "language",
+        "count": 31
+      }
+    ],
+    "signalTerms": [
+      "imaging",
+      "language",
+      "detection",
+      "networks",
+      "magnetic",
+      "neural",
+      "large"
+    ]
+  },
+  {
+    "cluster": "2",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 34 articles, avec une presence dominante de China.",
+    "size": 34,
+    "avgAuthors": 21.26,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 181
+      },
+      {
+        "term": "artificial",
+        "count": 80
+      },
+      {
+        "term": "deep",
+        "count": 79
+      },
+      {
+        "term": "intelligence",
+        "count": 77
+      },
+      {
+        "term": "machine",
+        "count": 68
+      },
+      {
+        "term": "data",
+        "count": 35
+      },
+      {
+        "term": "models",
+        "count": 32
+      },
+      {
+        "term": "explainable",
+        "count": 31
+      }
+    ],
+    "signalTerms": [
+      "explainable",
+      "networks",
+      "language",
+      "image",
+      "neural",
+      "processing",
+      "computer"
+    ]
+  },
+  {
+    "cluster": "44",
+    "label": "AI for health",
+    "description": "AI for health regroupe 19 articles, avec une presence dominante de China.",
+    "size": 19,
+    "avgAuthors": 23.74,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 88
+      },
+      {
+        "term": "machine",
+        "count": 52
+      },
+      {
+        "term": "models",
+        "count": 28
+      },
+      {
+        "term": "artificial",
+        "count": 25
+      },
+      {
+        "term": "networks",
+        "count": 25
+      },
+      {
+        "term": "intelligence",
+        "count": 23
+      },
+      {
+        "term": "deep",
+        "count": 21
+      },
+      {
+        "term": "neural",
+        "count": 20
+      }
+    ],
+    "signalTerms": [
+      "networks",
+      "neural",
+      "medical",
+      "predictive"
+    ]
+  },
+  {
+    "cluster": "38",
+    "label": "Language models and NLP",
+    "description": "Language models and NLP regroupe 14 articles, avec une presence dominante de Australia.",
+    "size": 14,
+    "avgAuthors": 26.14,
+    "topCountry": "Australia",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 62
+      },
+      {
+        "term": "machine",
+        "count": 23
+      },
+      {
+        "term": "artificial",
+        "count": 22
+      },
+      {
+        "term": "intelligence",
+        "count": 22
+      },
+      {
+        "term": "deep",
+        "count": 20
+      },
+      {
+        "term": "models",
+        "count": 20
+      },
+      {
+        "term": "analysis",
+        "count": 16
+      },
+      {
+        "term": "language",
+        "count": 15
+      }
+    ],
+    "signalTerms": [
+      "language",
+      "natural",
+      "generative",
+      "accuracy",
+      "processing",
+      "security",
+      "explainable"
+    ]
+  },
+  {
+    "cluster": "31",
+    "label": "AI for health",
+    "description": "AI for health regroupe 11 articles, avec une presence dominante de China.",
+    "size": 11,
+    "avgAuthors": 28.82,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 66
+      },
+      {
+        "term": "deep",
+        "count": 28
+      },
+      {
+        "term": "intelligence",
+        "count": 19
+      },
+      {
+        "term": "machine",
+        "count": 19
+      },
+      {
+        "term": "models",
+        "count": 18
+      },
+      {
+        "term": "artificial",
+        "count": 17
+      },
+      {
+        "term": "imaging",
+        "count": 16
+      },
+      {
+        "term": "medical",
+        "count": 12
+      }
+    ],
+    "signalTerms": [
+      "imaging",
+      "medical",
+      "computational",
+      "infrared",
+      "diagnostic",
+      "breast",
+      "cancer",
+      "literature"
+    ]
+  },
+  {
+    "cluster": "7",
+    "label": "AI for health",
+    "description": "AI for health regroupe 7 articles, avec une presence dominante de China.",
+    "size": 7,
+    "avgAuthors": 32.71,
+    "topCountry": "China",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 8
+      },
+      {
+        "term": "artificial",
+        "count": 8
+      },
+      {
+        "term": "medical",
+        "count": 7
+      },
+      {
+        "term": "intelligence",
+        "count": 7
+      },
+      {
+        "term": "systems",
+        "count": 6
+      },
+      {
+        "term": "data",
+        "count": 5
+      },
+      {
+        "term": "diseases",
+        "count": 5
+      },
+      {
+        "term": "cancer",
+        "count": 5
+      }
+    ],
+    "signalTerms": [
+      "medical",
+      "diseases",
+      "cancer",
+      "diabetes",
+      "insulin",
+      "glucose",
+      "disease",
+      "diagnostic"
+    ]
+  },
+  {
+    "cluster": "23",
+    "label": "AI for health",
+    "description": "AI for health regroupe 5 articles, avec une presence dominante de Italy.",
+    "size": 5,
+    "avgAuthors": 39.0,
+    "topCountry": "Italy",
+    "topTerms": [
+      {
+        "term": "feature",
+        "count": 9
+      },
+      {
+        "term": "medical",
+        "count": 7
+      },
+      {
+        "term": "models",
+        "count": 6
+      },
+      {
+        "term": "stroke",
+        "count": 6
+      },
+      {
+        "term": "detection",
+        "count": 6
+      },
+      {
+        "term": "genetic",
+        "count": 6
+      },
+      {
+        "term": "algorithms",
+        "count": 6
+      },
+      {
+        "term": "data",
+        "count": 6
+      }
+    ],
+    "signalTerms": [
+      "medical",
+      "stroke",
+      "detection",
+      "genetic",
+      "galaxies",
+      "large",
+      "language",
+      "benchmark"
+    ]
+  },
+  {
+    "cluster": "21",
+    "label": "AI for health",
+    "description": "AI for health regroupe 5 articles, avec une presence dominante de Italy.",
+    "size": 5,
+    "avgAuthors": 45.6,
+    "topCountry": "Italy",
+    "topTerms": [
+      {
+        "term": "learning",
+        "count": 15
+      },
+      {
+        "term": "deep",
+        "count": 10
+      },
+      {
+        "term": "feature",
+        "count": 6
+      },
+      {
+        "term": "extraction",
+        "count": 6
+      },
+      {
+        "term": "speech",
+        "count": 6
+      },
+      {
+        "term": "language",
+        "count": 6
+      },
+      {
+        "term": "computing",
+        "count": 6
+      },
+      {
+        "term": "machine",
+        "count": 5
+      }
+    ],
+    "signalTerms": [
+      "speech",
+      "language",
+      "computing",
+      "large",
+      "medical",
+      "psychiatry",
+      "cloud",
+      "information"
+    ]
+  },
+  {
+    "cluster": "5",
+    "label": "AI for health",
+    "description": "AI for health regroupe 1 articles, avec une presence dominante de Italy.",
+    "size": 1,
+    "avgAuthors": 68.0,
+    "topCountry": "Italy",
+    "topTerms": [
+      {
+        "term": "artificial",
+        "count": 2
+      },
+      {
+        "term": "intelligence",
+        "count": 2
+      },
+      {
+        "term": "covid-19",
+        "count": 2
+      },
+      {
+        "term": "ethics",
+        "count": 2
+      },
+      {
+        "term": "radiology",
+        "count": 2
+      },
+      {
+        "term": "pandemics",
+        "count": 1
+      },
+      {
+        "term": "medical",
+        "count": 1
+      },
+      {
+        "term": "services",
+        "count": 1
+      }
+    ],
+    "signalTerms": [
+      "covid-19",
+      "ethics",
+      "radiology",
+      "pandemics",
+      "medical",
+      "services",
+      "lung",
+      "case"
+    ]
+  },
+  {
+    "cluster": "16",
+    "label": "AI for health",
+    "description": "AI for health regroupe 1 articles, avec une presence dominante de Spain.",
+    "size": 1,
+    "avgAuthors": 58.0,
+    "topCountry": "Spain",
+    "topTerms": [
+      {
+        "term": "image",
+        "count": 2
+      },
+      {
+        "term": "segmentation",
+        "count": 2
+      },
+      {
+        "term": "deep",
+        "count": 2
+      },
+      {
+        "term": "learning",
+        "count": 2
+      },
+      {
+        "term": "heart",
+        "count": 1
+      },
+      {
+        "term": "training",
+        "count": 1
+      },
+      {
+        "term": "hospitals",
+        "count": 1
+      },
+      {
+        "term": "biomedical",
+        "count": 1
+      }
+    ],
+    "signalTerms": [
+      "image",
+      "segmentation",
+      "heart",
+      "hospitals",
+      "biomedical",
+      "engineering",
+      "protocols",
+      "cardiovascular"
+    ]
+  }
+]

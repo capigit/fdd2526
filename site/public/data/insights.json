@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Acceleration temporelle",
+    "value": "2024",
+    "detail": "Annee la plus dense avec 2466 articles. Le corpus passe de 22 articles en 2017 a 1788 en 2025.",
+    "tone": "teal",
+    "metric": 1766
+  },
+  {
+    "title": "Source dominante",
+    "value": "Artificial intelligence",
+    "detail": "3880 articles, soit 38.5% du corpus fusionne.",
+    "tone": "cobalt",
+    "metric": 3880
+  },
+  {
+    "title": "Theme lexical majeur",
+    "value": "deep learning",
+    "detail": "Mot-cle le plus frequent avec 6670 occurrences dans les metadonnees IEEE.",
+    "tone": "amber",
+    "metric": 6670
+  },
+  {
+    "title": "Pole geographique",
+    "value": "China",
+    "detail": "2416 articles, 13318 auteurs et 5797 laboratoires identifies.",
+    "tone": "rosewood",
+    "metric": 2416
+  },
+  {
+    "title": "Collaboration bilaterale",
+    "value": "Pakistan - Saudi Arabia",
+    "detail": "Lien international le plus visible avec 276 co-publications detectees.",
+    "tone": "teal",
+    "metric": 276
+  },
+  {
+    "title": "Grand cluster thematique",
+    "value": "Prediction and evaluation",
+    "detail": "Cluster 3 avec 777 articles. Termes signaux : neural, networks, detection, image.",
+    "tone": "cobalt",
+    "metric": 777
+  }
+]

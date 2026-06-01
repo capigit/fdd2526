@@ -1,0 +1,1680 @@
+{
+  "countries": [
+    {
+      "country": "China",
+      "articles": 2416,
+      "authors": 13318,
+      "labs": 5797,
+      "coordinates": [
+        35.8617,
+        104.1954
+      ]
+    },
+    {
+      "country": "India",
+      "articles": 712,
+      "authors": 3038,
+      "labs": 1902,
+      "coordinates": [
+        20.5937,
+        78.9629
+      ]
+    },
+    {
+      "country": "USA",
+      "articles": 687,
+      "authors": 3924,
+      "labs": 2518,
+      "coordinates": [
+        37.0902,
+        -95.7129
+      ]
+    },
+    {
+      "country": "South Korea",
+      "articles": 495,
+      "authors": 2167,
+      "labs": 1162,
+      "coordinates": [
+        35.9078,
+        127.7669
+      ]
+    },
+    {
+      "country": "Saudi Arabia",
+      "articles": 396,
+      "authors": 2138,
+      "labs": 1403,
+      "coordinates": [
+        23.8859,
+        45.0792
+      ]
+    },
+    {
+      "country": "Pakistan",
+      "articles": 358,
+      "authors": 1698,
+      "labs": 1098,
+      "coordinates": [
+        30.3753,
+        69.3451
+      ]
+    },
+    {
+      "country": "Malaysia",
+      "articles": 300,
+      "authors": 1502,
+      "labs": 863,
+      "coordinates": [
+        4.2105,
+        101.9758
+      ]
+    },
+    {
+      "country": "Germany",
+      "articles": 288,
+      "authors": 1823,
+      "labs": 929,
+      "coordinates": [
+        51.1657,
+        10.4515
+      ]
+    },
+    {
+      "country": "Italy",
+      "articles": 280,
+      "authors": 1703,
+      "labs": 848,
+      "coordinates": [
+        41.8719,
+        12.5674
+      ]
+    },
+    {
+      "country": "Spain",
+      "articles": 234,
+      "authors": 1210,
+      "labs": 687,
+      "coordinates": [
+        40.4637,
+        -3.7492
+      ]
+    },
+    {
+      "country": "Japan",
+      "articles": 216,
+      "authors": 1043,
+      "labs": 643,
+      "coordinates": [
+        36.2048,
+        138.2529
+      ]
+    },
+    {
+      "country": "Canada",
+      "articles": 211,
+      "authors": 962,
+      "labs": 586,
+      "coordinates": [
+        56.1304,
+        -106.3468
+      ]
+    },
+    {
+      "country": "U.K.",
+      "articles": 209,
+      "authors": 1246,
+      "labs": 769,
+      "coordinates": null
+    },
+    {
+      "country": "Republic of Korea",
+      "articles": 197,
+      "authors": 961,
+      "labs": 535,
+      "coordinates": null
+    },
+    {
+      "country": "Australia",
+      "articles": 178,
+      "authors": 1108,
+      "labs": 737,
+      "coordinates": [
+        -25.2744,
+        133.7751
+      ]
+    },
+    {
+      "country": "Taiwan",
+      "articles": 163,
+      "authors": 886,
+      "labs": 549,
+      "coordinates": [
+        23.6978,
+        120.9605
+      ]
+    },
+    {
+      "country": "United Arab Emirates",
+      "articles": 120,
+      "authors": 727,
+      "labs": 405,
+      "coordinates": null
+    },
+    {
+      "country": "Egypt",
+      "articles": 117,
+      "authors": 616,
+      "labs": 511,
+      "coordinates": [
+        26.8206,
+        30.8025
+      ]
+    },
+    {
+      "country": "Bangladesh",
+      "articles": 114,
+      "authors": 659,
+      "labs": 342,
+      "coordinates": null
+    },
+    {
+      "country": "Turkey",
+      "articles": 109,
+      "authors": 417,
+      "labs": 328,
+      "coordinates": [
+        38.9637,
+        35.2433
+      ]
+    },
+    {
+      "country": "Brazil",
+      "articles": 108,
+      "authors": 619,
+      "labs": 333,
+      "coordinates": [
+        -14.235,
+        -51.9253
+      ]
+    },
+    {
+      "country": "Türkiye",
+      "articles": 89,
+      "authors": 295,
+      "labs": 226,
+      "coordinates": null
+    },
+    {
+      "country": "Thailand",
+      "articles": 87,
+      "authors": 396,
+      "labs": 230,
+      "coordinates": [
+        15.87,
+        100.9925
+      ]
+    },
+    {
+      "country": "Greece",
+      "articles": 86,
+      "authors": 458,
+      "labs": 225,
+      "coordinates": [
+        39.0742,
+        21.8243
+      ]
+    },
+    {
+      "country": "Indonesia",
+      "articles": 82,
+      "authors": 355,
+      "labs": 283,
+      "coordinates": [
+        -0.7893,
+        113.9213
+      ]
+    },
+    {
+      "country": "Iran",
+      "articles": 82,
+      "authors": 310,
+      "labs": 202,
+      "coordinates": [
+        32.4279,
+        53.688
+      ]
+    },
+    {
+      "country": "Finland",
+      "articles": 78,
+      "authors": 422,
+      "labs": 182,
+      "coordinates": [
+        61.9241,
+        25.7482
+      ]
+    },
+    {
+      "country": "South Africa",
+      "articles": 75,
+      "authors": 273,
+      "labs": 174,
+      "coordinates": [
+        -30.5595,
+        22.9375
+      ]
+    },
+    {
+      "country": "Portugal",
+      "articles": 70,
+      "authors": 458,
+      "labs": 226,
+      "coordinates": [
+        39.3999,
+        -8.2245
+      ]
+    },
+    {
+      "country": "Morocco",
+      "articles": 69,
+      "authors": 313,
+      "labs": 188,
+      "coordinates": [
+        31.7917,
+        -7.0926
+      ]
+    },
+    {
+      "country": "Russia",
+      "articles": 66,
+      "authors": 526,
+      "labs": 223,
+      "coordinates": null
+    },
+    {
+      "country": "Ireland",
+      "articles": 62,
+      "authors": 335,
+      "labs": 201,
+      "coordinates": [
+        53.4129,
+        -8.2439
+      ]
+    },
+    {
+      "country": "France",
+      "articles": 56,
+      "authors": 398,
+      "labs": 285,
+      "coordinates": [
+        46.603354,
+        1.888334
+      ]
+    },
+    {
+      "country": "Norway",
+      "articles": 53,
+      "authors": 271,
+      "labs": 183,
+      "coordinates": [
+        60.472,
+        8.4689
+      ]
+    },
+    {
+      "country": "Qatar",
+      "articles": 50,
+      "authors": 257,
+      "labs": 113,
+      "coordinates": [
+        25.3548,
+        51.1839
+      ]
+    },
+    {
+      "country": "Poland",
+      "articles": 49,
+      "authors": 242,
+      "labs": 130,
+      "coordinates": [
+        51.9194,
+        19.1451
+      ]
+    },
+    {
+      "country": "Mexico",
+      "articles": 49,
+      "authors": 267,
+      "labs": 136,
+      "coordinates": [
+        23.6345,
+        -102.5528
+      ]
+    },
+    {
+      "country": "U.K",
+      "articles": 45,
+      "authors": 226,
+      "labs": 159,
+      "coordinates": null
+    },
+    {
+      "country": "Sweden",
+      "articles": 45,
+      "authors": 289,
+      "labs": 161,
+      "coordinates": [
+        60.1282,
+        18.6435
+      ]
+    },
+    {
+      "country": "Vietnam",
+      "articles": 43,
+      "authors": 274,
+      "labs": 182,
+      "coordinates": [
+        14.0583,
+        108.2772
+      ]
+    },
+    {
+      "country": "The Netherlands",
+      "articles": 42,
+      "authors": 257,
+      "labs": 136,
+      "coordinates": [
+        52.1326,
+        5.2913
+      ]
+    },
+    {
+      "country": "Singapore",
+      "articles": 40,
+      "authors": 217,
+      "labs": 143,
+      "coordinates": [
+        1.3521,
+        103.8198
+      ]
+    },
+    {
+      "country": "Jordan",
+      "articles": 39,
+      "authors": 214,
+      "labs": 164,
+      "coordinates": [
+        30.5852,
+        36.2384
+      ]
+    },
+    {
+      "country": "Belgium",
+      "articles": 38,
+      "authors": 226,
+      "labs": 116,
+      "coordinates": [
+        50.5039,
+        4.4699
+      ]
+    },
+    {
+      "country": "Austria",
+      "articles": 37,
+      "authors": 204,
+      "labs": 121,
+      "coordinates": [
+        47.5162,
+        14.5501
+      ]
+    },
+    {
+      "country": "Ecuador",
+      "articles": 34,
+      "authors": 151,
+      "labs": 76,
+      "coordinates": null
+    },
+    {
+      "country": "Switzerland",
+      "articles": 32,
+      "authors": 198,
+      "labs": 127,
+      "coordinates": [
+        46.8182,
+        8.2275
+      ]
+    },
+    {
+      "country": "Romania",
+      "articles": 31,
+      "authors": 150,
+      "labs": 102,
+      "coordinates": [
+        45.9432,
+        24.9668
+      ]
+    },
+    {
+      "country": "Colombia",
+      "articles": 29,
+      "authors": 121,
+      "labs": 82,
+      "coordinates": [
+        4.5709,
+        -74.2973
+      ]
+    },
+    {
+      "country": "Hungary",
+      "articles": 29,
+      "authors": 136,
+      "labs": 101,
+      "coordinates": [
+        47.1625,
+        19.5033
+      ]
+    },
+    {
+      "country": "Algeria",
+      "articles": 27,
+      "authors": 141,
+      "labs": 104,
+      "coordinates": null
+    },
+    {
+      "country": "Israel",
+      "articles": 25,
+      "authors": 91,
+      "labs": 68,
+      "coordinates": [
+        31.0461,
+        34.8516
+      ]
+    },
+    {
+      "country": "Czech Republic",
+      "articles": 22,
+      "authors": 154,
+      "labs": 95,
+      "coordinates": [
+        49.8175,
+        15.473
+      ]
+    },
+    {
+      "country": "Denmark",
+      "articles": 21,
+      "authors": 123,
+      "labs": 81,
+      "coordinates": [
+        56.2639,
+        9.5018
+      ]
+    },
+    {
+      "country": "Chile",
+      "articles": 20,
+      "authors": 118,
+      "labs": 82,
+      "coordinates": [
+        -35.6751,
+        -71.543
+      ]
+    },
+    {
+      "country": "Iraq",
+      "articles": 19,
+      "authors": 141,
+      "labs": 147,
+      "coordinates": null
+    },
+    {
+      "country": "Slovenia",
+      "articles": 18,
+      "authors": 79,
+      "labs": 56,
+      "coordinates": null
+    },
+    {
+      "country": "UAE",
+      "articles": 18,
+      "authors": 105,
+      "labs": 67,
+      "coordinates": [
+        23.4241,
+        53.8478
+      ]
+    },
+    {
+      "country": "Kazakhstan",
+      "articles": 17,
+      "authors": 106,
+      "labs": 55,
+      "coordinates": null
+    },
+    {
+      "country": "New Zealand",
+      "articles": 16,
+      "authors": 89,
+      "labs": 53,
+      "coordinates": [
+        -40.9006,
+        174.886
+      ]
+    },
+    {
+      "country": "Sri Lanka",
+      "articles": 16,
+      "authors": 74,
+      "labs": 30,
+      "coordinates": null
+    },
+    {
+      "country": "Estonia",
+      "articles": 15,
+      "authors": 61,
+      "labs": 28,
+      "coordinates": null
+    },
+    {
+      "country": "CN",
+      "articles": 14,
+      "authors": 59,
+      "labs": 31,
+      "coordinates": null
+    },
+    {
+      "country": "Tunisia",
+      "articles": 12,
+      "authors": 62,
+      "labs": 77,
+      "coordinates": [
+        33.8869,
+        9.5375
+      ]
+    },
+    {
+      "country": "Croatia",
+      "articles": 12,
+      "authors": 48,
+      "labs": 30,
+      "coordinates": null
+    },
+    {
+      "country": "Peru",
+      "articles": 12,
+      "authors": 62,
+      "labs": 34,
+      "coordinates": null
+    },
+    {
+      "country": "Serbia",
+      "articles": 11,
+      "authors": 60,
+      "labs": 28,
+      "coordinates": null
+    },
+    {
+      "country": "Nigeria",
+      "articles": 11,
+      "authors": 84,
+      "labs": 96,
+      "coordinates": null
+    },
+    {
+      "country": "Hong Kong",
+      "articles": 11,
+      "authors": 114,
+      "labs": 83,
+      "coordinates": [
+        22.3193,
+        114.1694
+      ]
+    },
+    {
+      "country": "Lebanon",
+      "articles": 11,
+      "authors": 75,
+      "labs": 52,
+      "coordinates": null
+    },
+    {
+      "country": "Cyprus",
+      "articles": 11,
+      "authors": 71,
+      "labs": 50,
+      "coordinates": null
+    },
+    {
+      "country": "Luxembourg",
+      "articles": 10,
+      "authors": 53,
+      "labs": 35,
+      "coordinates": null
+    },
+    {
+      "country": "Kuwait",
+      "articles": 9,
+      "authors": 70,
+      "labs": 36,
+      "coordinates": null
+    },
+    {
+      "country": "Slovakia",
+      "articles": 8,
+      "authors": 59,
+      "labs": 47,
+      "coordinates": null
+    },
+    {
+      "country": "UK",
+      "articles": 8,
+      "authors": 72,
+      "labs": 51,
+      "coordinates": [
+        55.3781,
+        -3.436
+      ]
+    },
+    {
+      "country": "Lithuania",
+      "articles": 7,
+      "authors": 34,
+      "labs": 17,
+      "coordinates": null
+    },
+    {
+      "country": "Ethiopia",
+      "articles": 7,
+      "authors": 36,
+      "labs": 28,
+      "coordinates": null
+    },
+    {
+      "country": "Yemen",
+      "articles": 7,
+      "authors": 39,
+      "labs": 48,
+      "coordinates": null
+    },
+    {
+      "country": "North Macedonia",
+      "articles": 7,
+      "authors": 30,
+      "labs": 25,
+      "coordinates": null
+    },
+    {
+      "country": "Oman",
+      "articles": 6,
+      "authors": 47,
+      "labs": 42,
+      "coordinates": null
+    },
+    {
+      "country": "Uganda",
+      "articles": 6,
+      "authors": 29,
+      "labs": 27,
+      "coordinates": null
+    },
+    {
+      "country": "Macau",
+      "articles": 6,
+      "authors": 24,
+      "labs": 13,
+      "coordinates": null
+    },
+    {
+      "country": "Netherlands",
+      "articles": 5,
+      "authors": 28,
+      "labs": 14,
+      "coordinates": [
+        52.1326,
+        5.2913
+      ]
+    },
+    {
+      "country": "Palestine",
+      "articles": 5,
+      "authors": 30,
+      "labs": 23,
+      "coordinates": null
+    },
+    {
+      "country": "Korea",
+      "articles": 5,
+      "authors": 30,
+      "labs": 22,
+      "coordinates": null
+    },
+    {
+      "country": "Nepal",
+      "articles": 5,
+      "authors": 33,
+      "labs": 21,
+      "coordinates": null
+    },
+    {
+      "country": "Ukraine",
+      "articles": 4,
+      "authors": 20,
+      "labs": 20,
+      "coordinates": null
+    },
+    {
+      "country": "Fiji",
+      "articles": 4,
+      "authors": 20,
+      "labs": 7,
+      "coordinates": null
+    },
+    {
+      "country": "Ghana",
+      "articles": 4,
+      "authors": 44,
+      "labs": 17,
+      "coordinates": null
+    },
+    {
+      "country": "MX",
+      "articles": 4,
+      "authors": 14,
+      "labs": 8,
+      "coordinates": null
+    },
+    {
+      "country": "BR",
+      "articles": 4,
+      "authors": 19,
+      "labs": 8,
+      "coordinates": null
+    },
+    {
+      "country": "México",
+      "articles": 4,
+      "authors": 22,
+      "labs": 16,
+      "coordinates": null
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "articles": 4,
+      "authors": 14,
+      "labs": 7,
+      "coordinates": null
+    },
+    {
+      "country": "Syria",
+      "articles": 3,
+      "authors": 9,
+      "labs": 8,
+      "coordinates": null
+    },
+    {
+      "country": "the Netherlands",
+      "articles": 3,
+      "authors": 13,
+      "labs": 7,
+      "coordinates": null
+    },
+    {
+      "country": "Philippines",
+      "articles": 3,
+      "authors": 21,
+      "labs": 27,
+      "coordinates": null
+    },
+    {
+      "country": "US",
+      "articles": 3,
+      "authors": 26,
+      "labs": 16,
+      "coordinates": [
+        37.0902,
+        -95.7129
+      ]
+    },
+    {
+      "country": "Argentina",
+      "articles": 2,
+      "authors": 16,
+      "labs": 23,
+      "coordinates": [
+        -38.4161,
+        -63.6167
+      ]
+    },
+    {
+      "country": "People's Republic of China",
+      "articles": 2,
+      "authors": 3,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "Kenya",
+      "articles": 2,
+      "authors": 7,
+      "labs": 8,
+      "coordinates": null
+    },
+    {
+      "country": "Bulgaria",
+      "articles": 2,
+      "authors": 47,
+      "labs": 36,
+      "coordinates": null
+    },
+    {
+      "country": "P. R. China",
+      "articles": 2,
+      "authors": 11,
+      "labs": 8,
+      "coordinates": null
+    },
+    {
+      "country": "United Kingdom",
+      "articles": 2,
+      "authors": 9,
+      "labs": 7,
+      "coordinates": [
+        55.3781,
+        -3.436
+      ]
+    },
+    {
+      "country": "Armenia",
+      "articles": 2,
+      "authors": 16,
+      "labs": 4,
+      "coordinates": null
+    },
+    {
+      "country": "Trinidad and Tobago",
+      "articles": 2,
+      "authors": 4,
+      "labs": 3,
+      "coordinates": null
+    },
+    {
+      "country": "Cameroon",
+      "articles": 2,
+      "authors": 10,
+      "labs": 10,
+      "coordinates": null
+    },
+    {
+      "country": "Botswana",
+      "articles": 2,
+      "authors": 9,
+      "labs": 4,
+      "coordinates": null
+    },
+    {
+      "country": "KR",
+      "articles": 2,
+      "authors": 10,
+      "labs": 5,
+      "coordinates": null
+    },
+    {
+      "country": "Tanzania",
+      "articles": 2,
+      "authors": 6,
+      "labs": 3,
+      "coordinates": null
+    },
+    {
+      "country": "Rwanda",
+      "articles": 2,
+      "authors": 9,
+      "labs": 6,
+      "coordinates": null
+    },
+    {
+      "country": "IN",
+      "articles": 2,
+      "authors": 5,
+      "labs": 3,
+      "coordinates": null
+    },
+    {
+      "country": "Czechia",
+      "articles": 2,
+      "authors": 13,
+      "labs": 6,
+      "coordinates": null
+    },
+    {
+      "country": "GB",
+      "articles": 2,
+      "authors": 8,
+      "labs": 4,
+      "coordinates": null
+    },
+    {
+      "country": "MY",
+      "articles": 1,
+      "authors": 3,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "ICPCSEE Steering Committee",
+      "articles": 1,
+      "authors": 2,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "Centro de Ciencias de la Complejidad.",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "and Media.",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Department of Computer and Information Science.",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Honduras",
+      "articles": 1,
+      "authors": 2,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "USA (e-mail: jsimmons@monarchna.com)",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Kyrgyzstan",
+      "articles": 1,
+      "authors": 5,
+      "labs": 3,
+      "coordinates": null
+    },
+    {
+      "country": "SE",
+      "articles": 1,
+      "authors": 2,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "United States of America",
+      "articles": 1,
+      "authors": 7,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "(Shenzhen)",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Spain; esteva@iiia.csic.es",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Republic of Kazakhstan",
+      "articles": 1,
+      "authors": 5,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Ltd.",
+      "articles": 1,
+      "authors": 5,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Puerto Rico",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "z.engin@ucl.ac.uk",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Academy of Interdisciplinary Studies",
+      "articles": 1,
+      "authors": 2,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Malta",
+      "articles": 1,
+      "authors": 8,
+      "labs": 5,
+      "coordinates": null
+    },
+    {
+      "country": "S. Africa",
+      "articles": 1,
+      "authors": 3,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "Congo",
+      "articles": 1,
+      "authors": 4,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "SA",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Chonnam National University",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Brunei Darussalam",
+      "articles": 1,
+      "authors": 9,
+      "labs": 7,
+      "coordinates": null
+    },
+    {
+      "country": "University of Rwanda; Alumnus of Carnegie Mellon University and currently pursuing a dual PhD in Data Science at ACE-DS and Internet of Things at ACEIoT",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Google Brain",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "CA",
+      "articles": 1,
+      "authors": 3,
+      "labs": 3,
+      "coordinates": null
+    },
+    {
+      "country": "Physikalisch-Technische Bundesanstalt",
+      "articles": 1,
+      "authors": 2,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "TW",
+      "articles": 1,
+      "authors": 4,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Abu Dhabi",
+      "articles": 1,
+      "authors": 5,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Mongolia",
+      "articles": 1,
+      "authors": 5,
+      "labs": 5,
+      "coordinates": null
+    },
+    {
+      "country": "Panama",
+      "articles": 1,
+      "authors": 5,
+      "labs": 10,
+      "coordinates": null
+    },
+    {
+      "country": "Russian Federation",
+      "articles": 1,
+      "authors": 2,
+      "labs": 3,
+      "coordinates": null
+    },
+    {
+      "country": "India;",
+      "articles": 1,
+      "authors": 1,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Rwanda.",
+      "articles": 1,
+      "authors": 2,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "NO",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Republic of Ireland",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "AU",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Google Research",
+      "articles": 1,
+      "authors": 6,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "United States",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": [
+        37.0902,
+        -95.7129
+      ]
+    },
+    {
+      "country": "ES",
+      "articles": 1,
+      "authors": 4,
+      "labs": 3,
+      "coordinates": null
+    },
+    {
+      "country": "Cuba",
+      "articles": 1,
+      "authors": 2,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "UCB Pharma SA",
+      "articles": 1,
+      "authors": 4,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Kosovo",
+      "articles": 1,
+      "authors": 4,
+      "labs": 1,
+      "coordinates": null
+    },
+    {
+      "country": "Comoros",
+      "articles": 1,
+      "authors": 4,
+      "labs": 2,
+      "coordinates": null
+    },
+    {
+      "country": "Barcelona",
+      "articles": 1,
+      "authors": 3,
+      "labs": 1,
+      "coordinates": null
+    }
+  ],
+  "links": [
+    {
+      "source": "Pakistan",
+      "target": "Saudi Arabia",
+      "count": 276
+    },
+    {
+      "source": "China",
+      "target": "USA",
+      "count": 207
+    },
+    {
+      "source": "India",
+      "target": "Saudi Arabia",
+      "count": 105
+    },
+    {
+      "source": "Egypt",
+      "target": "Saudi Arabia",
+      "count": 101
+    },
+    {
+      "source": "China",
+      "target": "Saudi Arabia",
+      "count": 83
+    },
+    {
+      "source": "Australia",
+      "target": "China",
+      "count": 80
+    },
+    {
+      "source": "India",
+      "target": "USA",
+      "count": 79
+    },
+    {
+      "source": "Pakistan",
+      "target": "South Korea",
+      "count": 79
+    },
+    {
+      "source": "South Korea",
+      "target": "USA",
+      "count": 76
+    },
+    {
+      "source": "Malaysia",
+      "target": "Saudi Arabia",
+      "count": 74
+    },
+    {
+      "source": "Saudi Arabia",
+      "target": "USA",
+      "count": 64
+    },
+    {
+      "source": "China",
+      "target": "Pakistan",
+      "count": 62
+    },
+    {
+      "source": "Australia",
+      "target": "USA",
+      "count": 55
+    },
+    {
+      "source": "Canada",
+      "target": "China",
+      "count": 51
+    },
+    {
+      "source": "Canada",
+      "target": "USA",
+      "count": 51
+    },
+    {
+      "source": "Malaysia",
+      "target": "Pakistan",
+      "count": 49
+    },
+    {
+      "source": "China",
+      "target": "Japan",
+      "count": 49
+    },
+    {
+      "source": "Saudi Arabia",
+      "target": "South Korea",
+      "count": 49
+    },
+    {
+      "source": "Pakistan",
+      "target": "USA",
+      "count": 48
+    },
+    {
+      "source": "Australia",
+      "target": "Saudi Arabia",
+      "count": 47
+    },
+    {
+      "source": "China",
+      "target": "South Korea",
+      "count": 46
+    },
+    {
+      "source": "Germany",
+      "target": "USA",
+      "count": 45
+    },
+    {
+      "source": "China",
+      "target": "Malaysia",
+      "count": 43
+    },
+    {
+      "source": "India",
+      "target": "South Korea",
+      "count": 42
+    },
+    {
+      "source": "China",
+      "target": "Singapore",
+      "count": 42
+    },
+    {
+      "source": "China",
+      "target": "Hong Kong",
+      "count": 40
+    },
+    {
+      "source": "Italy",
+      "target": "USA",
+      "count": 39
+    },
+    {
+      "source": "Australia",
+      "target": "Pakistan",
+      "count": 36
+    },
+    {
+      "source": "India",
+      "target": "Malaysia",
+      "count": 36
+    },
+    {
+      "source": "China",
+      "target": "Germany",
+      "count": 35
+    },
+    {
+      "source": "Australia",
+      "target": "India",
+      "count": 34
+    },
+    {
+      "source": "Australia",
+      "target": "Malaysia",
+      "count": 32
+    },
+    {
+      "source": "China",
+      "target": "Taiwan",
+      "count": 31
+    },
+    {
+      "source": "Japan",
+      "target": "USA",
+      "count": 30
+    },
+    {
+      "source": "China",
+      "target": "India",
+      "count": 29
+    },
+    {
+      "source": "Malaysia",
+      "target": "USA",
+      "count": 27
+    },
+    {
+      "source": "Jordan",
+      "target": "Saudi Arabia",
+      "count": 27
+    },
+    {
+      "source": "Germany",
+      "target": "Italy",
+      "count": 26
+    },
+    {
+      "source": "Taiwan",
+      "target": "USA",
+      "count": 26
+    },
+    {
+      "source": "Ireland",
+      "target": "Pakistan",
+      "count": 26
+    },
+    {
+      "source": "Spain",
+      "target": "USA",
+      "count": 24
+    },
+    {
+      "source": "Australia",
+      "target": "South Korea",
+      "count": 24
+    },
+    {
+      "source": "India",
+      "target": "Italy",
+      "count": 23
+    },
+    {
+      "source": "China",
+      "target": "France",
+      "count": 22
+    },
+    {
+      "source": "China",
+      "target": "Italy",
+      "count": 22
+    },
+    {
+      "source": "Italy",
+      "target": "Spain",
+      "count": 21
+    },
+    {
+      "source": "China",
+      "target": "Sweden",
+      "count": 21
+    },
+    {
+      "source": "India",
+      "target": "South Africa",
+      "count": 20
+    },
+    {
+      "source": "Qatar",
+      "target": "USA",
+      "count": 20
+    },
+    {
+      "source": "Italy",
+      "target": "Pakistan",
+      "count": 20
+    },
+    {
+      "source": "Norway",
+      "target": "Pakistan",
+      "count": 20
+    },
+    {
+      "source": "France",
+      "target": "USA",
+      "count": 19
+    },
+    {
+      "source": "Canada",
+      "target": "India",
+      "count": 19
+    },
+    {
+      "source": "China",
+      "target": "Finland",
+      "count": 19
+    },
+    {
+      "source": "India",
+      "target": "Taiwan",
+      "count": 19
+    },
+    {
+      "source": "Germany",
+      "target": "South Korea",
+      "count": 19
+    },
+    {
+      "source": "Singapore",
+      "target": "USA",
+      "count": 18
+    },
+    {
+      "source": "Pakistan",
+      "target": "Qatar",
+      "count": 18
+    },
+    {
+      "source": "France",
+      "target": "Germany",
+      "count": 17
+    },
+    {
+      "source": "Germany",
+      "target": "Spain",
+      "count": 17
+    },
+    {
+      "source": "China",
+      "target": "Spain",
+      "count": 17
+    },
+    {
+      "source": "Egypt",
+      "target": "India",
+      "count": 17
+    },
+    {
+      "source": "Egypt",
+      "target": "USA",
+      "count": 17
+    },
+    {
+      "source": "India",
+      "target": "Vietnam",
+      "count": 17
+    },
+    {
+      "source": "China",
+      "target": "Ireland",
+      "count": 17
+    },
+    {
+      "source": "India",
+      "target": "Norway",
+      "count": 17
+    },
+    {
+      "source": "Germany",
+      "target": "Pakistan",
+      "count": 17
+    },
+    {
+      "source": "Japan",
+      "target": "Malaysia",
+      "count": 16
+    },
+    {
+      "source": "France",
+      "target": "Italy",
+      "count": 16
+    },
+    {
+      "source": "Germany",
+      "target": "Sweden",
+      "count": 16
+    },
+    {
+      "source": "The Netherlands",
+      "target": "USA",
+      "count": 16
+    },
+    {
+      "source": "Turkey",
+      "target": "USA",
+      "count": 16
+    },
+    {
+      "source": "Norway",
+      "target": "USA",
+      "count": 16
+    },
+    {
+      "source": "Ireland",
+      "target": "USA",
+      "count": 16
+    },
+    {
+      "source": "Austria",
+      "target": "Germany",
+      "count": 15
+    },
+    {
+      "source": "China",
+      "target": "UK",
+      "count": 15
+    },
+    {
+      "source": "India",
+      "target": "Singapore",
+      "count": 15
+    },
+    {
+      "source": "China",
+      "target": "Egypt",
+      "count": 15
+    },
+    {
+      "source": "Canada",
+      "target": "Saudi Arabia",
+      "count": 15
+    },
+    {
+      "source": "Italy",
+      "target": "Saudi Arabia",
+      "count": 15
+    }
+  ]
+}

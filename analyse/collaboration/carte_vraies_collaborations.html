@@ -1,0 +1,3795 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_18c7e3b58501559caf7c784caa02ae8c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; right: 50px; width: 280px; 
+            background-color: white; z-index:9999; font-size:13px;
+            border:2px solid grey; border-radius: 5px; padding: 10px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.3);">
+    <h4 style="margin-top:0;">🌍 Collaborations IA/ML</h4>
+    <p style="margin: 5px 0;"><b>Cercles:</b> Nb publications</p>
+    <p style="margin: 5px 0;"><b>Lignes:</b> Collaborations réelles</p>
+    <hr style="margin: 10px 0;">
+    <p style="margin: 5px 0;">
+        <span style="color: #c41e3a;">━━</span> ≥10 collabs<br>
+        <span style="color: #ff6b35;">━━</span> 5-9 collabs<br>
+        <span style="color: #4ecdc4;">━━</span> 2-4 collabs
+    </p>
+</div>
+    
+<div style="position: fixed; 
+            top: 10px; left: 50px; width: 550px; 
+            background-color: white; z-index:9999; 
+            border:2px solid grey; border-radius: 5px; padding: 10px;">
+    <h3 style="margin:0; text-align: center; color: #2c3e50;">
+        📊 Vraies Collaborations Internationales en IA/ML
+        <br><span style="font-size: 14px; color: #7f8c8d;">(2018-2025)</span>
+    </h3>
+</div>
+    
+            <div class="folium-map" id="map_18c7e3b58501559caf7c784caa02ae8c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_18c7e3b58501559caf7c784caa02ae8c = L.map(
+                "map_18c7e3b58501559caf7c784caa02ae8c",
+                {
+                    center: [30.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_edae4ca45ebfed3e53381f739024ac52 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_edae4ca45ebfed3e53381f739024ac52.addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var poly_line_9f4842008f2eb5f24ea345f5b918f1e1 = L.polyline(
+                [[35.8617, 104.1954], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_773439446d9b46b2a56691818165e7cf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_efde6d84a19691ecf3870e78e267d5e9 = $(`<div id="html_efde6d84a19691ecf3870e78e267d5e9" style="width: 100.0%; height: 100.0%;"><b>China ↔ USA</b><br>1192 collaborations</div>`)[0];
+                popup_773439446d9b46b2a56691818165e7cf.setContent(html_efde6d84a19691ecf3870e78e267d5e9);
+            
+        
+
+        poly_line_9f4842008f2eb5f24ea345f5b918f1e1.bindPopup(popup_773439446d9b46b2a56691818165e7cf)
+        ;
+
+        
+    
+    
+            poly_line_9f4842008f2eb5f24ea345f5b918f1e1.bindTooltip(
+                `<div>
+                     1192 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6d03618d7b35486b097c359cd5b69271 = L.polyline(
+                [[35.8617, 104.1954], [20.5937, 78.9629]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_5f29643515412dbb3e03571010d66e56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_caf11bc0ca732303e7d5ba31a1a7156c = $(`<div id="html_caf11bc0ca732303e7d5ba31a1a7156c" style="width: 100.0%; height: 100.0%;"><b>China ↔ India</b><br>996 collaborations</div>`)[0];
+                popup_5f29643515412dbb3e03571010d66e56.setContent(html_caf11bc0ca732303e7d5ba31a1a7156c);
+            
+        
+
+        poly_line_6d03618d7b35486b097c359cd5b69271.bindPopup(popup_5f29643515412dbb3e03571010d66e56)
+        ;
+
+        
+    
+    
+            poly_line_6d03618d7b35486b097c359cd5b69271.bindTooltip(
+                `<div>
+                     996 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_29db05a9cf5e3712be6af48394b48468 = L.polyline(
+                [[35.8617, 104.1954], [23.8859, 45.0792]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_1c9f1782e87bf2b43bc7a81b3c3aaf58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8daaea44a0076be038ae7e66c4eab49 = $(`<div id="html_c8daaea44a0076be038ae7e66c4eab49" style="width: 100.0%; height: 100.0%;"><b>China ↔ Saudi Arabia</b><br>816 collaborations</div>`)[0];
+                popup_1c9f1782e87bf2b43bc7a81b3c3aaf58.setContent(html_c8daaea44a0076be038ae7e66c4eab49);
+            
+        
+
+        poly_line_29db05a9cf5e3712be6af48394b48468.bindPopup(popup_1c9f1782e87bf2b43bc7a81b3c3aaf58)
+        ;
+
+        
+    
+    
+            poly_line_29db05a9cf5e3712be6af48394b48468.bindTooltip(
+                `<div>
+                     816 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_903fdc9129c46d3b7dc705e7018e4ff9 = L.polyline(
+                [[35.8617, 104.1954], [30.3753, 69.3451]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_cba98728d8c78a38604570e7f7339b1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7df1f72354a3f7714a8b08e7938c9cda = $(`<div id="html_7df1f72354a3f7714a8b08e7938c9cda" style="width: 100.0%; height: 100.0%;"><b>China ↔ Pakistan</b><br>698 collaborations</div>`)[0];
+                popup_cba98728d8c78a38604570e7f7339b1d.setContent(html_7df1f72354a3f7714a8b08e7938c9cda);
+            
+        
+
+        poly_line_903fdc9129c46d3b7dc705e7018e4ff9.bindPopup(popup_cba98728d8c78a38604570e7f7339b1d)
+        ;
+
+        
+    
+    
+            poly_line_903fdc9129c46d3b7dc705e7018e4ff9.bindTooltip(
+                `<div>
+                     698 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4b0afc8100fa0f4c599152a4287cf9b5 = L.polyline(
+                [[35.8617, 104.1954], [35.9078, 127.7669]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_6c4b8e2d55f25d62be747e6bb1e418ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c604d7764f9577e20663d98d237b9599 = $(`<div id="html_c604d7764f9577e20663d98d237b9599" style="width: 100.0%; height: 100.0%;"><b>China ↔ South Korea</b><br>684 collaborations</div>`)[0];
+                popup_6c4b8e2d55f25d62be747e6bb1e418ae.setContent(html_c604d7764f9577e20663d98d237b9599);
+            
+        
+
+        poly_line_4b0afc8100fa0f4c599152a4287cf9b5.bindPopup(popup_6c4b8e2d55f25d62be747e6bb1e418ae)
+        ;
+
+        
+    
+    
+            poly_line_4b0afc8100fa0f4c599152a4287cf9b5.bindTooltip(
+                `<div>
+                     684 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_69c3e3c346819c969fe880d494e98637 = L.polyline(
+                [[20.5937, 78.9629], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_28b395c6027ea7437054fde3c1db7a18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a99010a0c8853e61115e342b9c3bcf1d = $(`<div id="html_a99010a0c8853e61115e342b9c3bcf1d" style="width: 100.0%; height: 100.0%;"><b>India ↔ USA</b><br>674 collaborations</div>`)[0];
+                popup_28b395c6027ea7437054fde3c1db7a18.setContent(html_a99010a0c8853e61115e342b9c3bcf1d);
+            
+        
+
+        poly_line_69c3e3c346819c969fe880d494e98637.bindPopup(popup_28b395c6027ea7437054fde3c1db7a18)
+        ;
+
+        
+    
+    
+            poly_line_69c3e3c346819c969fe880d494e98637.bindTooltip(
+                `<div>
+                     674 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a5a4ff4369abf12b229e8ca78f142e21 = L.polyline(
+                [[23.8859, 45.0792], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_96289d9343b4225ae0ef67ccd28e5f4f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d2bb91a3282e4475ff7b52df3c678b2 = $(`<div id="html_5d2bb91a3282e4475ff7b52df3c678b2" style="width: 100.0%; height: 100.0%;"><b>Saudi Arabia ↔ USA</b><br>544 collaborations</div>`)[0];
+                popup_96289d9343b4225ae0ef67ccd28e5f4f.setContent(html_5d2bb91a3282e4475ff7b52df3c678b2);
+            
+        
+
+        poly_line_a5a4ff4369abf12b229e8ca78f142e21.bindPopup(popup_96289d9343b4225ae0ef67ccd28e5f4f)
+        ;
+
+        
+    
+    
+            poly_line_a5a4ff4369abf12b229e8ca78f142e21.bindTooltip(
+                `<div>
+                     544 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fdf377f95b2456666327f6fcfc7da727 = L.polyline(
+                [[35.8617, 104.1954], [4.2105, 101.9758]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_135f2d40a3b78f40356cc81a971186ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_911c4fb39f7fa400a01287950932d485 = $(`<div id="html_911c4fb39f7fa400a01287950932d485" style="width: 100.0%; height: 100.0%;"><b>China ↔ Malaysia</b><br>530 collaborations</div>`)[0];
+                popup_135f2d40a3b78f40356cc81a971186ab.setContent(html_911c4fb39f7fa400a01287950932d485);
+            
+        
+
+        poly_line_fdf377f95b2456666327f6fcfc7da727.bindPopup(popup_135f2d40a3b78f40356cc81a971186ab)
+        ;
+
+        
+    
+    
+            poly_line_fdf377f95b2456666327f6fcfc7da727.bindTooltip(
+                `<div>
+                     530 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a2b37c3d8cdf271ffad17e18582ac635 = L.polyline(
+                [[20.5937, 78.9629], [23.8859, 45.0792]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_b9c8301a6831e691eb6bb769cdb2b35f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc7fbdad77b1d5821de7a99fc2bd7af7 = $(`<div id="html_cc7fbdad77b1d5821de7a99fc2bd7af7" style="width: 100.0%; height: 100.0%;"><b>India ↔ Saudi Arabia</b><br>510 collaborations</div>`)[0];
+                popup_b9c8301a6831e691eb6bb769cdb2b35f.setContent(html_cc7fbdad77b1d5821de7a99fc2bd7af7);
+            
+        
+
+        poly_line_a2b37c3d8cdf271ffad17e18582ac635.bindPopup(popup_b9c8301a6831e691eb6bb769cdb2b35f)
+        ;
+
+        
+    
+    
+            poly_line_a2b37c3d8cdf271ffad17e18582ac635.bindTooltip(
+                `<div>
+                     510 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_26c61dcef0c0eb04e7fc230248e6ed02 = L.polyline(
+                [[35.8617, 104.1954], [51.1657, 10.4515]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_c0e062e5d9a8b924f3015a34e90a5fe0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82d9068070a8dcdd989ce834b39f891a = $(`<div id="html_82d9068070a8dcdd989ce834b39f891a" style="width: 100.0%; height: 100.0%;"><b>China ↔ Germany</b><br>503 collaborations</div>`)[0];
+                popup_c0e062e5d9a8b924f3015a34e90a5fe0.setContent(html_82d9068070a8dcdd989ce834b39f891a);
+            
+        
+
+        poly_line_26c61dcef0c0eb04e7fc230248e6ed02.bindPopup(popup_c0e062e5d9a8b924f3015a34e90a5fe0)
+        ;
+
+        
+    
+    
+            poly_line_26c61dcef0c0eb04e7fc230248e6ed02.bindTooltip(
+                `<div>
+                     503 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e44b62e665a34b3fd371ec963cce941e = L.polyline(
+                [[30.3753, 69.3451], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_e057dacb4592d6cdecf1c544e791e3f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f596b3ad4265c44fc51082b3bb830507 = $(`<div id="html_f596b3ad4265c44fc51082b3bb830507" style="width: 100.0%; height: 100.0%;"><b>Pakistan ↔ USA</b><br>474 collaborations</div>`)[0];
+                popup_e057dacb4592d6cdecf1c544e791e3f7.setContent(html_f596b3ad4265c44fc51082b3bb830507);
+            
+        
+
+        poly_line_e44b62e665a34b3fd371ec963cce941e.bindPopup(popup_e057dacb4592d6cdecf1c544e791e3f7)
+        ;
+
+        
+    
+    
+            poly_line_e44b62e665a34b3fd371ec963cce941e.bindTooltip(
+                `<div>
+                     474 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e8e2e744e62b553f690e503a71c15cfa = L.polyline(
+                [[35.9078, 127.7669], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_5c0280e1b5d698f9a52c3d3563d757fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f388083ee6d72b9f6783ac96b2787eb = $(`<div id="html_3f388083ee6d72b9f6783ac96b2787eb" style="width: 100.0%; height: 100.0%;"><b>South Korea ↔ USA</b><br>458 collaborations</div>`)[0];
+                popup_5c0280e1b5d698f9a52c3d3563d757fe.setContent(html_3f388083ee6d72b9f6783ac96b2787eb);
+            
+        
+
+        poly_line_e8e2e744e62b553f690e503a71c15cfa.bindPopup(popup_5c0280e1b5d698f9a52c3d3563d757fe)
+        ;
+
+        
+    
+    
+            poly_line_e8e2e744e62b553f690e503a71c15cfa.bindTooltip(
+                `<div>
+                     458 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_25ea4159c61aa1161001467a4831e296 = L.polyline(
+                [[35.8617, 104.1954], [41.8719, 12.5674]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_23a9d1b06016d41d766c8d29c88fede3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36dacdf9cde56a41c572967ca543d3c7 = $(`<div id="html_36dacdf9cde56a41c572967ca543d3c7" style="width: 100.0%; height: 100.0%;"><b>China ↔ Italy</b><br>438 collaborations</div>`)[0];
+                popup_23a9d1b06016d41d766c8d29c88fede3.setContent(html_36dacdf9cde56a41c572967ca543d3c7);
+            
+        
+
+        poly_line_25ea4159c61aa1161001467a4831e296.bindPopup(popup_23a9d1b06016d41d766c8d29c88fede3)
+        ;
+
+        
+    
+    
+            poly_line_25ea4159c61aa1161001467a4831e296.bindTooltip(
+                `<div>
+                     438 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4c33479cc43a0407116e9566d9dc4ba1 = L.polyline(
+                [[-25.2744, 133.7751], [35.8617, 104.1954]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_3534b9b0532c3f31106b17f3e4e8dc5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0cce3f9632543d6c4c49be708f8c86a = $(`<div id="html_f0cce3f9632543d6c4c49be708f8c86a" style="width: 100.0%; height: 100.0%;"><b>Australia ↔ China</b><br>437 collaborations</div>`)[0];
+                popup_3534b9b0532c3f31106b17f3e4e8dc5a.setContent(html_f0cce3f9632543d6c4c49be708f8c86a);
+            
+        
+
+        poly_line_4c33479cc43a0407116e9566d9dc4ba1.bindPopup(popup_3534b9b0532c3f31106b17f3e4e8dc5a)
+        ;
+
+        
+    
+    
+            poly_line_4c33479cc43a0407116e9566d9dc4ba1.bindTooltip(
+                `<div>
+                     437 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e07901b98dffed981206547ffb0f1f45 = L.polyline(
+                [[56.1304, -106.3468], [35.8617, 104.1954]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_e4155ff3931aef8b620001da80165e14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d600aa6436059b69d28cc553639d1726 = $(`<div id="html_d600aa6436059b69d28cc553639d1726" style="width: 100.0%; height: 100.0%;"><b>Canada ↔ China</b><br>418 collaborations</div>`)[0];
+                popup_e4155ff3931aef8b620001da80165e14.setContent(html_d600aa6436059b69d28cc553639d1726);
+            
+        
+
+        poly_line_e07901b98dffed981206547ffb0f1f45.bindPopup(popup_e4155ff3931aef8b620001da80165e14)
+        ;
+
+        
+    
+    
+            poly_line_e07901b98dffed981206547ffb0f1f45.bindTooltip(
+                `<div>
+                     418 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e00b1e06755ffd91608208d3ba51dc9c = L.polyline(
+                [[35.8617, 104.1954], [40.4637, -3.7492]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_bf50c4f804d4356b018063eb9685ea0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69f4f47bc5da93c9db3d2298afa8dcde = $(`<div id="html_69f4f47bc5da93c9db3d2298afa8dcde" style="width: 100.0%; height: 100.0%;"><b>China ↔ Spain</b><br>404 collaborations</div>`)[0];
+                popup_bf50c4f804d4356b018063eb9685ea0c.setContent(html_69f4f47bc5da93c9db3d2298afa8dcde);
+            
+        
+
+        poly_line_e00b1e06755ffd91608208d3ba51dc9c.bindPopup(popup_bf50c4f804d4356b018063eb9685ea0c)
+        ;
+
+        
+    
+    
+            poly_line_e00b1e06755ffd91608208d3ba51dc9c.bindTooltip(
+                `<div>
+                     404 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ee8f13db6a50c4cfb56894747b833bca = L.polyline(
+                [[20.5937, 78.9629], [35.9078, 127.7669]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d7b61beb294d145dcdfab0650ec19b9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a7d46df7fd335340d9566fc6e8f282ff = $(`<div id="html_a7d46df7fd335340d9566fc6e8f282ff" style="width: 100.0%; height: 100.0%;"><b>India ↔ South Korea</b><br>404 collaborations</div>`)[0];
+                popup_d7b61beb294d145dcdfab0650ec19b9f.setContent(html_a7d46df7fd335340d9566fc6e8f282ff);
+            
+        
+
+        poly_line_ee8f13db6a50c4cfb56894747b833bca.bindPopup(popup_d7b61beb294d145dcdfab0650ec19b9f)
+        ;
+
+        
+    
+    
+            poly_line_ee8f13db6a50c4cfb56894747b833bca.bindTooltip(
+                `<div>
+                     404 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_aae21b5423d05e0341bf83cecfcf897d = L.polyline(
+                [[35.8617, 104.1954], [36.2048, 138.2529]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_2356c9a36b4daef700a8bd940487177b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f11588c332a8e4d315c165c3cad0ffb8 = $(`<div id="html_f11588c332a8e4d315c165c3cad0ffb8" style="width: 100.0%; height: 100.0%;"><b>China ↔ Japan</b><br>390 collaborations</div>`)[0];
+                popup_2356c9a36b4daef700a8bd940487177b.setContent(html_f11588c332a8e4d315c165c3cad0ffb8);
+            
+        
+
+        poly_line_aae21b5423d05e0341bf83cecfcf897d.bindPopup(popup_2356c9a36b4daef700a8bd940487177b)
+        ;
+
+        
+    
+    
+            poly_line_aae21b5423d05e0341bf83cecfcf897d.bindTooltip(
+                `<div>
+                     390 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_38bf1d109dfb0e5140addd6065e18501 = L.polyline(
+                [[30.3753, 69.3451], [23.8859, 45.0792]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_b4f38bdd5c559042e50c3dad46c9ea33 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ea634d73b929b0ac45aaae293e1ff07 = $(`<div id="html_8ea634d73b929b0ac45aaae293e1ff07" style="width: 100.0%; height: 100.0%;"><b>Pakistan ↔ Saudi Arabia</b><br>381 collaborations</div>`)[0];
+                popup_b4f38bdd5c559042e50c3dad46c9ea33.setContent(html_8ea634d73b929b0ac45aaae293e1ff07);
+            
+        
+
+        poly_line_38bf1d109dfb0e5140addd6065e18501.bindPopup(popup_b4f38bdd5c559042e50c3dad46c9ea33)
+        ;
+
+        
+    
+    
+            poly_line_38bf1d109dfb0e5140addd6065e18501.bindTooltip(
+                `<div>
+                     381 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fde2b879842ac139527c3088c2d7737f = L.polyline(
+                [[20.5937, 78.9629], [30.3753, 69.3451]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_062c7442b3f2473b823edb3a100b2b45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8da4eb9e385abf39dd97cd0ebd918e0 = $(`<div id="html_e8da4eb9e385abf39dd97cd0ebd918e0" style="width: 100.0%; height: 100.0%;"><b>India ↔ Pakistan</b><br>378 collaborations</div>`)[0];
+                popup_062c7442b3f2473b823edb3a100b2b45.setContent(html_e8da4eb9e385abf39dd97cd0ebd918e0);
+            
+        
+
+        poly_line_fde2b879842ac139527c3088c2d7737f.bindPopup(popup_062c7442b3f2473b823edb3a100b2b45)
+        ;
+
+        
+    
+    
+            poly_line_fde2b879842ac139527c3088c2d7737f.bindTooltip(
+                `<div>
+                     378 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0996c994c7628d2cc84ee5e65b18cfd2 = L.polyline(
+                [[4.2105, 101.9758], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_de587ffb2147d15e6c58f8f7ea862a5f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce971af1885badaaf71eff90cb6ed95f = $(`<div id="html_ce971af1885badaaf71eff90cb6ed95f" style="width: 100.0%; height: 100.0%;"><b>Malaysia ↔ USA</b><br>369 collaborations</div>`)[0];
+                popup_de587ffb2147d15e6c58f8f7ea862a5f.setContent(html_ce971af1885badaaf71eff90cb6ed95f);
+            
+        
+
+        poly_line_0996c994c7628d2cc84ee5e65b18cfd2.bindPopup(popup_de587ffb2147d15e6c58f8f7ea862a5f)
+        ;
+
+        
+    
+    
+            poly_line_0996c994c7628d2cc84ee5e65b18cfd2.bindTooltip(
+                `<div>
+                     369 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5a33d6d304362415ace2d8b4d06a53b9 = L.polyline(
+                [[51.1657, 10.4515], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_be0ee2d09b2202553e582a1eb3159cae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a264937f0c1eeb34a29a3bc2a77366c = $(`<div id="html_1a264937f0c1eeb34a29a3bc2a77366c" style="width: 100.0%; height: 100.0%;"><b>Germany ↔ USA</b><br>337 collaborations</div>`)[0];
+                popup_be0ee2d09b2202553e582a1eb3159cae.setContent(html_1a264937f0c1eeb34a29a3bc2a77366c);
+            
+        
+
+        poly_line_5a33d6d304362415ace2d8b4d06a53b9.bindPopup(popup_be0ee2d09b2202553e582a1eb3159cae)
+        ;
+
+        
+    
+    
+            poly_line_5a33d6d304362415ace2d8b4d06a53b9.bindTooltip(
+                `<div>
+                     337 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_087fde4769dbeb98bcb460e027e14f8c = L.polyline(
+                [[20.5937, 78.9629], [4.2105, 101.9758]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_ca4f9926cee9dda301e1c942d068a7e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_154a72e5149ba1bd3060b69c4dfa4910 = $(`<div id="html_154a72e5149ba1bd3060b69c4dfa4910" style="width: 100.0%; height: 100.0%;"><b>India ↔ Malaysia</b><br>324 collaborations</div>`)[0];
+                popup_ca4f9926cee9dda301e1c942d068a7e1.setContent(html_154a72e5149ba1bd3060b69c4dfa4910);
+            
+        
+
+        poly_line_087fde4769dbeb98bcb460e027e14f8c.bindPopup(popup_ca4f9926cee9dda301e1c942d068a7e1)
+        ;
+
+        
+    
+    
+            poly_line_087fde4769dbeb98bcb460e027e14f8c.bindTooltip(
+                `<div>
+                     324 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_313e5a89e4fec986b0db51554cb3a3b5 = L.polyline(
+                [[41.8719, 12.5674], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_0e8479ba2360b9450c4ff33cf0271bcf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6248f33502be79a5da802effb6cbb99 = $(`<div id="html_d6248f33502be79a5da802effb6cbb99" style="width: 100.0%; height: 100.0%;"><b>Italy ↔ USA</b><br>309 collaborations</div>`)[0];
+                popup_0e8479ba2360b9450c4ff33cf0271bcf.setContent(html_d6248f33502be79a5da802effb6cbb99);
+            
+        
+
+        poly_line_313e5a89e4fec986b0db51554cb3a3b5.bindPopup(popup_0e8479ba2360b9450c4ff33cf0271bcf)
+        ;
+
+        
+    
+    
+            poly_line_313e5a89e4fec986b0db51554cb3a3b5.bindTooltip(
+                `<div>
+                     309 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5ead563d85f2560d1379400c7fcef553 = L.polyline(
+                [[56.1304, -106.3468], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d71b99ea5c46fd634ae7a1a976b0b997 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b31b63838de59c4029d67cacaf37520 = $(`<div id="html_4b31b63838de59c4029d67cacaf37520" style="width: 100.0%; height: 100.0%;"><b>Canada ↔ USA</b><br>305 collaborations</div>`)[0];
+                popup_d71b99ea5c46fd634ae7a1a976b0b997.setContent(html_4b31b63838de59c4029d67cacaf37520);
+            
+        
+
+        poly_line_5ead563d85f2560d1379400c7fcef553.bindPopup(popup_d71b99ea5c46fd634ae7a1a976b0b997)
+        ;
+
+        
+    
+    
+            poly_line_5ead563d85f2560d1379400c7fcef553.bindTooltip(
+                `<div>
+                     305 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0c6b0dbfd6149bd36169a319b16751eb = L.polyline(
+                [[23.8859, 45.0792], [35.9078, 127.7669]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_2df784d1d87715ddc06b297a89cf3f65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6d852f216f7bad83564667b0b2fac77 = $(`<div id="html_a6d852f216f7bad83564667b0b2fac77" style="width: 100.0%; height: 100.0%;"><b>Saudi Arabia ↔ South Korea</b><br>301 collaborations</div>`)[0];
+                popup_2df784d1d87715ddc06b297a89cf3f65.setContent(html_a6d852f216f7bad83564667b0b2fac77);
+            
+        
+
+        poly_line_0c6b0dbfd6149bd36169a319b16751eb.bindPopup(popup_2df784d1d87715ddc06b297a89cf3f65)
+        ;
+
+        
+    
+    
+            poly_line_0c6b0dbfd6149bd36169a319b16751eb.bindTooltip(
+                `<div>
+                     301 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fcdb08e3dc3d7ca1fafa8854af9a96c3 = L.polyline(
+                [[35.8617, 104.1954], [23.6978, 120.9605]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_3671a5bed23d2a371ec471225494e752 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c7d1ebe46ae5449ca5ce9ad964167d02 = $(`<div id="html_c7d1ebe46ae5449ca5ce9ad964167d02" style="width: 100.0%; height: 100.0%;"><b>China ↔ Taiwan</b><br>298 collaborations</div>`)[0];
+                popup_3671a5bed23d2a371ec471225494e752.setContent(html_c7d1ebe46ae5449ca5ce9ad964167d02);
+            
+        
+
+        poly_line_fcdb08e3dc3d7ca1fafa8854af9a96c3.bindPopup(popup_3671a5bed23d2a371ec471225494e752)
+        ;
+
+        
+    
+    
+            poly_line_fcdb08e3dc3d7ca1fafa8854af9a96c3.bindTooltip(
+                `<div>
+                     298 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f53c1e9299e32d4af93a99a057b98222 = L.polyline(
+                [[30.3753, 69.3451], [35.9078, 127.7669]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_c1560355995078d2e16f834dea3f1495 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a199615c9127196cbf37cbb4c98c1da9 = $(`<div id="html_a199615c9127196cbf37cbb4c98c1da9" style="width: 100.0%; height: 100.0%;"><b>Pakistan ↔ South Korea</b><br>287 collaborations</div>`)[0];
+                popup_c1560355995078d2e16f834dea3f1495.setContent(html_a199615c9127196cbf37cbb4c98c1da9);
+            
+        
+
+        poly_line_f53c1e9299e32d4af93a99a057b98222.bindPopup(popup_c1560355995078d2e16f834dea3f1495)
+        ;
+
+        
+    
+    
+            poly_line_f53c1e9299e32d4af93a99a057b98222.bindTooltip(
+                `<div>
+                     287 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_77da4ba7dfe40d8453486d1d9bf64e9a = L.polyline(
+                [[-25.2744, 133.7751], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_1865ac2315e3700269605fe2cff51480 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5230fe5915426da13bd0ce75e43069e = $(`<div id="html_f5230fe5915426da13bd0ce75e43069e" style="width: 100.0%; height: 100.0%;"><b>Australia ↔ USA</b><br>287 collaborations</div>`)[0];
+                popup_1865ac2315e3700269605fe2cff51480.setContent(html_f5230fe5915426da13bd0ce75e43069e);
+            
+        
+
+        poly_line_77da4ba7dfe40d8453486d1d9bf64e9a.bindPopup(popup_1865ac2315e3700269605fe2cff51480)
+        ;
+
+        
+    
+    
+            poly_line_77da4ba7dfe40d8453486d1d9bf64e9a.bindTooltip(
+                `<div>
+                     287 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7e90b632250b9c75f42a6a9231de5548 = L.polyline(
+                [[4.2105, 101.9758], [23.8859, 45.0792]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_9a3b0bd9c72db0079287c101e9bd997c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43e2161500282747cf3d39f0f69fa24b = $(`<div id="html_43e2161500282747cf3d39f0f69fa24b" style="width: 100.0%; height: 100.0%;"><b>Malaysia ↔ Saudi Arabia</b><br>285 collaborations</div>`)[0];
+                popup_9a3b0bd9c72db0079287c101e9bd997c.setContent(html_43e2161500282747cf3d39f0f69fa24b);
+            
+        
+
+        poly_line_7e90b632250b9c75f42a6a9231de5548.bindPopup(popup_9a3b0bd9c72db0079287c101e9bd997c)
+        ;
+
+        
+    
+    
+            poly_line_7e90b632250b9c75f42a6a9231de5548.bindTooltip(
+                `<div>
+                     285 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_895b3bb081ad6c542029ca366a4dad22 = L.polyline(
+                [[51.1657, 10.4515], [20.5937, 78.9629]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_90b81bde965b0a06e778ee31bf1a7af3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7610a1f3b93859f410b6b3b7df1677ec = $(`<div id="html_7610a1f3b93859f410b6b3b7df1677ec" style="width: 100.0%; height: 100.0%;"><b>Germany ↔ India</b><br>283 collaborations</div>`)[0];
+                popup_90b81bde965b0a06e778ee31bf1a7af3.setContent(html_7610a1f3b93859f410b6b3b7df1677ec);
+            
+        
+
+        poly_line_895b3bb081ad6c542029ca366a4dad22.bindPopup(popup_90b81bde965b0a06e778ee31bf1a7af3)
+        ;
+
+        
+    
+    
+            poly_line_895b3bb081ad6c542029ca366a4dad22.bindTooltip(
+                `<div>
+                     283 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dc066396fd0ca66ceb0bef18fecc4c57 = L.polyline(
+                [[35.8617, 104.1954], [26.8206, 30.8025]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_f5feab4de6b6c3675a181d867ad2fc8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c04cb3e52da78c92883b93911542dede = $(`<div id="html_c04cb3e52da78c92883b93911542dede" style="width: 100.0%; height: 100.0%;"><b>China ↔ Egypt</b><br>273 collaborations</div>`)[0];
+                popup_f5feab4de6b6c3675a181d867ad2fc8d.setContent(html_c04cb3e52da78c92883b93911542dede);
+            
+        
+
+        poly_line_dc066396fd0ca66ceb0bef18fecc4c57.bindPopup(popup_f5feab4de6b6c3675a181d867ad2fc8d)
+        ;
+
+        
+    
+    
+            poly_line_dc066396fd0ca66ceb0bef18fecc4c57.bindTooltip(
+                `<div>
+                     273 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_301360cf5ed098a08cb48fb25fd341db = L.polyline(
+                [[36.2048, 138.2529], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_97ba127aea638ea6eec9d08be977f5c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_504b7b61715f3cea03ab2d32f01986ff = $(`<div id="html_504b7b61715f3cea03ab2d32f01986ff" style="width: 100.0%; height: 100.0%;"><b>Japan ↔ USA</b><br>269 collaborations</div>`)[0];
+                popup_97ba127aea638ea6eec9d08be977f5c1.setContent(html_504b7b61715f3cea03ab2d32f01986ff);
+            
+        
+
+        poly_line_301360cf5ed098a08cb48fb25fd341db.bindPopup(popup_97ba127aea638ea6eec9d08be977f5c1)
+        ;
+
+        
+    
+    
+            poly_line_301360cf5ed098a08cb48fb25fd341db.bindTooltip(
+                `<div>
+                     269 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_05ab5907b204dce55905f145c45a0ee0 = L.polyline(
+                [[40.4637, -3.7492], [37.0902, -95.7129]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_f7c5c56640e8db31b1cd594fa5807784 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_007f79c3bdd4bd094c13a7399279d12e = $(`<div id="html_007f79c3bdd4bd094c13a7399279d12e" style="width: 100.0%; height: 100.0%;"><b>Spain ↔ USA</b><br>267 collaborations</div>`)[0];
+                popup_f7c5c56640e8db31b1cd594fa5807784.setContent(html_007f79c3bdd4bd094c13a7399279d12e);
+            
+        
+
+        poly_line_05ab5907b204dce55905f145c45a0ee0.bindPopup(popup_f7c5c56640e8db31b1cd594fa5807784)
+        ;
+
+        
+    
+    
+            poly_line_05ab5907b204dce55905f145c45a0ee0.bindTooltip(
+                `<div>
+                     267 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e69058039e4d3c47088d79010d477afd = L.polyline(
+                [[-25.2744, 133.7751], [20.5937, 78.9629]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_b9de477bdfbd4feb471bdb2b54383fe9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_620e4b5b98479dcd62a22dc625da49a2 = $(`<div id="html_620e4b5b98479dcd62a22dc625da49a2" style="width: 100.0%; height: 100.0%;"><b>Australia ↔ India</b><br>259 collaborations</div>`)[0];
+                popup_b9de477bdfbd4feb471bdb2b54383fe9.setContent(html_620e4b5b98479dcd62a22dc625da49a2);
+            
+        
+
+        poly_line_e69058039e4d3c47088d79010d477afd.bindPopup(popup_b9de477bdfbd4feb471bdb2b54383fe9)
+        ;
+
+        
+    
+    
+            poly_line_e69058039e4d3c47088d79010d477afd.bindTooltip(
+                `<div>
+                     259 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_27a56224338961f5b5c5f9eb1cb962e6 = L.polyline(
+                [[56.1304, -106.3468], [20.5937, 78.9629]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_9d62add46a80bf21b6d8862bd07e5579 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_230128391062c35d74d0fd6595d2082a = $(`<div id="html_230128391062c35d74d0fd6595d2082a" style="width: 100.0%; height: 100.0%;"><b>Canada ↔ India</b><br>252 collaborations</div>`)[0];
+                popup_9d62add46a80bf21b6d8862bd07e5579.setContent(html_230128391062c35d74d0fd6595d2082a);
+            
+        
+
+        poly_line_27a56224338961f5b5c5f9eb1cb962e6.bindPopup(popup_9d62add46a80bf21b6d8862bd07e5579)
+        ;
+
+        
+    
+    
+            poly_line_27a56224338961f5b5c5f9eb1cb962e6.bindTooltip(
+                `<div>
+                     252 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_bff5a34250c7c3ac784102acf15c4e56 = L.polyline(
+                [[20.5937, 78.9629], [41.8719, 12.5674]],
+                {"bubblingMouseEvents": true, "color": "#c41e3a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c41e3a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 10}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_ac40425d31ff44d999c8f403e17af269 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d617369b571e8ab01c82579a51fc374 = $(`<div id="html_6d617369b571e8ab01c82579a51fc374" style="width: 100.0%; height: 100.0%;"><b>India ↔ Italy</b><br>251 collaborations</div>`)[0];
+                popup_ac40425d31ff44d999c8f403e17af269.setContent(html_6d617369b571e8ab01c82579a51fc374);
+            
+        
+
+        poly_line_bff5a34250c7c3ac784102acf15c4e56.bindPopup(popup_ac40425d31ff44d999c8f403e17af269)
+        ;
+
+        
+    
+    
+            poly_line_bff5a34250c7c3ac784102acf15c4e56.bindTooltip(
+                `<div>
+                     251 collaborations
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2e69dd14101d75d64dcf9fa50ddd2ea = L.circleMarker(
+                [35.8617, 104.1954],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_ed4fd6af948fea0b3699a5c090ea4c7c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2e81a603cc7327349ce11d25ee3bd887 = $(`<div id="html_2e81a603cc7327349ce11d25ee3bd887" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">China</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 2427<br>             <b>👥 Auteurs:</b> 3705<br>             <b>🏛️ Labs:</b> 1690         </div>         </div>`)[0];
+                popup_ed4fd6af948fea0b3699a5c090ea4c7c.setContent(html_2e81a603cc7327349ce11d25ee3bd887);
+            
+        
+
+        circle_marker_e2e69dd14101d75d64dcf9fa50ddd2ea.bindPopup(popup_ed4fd6af948fea0b3699a5c090ea4c7c)
+        ;
+
+        
+    
+    
+            circle_marker_e2e69dd14101d75d64dcf9fa50ddd2ea.bindTooltip(
+                `<div>
+                     China: 2427 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7b97089a1fd1fe16fea955e738c40f9b = L.marker(
+                [35.8617, 104.1954],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_277ff7bb54aa99c09614311aa4750a1a = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        China\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_7b97089a1fd1fe16fea955e738c40f9b.setIcon(div_icon_277ff7bb54aa99c09614311aa4750a1a);
+            
+    
+            var circle_marker_74200a82e06f551b81444051d150f632 = L.circleMarker(
+                [37.0902, -95.7129],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_4f6e88610a62723c5285fd4c02e4a319 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bee7b4e3ec551bf1e2178a88e1ed5590 = $(`<div id="html_bee7b4e3ec551bf1e2178a88e1ed5590" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">USA</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 1569<br>             <b>👥 Auteurs:</b> 1644<br>             <b>🏛️ Labs:</b> 845         </div>         </div>`)[0];
+                popup_4f6e88610a62723c5285fd4c02e4a319.setContent(html_bee7b4e3ec551bf1e2178a88e1ed5590);
+            
+        
+
+        circle_marker_74200a82e06f551b81444051d150f632.bindPopup(popup_4f6e88610a62723c5285fd4c02e4a319)
+        ;
+
+        
+    
+    
+            circle_marker_74200a82e06f551b81444051d150f632.bindTooltip(
+                `<div>
+                     USA: 1569 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a36b0c90ce08613a72e127b350cda1e5 = L.marker(
+                [37.0902, -95.7129],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_c8e4cf29e34c6e27e6067db504d561a7 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        USA\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_a36b0c90ce08613a72e127b350cda1e5.setIcon(div_icon_c8e4cf29e34c6e27e6067db504d561a7);
+            
+    
+            var circle_marker_86fe33b3145f72414385406027fa58e2 = L.circleMarker(
+                [20.5937, 78.9629],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_df3e3ad0f778b615c84c35dfeb96fa64 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_59819eec215c0c0eb65649218d897177 = $(`<div id="html_59819eec215c0c0eb65649218d897177" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">India</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 1331<br>             <b>👥 Auteurs:</b> 1289<br>             <b>🏛️ Labs:</b> 663         </div>         </div>`)[0];
+                popup_df3e3ad0f778b615c84c35dfeb96fa64.setContent(html_59819eec215c0c0eb65649218d897177);
+            
+        
+
+        circle_marker_86fe33b3145f72414385406027fa58e2.bindPopup(popup_df3e3ad0f778b615c84c35dfeb96fa64)
+        ;
+
+        
+    
+    
+            circle_marker_86fe33b3145f72414385406027fa58e2.bindTooltip(
+                `<div>
+                     India: 1331 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c9b3cf48d93475afcc231b950a08f4ce = L.marker(
+                [20.5937, 78.9629],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_0b5194b0b18830700e927ea06c120923 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        India\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_c9b3cf48d93475afcc231b950a08f4ce.setIcon(div_icon_0b5194b0b18830700e927ea06c120923);
+            
+    
+            var circle_marker_6a19c728d85116402fb346fe0404964c = L.circleMarker(
+                [23.8859, 45.0792],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_7bd7e5750931076df2c7b6747bd703b8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5ce72f1d260940e40d48483850cf8547 = $(`<div id="html_5ce72f1d260940e40d48483850cf8547" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Saudi Arabia</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 1061<br>             <b>👥 Auteurs:</b> 844<br>             <b>🏛️ Labs:</b> 424         </div>         </div>`)[0];
+                popup_7bd7e5750931076df2c7b6747bd703b8.setContent(html_5ce72f1d260940e40d48483850cf8547);
+            
+        
+
+        circle_marker_6a19c728d85116402fb346fe0404964c.bindPopup(popup_7bd7e5750931076df2c7b6747bd703b8)
+        ;
+
+        
+    
+    
+            circle_marker_6a19c728d85116402fb346fe0404964c.bindTooltip(
+                `<div>
+                     Saudi Arabia: 1061 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5eec11e0f136c849ce8aa348136ad5c7 = L.marker(
+                [23.8859, 45.0792],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_c47d7965f191a19946bd7a934c7eea52 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Saudi Arabia\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_5eec11e0f136c849ce8aa348136ad5c7.setIcon(div_icon_c47d7965f191a19946bd7a934c7eea52);
+            
+    
+            var circle_marker_1e901d12d9012797cfd72b760d9a51fb = L.circleMarker(
+                [30.3753, 69.3451],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_9379429aad8e50defc05198c927eb1e6 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4f283e5dd69f77b45405e91667732835 = $(`<div id="html_4f283e5dd69f77b45405e91667732835" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Pakistan</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 902<br>             <b>👥 Auteurs:</b> 766<br>             <b>🏛️ Labs:</b> 352         </div>         </div>`)[0];
+                popup_9379429aad8e50defc05198c927eb1e6.setContent(html_4f283e5dd69f77b45405e91667732835);
+            
+        
+
+        circle_marker_1e901d12d9012797cfd72b760d9a51fb.bindPopup(popup_9379429aad8e50defc05198c927eb1e6)
+        ;
+
+        
+    
+    
+            circle_marker_1e901d12d9012797cfd72b760d9a51fb.bindTooltip(
+                `<div>
+                     Pakistan: 902 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_97400d74623a32d151774547e0645426 = L.marker(
+                [30.3753, 69.3451],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_750668f6318d3dbb7b9ba7e942487340 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Pakistan\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_97400d74623a32d151774547e0645426.setIcon(div_icon_750668f6318d3dbb7b9ba7e942487340);
+            
+    
+            var circle_marker_d55e941e2abfb6f1b3d0f11adc563ad4 = L.circleMarker(
+                [35.9078, 127.7669],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_e49edab0a76655d30a5a28e552902712 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_35c7e0bb4769309b8418523d463782ea = $(`<div id="html_35c7e0bb4769309b8418523d463782ea" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">South Korea</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 885<br>             <b>👥 Auteurs:</b> 733<br>             <b>🏛️ Labs:</b> 375         </div>         </div>`)[0];
+                popup_e49edab0a76655d30a5a28e552902712.setContent(html_35c7e0bb4769309b8418523d463782ea);
+            
+        
+
+        circle_marker_d55e941e2abfb6f1b3d0f11adc563ad4.bindPopup(popup_e49edab0a76655d30a5a28e552902712)
+        ;
+
+        
+    
+    
+            circle_marker_d55e941e2abfb6f1b3d0f11adc563ad4.bindTooltip(
+                `<div>
+                     South Korea: 885 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_86e754d5006c14d33a9c9de3ca9f3a02 = L.marker(
+                [35.9078, 127.7669],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_5764325d2a3065cccac76ee312c1a3b5 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        South Korea\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_86e754d5006c14d33a9c9de3ca9f3a02.setIcon(div_icon_5764325d2a3065cccac76ee312c1a3b5);
+            
+    
+            var circle_marker_409ae4d247b11d4816f2f936648c1664 = L.circleMarker(
+                [4.2105, 101.9758],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_7de7f5e3486c9f029d9dab403c3f2bde = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3a8f9133a2355dbcbd991d821f95c92c = $(`<div id="html_3a8f9133a2355dbcbd991d821f95c92c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Malaysia</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 710<br>             <b>👥 Auteurs:</b> 606<br>             <b>🏛️ Labs:</b> 270         </div>         </div>`)[0];
+                popup_7de7f5e3486c9f029d9dab403c3f2bde.setContent(html_3a8f9133a2355dbcbd991d821f95c92c);
+            
+        
+
+        circle_marker_409ae4d247b11d4816f2f936648c1664.bindPopup(popup_7de7f5e3486c9f029d9dab403c3f2bde)
+        ;
+
+        
+    
+    
+            circle_marker_409ae4d247b11d4816f2f936648c1664.bindTooltip(
+                `<div>
+                     Malaysia: 710 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_04813cf20fa86b806382cc5a65ec1ff0 = L.marker(
+                [4.2105, 101.9758],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_bf7ed80456f8cef044cc8a88f538ac3c = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Malaysia\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_04813cf20fa86b806382cc5a65ec1ff0.setIcon(div_icon_bf7ed80456f8cef044cc8a88f538ac3c);
+            
+    
+            var circle_marker_72b44888e81351f1570bc7d53286bb84 = L.circleMarker(
+                [51.1657, 10.4515],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_1c5de889e4eda134f1e43b6b93fb06fa = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4bd1b5f741a3f3bf71ca0f7fae2b83d3 = $(`<div id="html_4bd1b5f741a3f3bf71ca0f7fae2b83d3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Germany</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 657<br>             <b>👥 Auteurs:</b> 615<br>             <b>🏛️ Labs:</b> 270         </div>         </div>`)[0];
+                popup_1c5de889e4eda134f1e43b6b93fb06fa.setContent(html_4bd1b5f741a3f3bf71ca0f7fae2b83d3);
+            
+        
+
+        circle_marker_72b44888e81351f1570bc7d53286bb84.bindPopup(popup_1c5de889e4eda134f1e43b6b93fb06fa)
+        ;
+
+        
+    
+    
+            circle_marker_72b44888e81351f1570bc7d53286bb84.bindTooltip(
+                `<div>
+                     Germany: 657 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5a7d7fd58c621a4a4868a2191f2e1da1 = L.marker(
+                [51.1657, 10.4515],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_b154feca430ab0411e532d036840bede = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Germany\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_5a7d7fd58c621a4a4868a2191f2e1da1.setIcon(div_icon_b154feca430ab0411e532d036840bede);
+            
+    
+            var circle_marker_f2045759d06beb83a73f79141d6344a1 = L.circleMarker(
+                [41.8719, 12.5674],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d6a393c691748b757378408c162bd144 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9aeea34f91066fc0fb0e29590f8eba5f = $(`<div id="html_9aeea34f91066fc0fb0e29590f8eba5f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Italy</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 588<br>             <b>👥 Auteurs:</b> 563<br>             <b>🏛️ Labs:</b> 249         </div>         </div>`)[0];
+                popup_d6a393c691748b757378408c162bd144.setContent(html_9aeea34f91066fc0fb0e29590f8eba5f);
+            
+        
+
+        circle_marker_f2045759d06beb83a73f79141d6344a1.bindPopup(popup_d6a393c691748b757378408c162bd144)
+        ;
+
+        
+    
+    
+            circle_marker_f2045759d06beb83a73f79141d6344a1.bindTooltip(
+                `<div>
+                     Italy: 588 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6e0e45e93d552fe935803192001a22b0 = L.marker(
+                [41.8719, 12.5674],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_5b9ee46cc4ffd08b6f1cb14787e6f062 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Italy\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_6e0e45e93d552fe935803192001a22b0.setIcon(div_icon_5b9ee46cc4ffd08b6f1cb14787e6f062);
+            
+    
+            var circle_marker_1a62c465d859deadeb5a8954d6e20455 = L.circleMarker(
+                [56.1304, -106.3468],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_ab035ee5aff2ec78636a17fb9e58f369 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8c9dd3aadee5c7f92c6aefb9bbf842ad = $(`<div id="html_8c9dd3aadee5c7f92c6aefb9bbf842ad" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Canada</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 558<br>             <b>👥 Auteurs:</b> 444<br>             <b>🏛️ Labs:</b> 208         </div>         </div>`)[0];
+                popup_ab035ee5aff2ec78636a17fb9e58f369.setContent(html_8c9dd3aadee5c7f92c6aefb9bbf842ad);
+            
+        
+
+        circle_marker_1a62c465d859deadeb5a8954d6e20455.bindPopup(popup_ab035ee5aff2ec78636a17fb9e58f369)
+        ;
+
+        
+    
+    
+            circle_marker_1a62c465d859deadeb5a8954d6e20455.bindTooltip(
+                `<div>
+                     Canada: 558 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5ddf486ea3d49bed9494c0546bd82970 = L.marker(
+                [56.1304, -106.3468],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_6cb09ea790f3425296a2271d094aabec = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Canada\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_5ddf486ea3d49bed9494c0546bd82970.setIcon(div_icon_6cb09ea790f3425296a2271d094aabec);
+            
+    
+            var circle_marker_3f84bed1846d2fde324ad1ac72fb1e6b = L.circleMarker(
+                [-25.2744, 133.7751],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_024c858c49ac7badb48fb3ecf124f46c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_acdad8e591e5a39537a6f609e9f0652e = $(`<div id="html_acdad8e591e5a39537a6f609e9f0652e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Australia</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 544<br>             <b>👥 Auteurs:</b> 427<br>             <b>🏛️ Labs:</b> 214         </div>         </div>`)[0];
+                popup_024c858c49ac7badb48fb3ecf124f46c.setContent(html_acdad8e591e5a39537a6f609e9f0652e);
+            
+        
+
+        circle_marker_3f84bed1846d2fde324ad1ac72fb1e6b.bindPopup(popup_024c858c49ac7badb48fb3ecf124f46c)
+        ;
+
+        
+    
+    
+            circle_marker_3f84bed1846d2fde324ad1ac72fb1e6b.bindTooltip(
+                `<div>
+                     Australia: 544 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a7e34c34c3b69e137da175fed2f70fff = L.marker(
+                [-25.2744, 133.7751],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_b60023dea2ab9bacf141650480a5ba4e = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Australia\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_a7e34c34c3b69e137da175fed2f70fff.setIcon(div_icon_b60023dea2ab9bacf141650480a5ba4e);
+            
+    
+            var circle_marker_d72b59fe7988a907570bc6c3c215399f = L.circleMarker(
+                [36.2048, 138.2529],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_1a10f6d6d0bbcaf2a17c26c53362fec6 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9a65309e3f3c87ba96ee43a15db90a05 = $(`<div id="html_9a65309e3f3c87ba96ee43a15db90a05" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Japan</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 535<br>             <b>👥 Auteurs:</b> 504<br>             <b>🏛️ Labs:</b> 248         </div>         </div>`)[0];
+                popup_1a10f6d6d0bbcaf2a17c26c53362fec6.setContent(html_9a65309e3f3c87ba96ee43a15db90a05);
+            
+        
+
+        circle_marker_d72b59fe7988a907570bc6c3c215399f.bindPopup(popup_1a10f6d6d0bbcaf2a17c26c53362fec6)
+        ;
+
+        
+    
+    
+            circle_marker_d72b59fe7988a907570bc6c3c215399f.bindTooltip(
+                `<div>
+                     Japan: 535 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b6d546001c54a38c971f88d5a3a32eed = L.marker(
+                [36.2048, 138.2529],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_3287f2560b6b3610ceab2d752a35aa0f = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Japan\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_b6d546001c54a38c971f88d5a3a32eed.setIcon(div_icon_3287f2560b6b3610ceab2d752a35aa0f);
+            
+    
+            var circle_marker_2443f1f1451c7c0e35e90cdd688b0aae = L.circleMarker(
+                [40.4637, -3.7492],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_2c2ee920d5de5ade1e6b9bf3c2ca179a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_36da6f51e5fc371fd1e31d7616dfe30e = $(`<div id="html_36da6f51e5fc371fd1e31d7616dfe30e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Spain</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 520<br>             <b>👥 Auteurs:</b> 482<br>             <b>🏛️ Labs:</b> 227         </div>         </div>`)[0];
+                popup_2c2ee920d5de5ade1e6b9bf3c2ca179a.setContent(html_36da6f51e5fc371fd1e31d7616dfe30e);
+            
+        
+
+        circle_marker_2443f1f1451c7c0e35e90cdd688b0aae.bindPopup(popup_2c2ee920d5de5ade1e6b9bf3c2ca179a)
+        ;
+
+        
+    
+    
+            circle_marker_2443f1f1451c7c0e35e90cdd688b0aae.bindTooltip(
+                `<div>
+                     Spain: 520 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_00baf23754452457104009905a91612e = L.marker(
+                [40.4637, -3.7492],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_9404b62e2b0a321a692c05f526161b2a = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Spain\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_00baf23754452457104009905a91612e.setIcon(div_icon_9404b62e2b0a321a692c05f526161b2a);
+            
+    
+            var circle_marker_c6588b38c1ab72c6610d8eef75cbe240 = L.circleMarker(
+                [23.6978, 120.9605],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_99f68fdc68cf9ddab18be64d047d5053 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bddf0ec71b738916ac177b4c292bb9fb = $(`<div id="html_bddf0ec71b738916ac177b4c292bb9fb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Taiwan</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 387<br>             <b>👥 Auteurs:</b> 354<br>             <b>🏛️ Labs:</b> 175         </div>         </div>`)[0];
+                popup_99f68fdc68cf9ddab18be64d047d5053.setContent(html_bddf0ec71b738916ac177b4c292bb9fb);
+            
+        
+
+        circle_marker_c6588b38c1ab72c6610d8eef75cbe240.bindPopup(popup_99f68fdc68cf9ddab18be64d047d5053)
+        ;
+
+        
+    
+    
+            circle_marker_c6588b38c1ab72c6610d8eef75cbe240.bindTooltip(
+                `<div>
+                     Taiwan: 387 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_68f2b11d0e8ad0e2866b5cb18052d35e = L.marker(
+                [23.6978, 120.9605],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_d8fc178f8cb938eb27220cfece17590b = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Taiwan\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_68f2b11d0e8ad0e2866b5cb18052d35e.setIcon(div_icon_d8fc178f8cb938eb27220cfece17590b);
+            
+    
+            var circle_marker_a2d162f5609f458e8fe2ed6e2ee7c482 = L.circleMarker(
+                [26.8206, 30.8025],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_5a1d42e1fc5a428b90fc4b5ebea74766 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8836a0f6b58b59713b3e5dac27a79511 = $(`<div id="html_8836a0f6b58b59713b3e5dac27a79511" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Egypt</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 350<br>             <b>👥 Auteurs:</b> 259<br>             <b>🏛️ Labs:</b> 145         </div>         </div>`)[0];
+                popup_5a1d42e1fc5a428b90fc4b5ebea74766.setContent(html_8836a0f6b58b59713b3e5dac27a79511);
+            
+        
+
+        circle_marker_a2d162f5609f458e8fe2ed6e2ee7c482.bindPopup(popup_5a1d42e1fc5a428b90fc4b5ebea74766)
+        ;
+
+        
+    
+    
+            circle_marker_a2d162f5609f458e8fe2ed6e2ee7c482.bindTooltip(
+                `<div>
+                     Egypt: 350 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c6106e64c3473032bcb1b09b61547dce = L.marker(
+                [26.8206, 30.8025],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_93b76c2733de8998fe9437079e03c60a = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Egypt\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_c6106e64c3473032bcb1b09b61547dce.setIcon(div_icon_93b76c2733de8998fe9437079e03c60a);
+            
+    
+            var circle_marker_8b98a3d59b30b1127666803f5999393c = L.circleMarker(
+                [-14.235, -51.9253],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_a395a4cdeaf18b5849a0bf3450680ae3 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2badba17452a5a48a09d12cd2a1cbbea = $(`<div id="html_2badba17452a5a48a09d12cd2a1cbbea" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Brazil</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 292<br>             <b>👥 Auteurs:</b> 307<br>             <b>🏛️ Labs:</b> 118         </div>         </div>`)[0];
+                popup_a395a4cdeaf18b5849a0bf3450680ae3.setContent(html_2badba17452a5a48a09d12cd2a1cbbea);
+            
+        
+
+        circle_marker_8b98a3d59b30b1127666803f5999393c.bindPopup(popup_a395a4cdeaf18b5849a0bf3450680ae3)
+        ;
+
+        
+    
+    
+            circle_marker_8b98a3d59b30b1127666803f5999393c.bindTooltip(
+                `<div>
+                     Brazil: 292 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b0d9745f3fe485f48543418d9b95e7d8 = L.marker(
+                [-14.235, -51.9253],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_9796f45532982ce05f392acad1b35ac3 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Brazil\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_b0d9745f3fe485f48543418d9b95e7d8.setIcon(div_icon_9796f45532982ce05f392acad1b35ac3);
+            
+    
+            var circle_marker_4608fc34412aec9da11c06494fa4e044 = L.circleMarker(
+                [-0.7893, 113.9213],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_4a57eee9496dc5741aaa1289cbb62dd3 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_23cc213e6d4ed564542d4bcf366bdc44 = $(`<div id="html_23cc213e6d4ed564542d4bcf366bdc44" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Indonesia</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 287<br>             <b>👥 Auteurs:</b> 213<br>             <b>🏛️ Labs:</b> 96         </div>         </div>`)[0];
+                popup_4a57eee9496dc5741aaa1289cbb62dd3.setContent(html_23cc213e6d4ed564542d4bcf366bdc44);
+            
+        
+
+        circle_marker_4608fc34412aec9da11c06494fa4e044.bindPopup(popup_4a57eee9496dc5741aaa1289cbb62dd3)
+        ;
+
+        
+    
+    
+            circle_marker_4608fc34412aec9da11c06494fa4e044.bindTooltip(
+                `<div>
+                     Indonesia: 287 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e5a06fac7bb38f3bf9cc152c62c662c3 = L.marker(
+                [-0.7893, 113.9213],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_5daaab394fb242979ecbce80c70ab542 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Indonesia\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_e5a06fac7bb38f3bf9cc152c62c662c3.setIcon(div_icon_5daaab394fb242979ecbce80c70ab542);
+            
+    
+            var circle_marker_8d90c04fe8d9559f498d5eb1e6ee3177 = L.circleMarker(
+                [38.9637, 35.2433],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d950f92365dcba78e7e7f703e001512b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_02c9a2066249c4406f8a553adf08c38c = $(`<div id="html_02c9a2066249c4406f8a553adf08c38c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Turkey</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 285<br>             <b>👥 Auteurs:</b> 210<br>             <b>🏛️ Labs:</b> 119         </div>         </div>`)[0];
+                popup_d950f92365dcba78e7e7f703e001512b.setContent(html_02c9a2066249c4406f8a553adf08c38c);
+            
+        
+
+        circle_marker_8d90c04fe8d9559f498d5eb1e6ee3177.bindPopup(popup_d950f92365dcba78e7e7f703e001512b)
+        ;
+
+        
+    
+    
+            circle_marker_8d90c04fe8d9559f498d5eb1e6ee3177.bindTooltip(
+                `<div>
+                     Turkey: 285 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b85ff5e34c54a41f2943e145291803b2 = L.marker(
+                [38.9637, 35.2433],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_1312e51b3b05542830429dbf7629cb0e = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Turkey\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_b85ff5e34c54a41f2943e145291803b2.setIcon(div_icon_1312e51b3b05542830429dbf7629cb0e);
+            
+    
+            var circle_marker_634abb4b0a26d81facb8f08506d3c487 = L.circleMarker(
+                [14.0583, 108.2772],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35.0, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_055ae847ad58e368390e57ec538d6181 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0e70043e331532f9486ffff3ecc01a5a = $(`<div id="html_0e70043e331532f9486ffff3ecc01a5a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Vietnam</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 216<br>             <b>👥 Auteurs:</b> 150<br>             <b>🏛️ Labs:</b> 52         </div>         </div>`)[0];
+                popup_055ae847ad58e368390e57ec538d6181.setContent(html_0e70043e331532f9486ffff3ecc01a5a);
+            
+        
+
+        circle_marker_634abb4b0a26d81facb8f08506d3c487.bindPopup(popup_055ae847ad58e368390e57ec538d6181)
+        ;
+
+        
+    
+    
+            circle_marker_634abb4b0a26d81facb8f08506d3c487.bindTooltip(
+                `<div>
+                     Vietnam: 216 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_411bbe39d5e262d306b97b58836648ec = L.marker(
+                [14.0583, 108.2772],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_539ca474750f7cf4cdd55b0b69edf95d = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Vietnam\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_411bbe39d5e262d306b97b58836648ec.setIcon(div_icon_539ca474750f7cf4cdd55b0b69edf95d);
+            
+    
+            var circle_marker_2163a55064893d65e8330f8144a87773 = L.circleMarker(
+                [-30.5595, 22.9375],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 34.125, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_c90c0d392915ccf55bbdf38f7116699e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8673df9f50a8e62271cae912025a9425 = $(`<div id="html_8673df9f50a8e62271cae912025a9425" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">South Africa</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 209<br>             <b>👥 Auteurs:</b> 126<br>             <b>🏛️ Labs:</b> 52         </div>         </div>`)[0];
+                popup_c90c0d392915ccf55bbdf38f7116699e.setContent(html_8673df9f50a8e62271cae912025a9425);
+            
+        
+
+        circle_marker_2163a55064893d65e8330f8144a87773.bindPopup(popup_c90c0d392915ccf55bbdf38f7116699e)
+        ;
+
+        
+    
+    
+            circle_marker_2163a55064893d65e8330f8144a87773.bindTooltip(
+                `<div>
+                     South Africa: 209 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6fd0e961c0e8077b3f96845770f30088 = L.marker(
+                [-30.5595, 22.9375],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_2f97acb83b93adf5fe72176e5bf65eb5 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        South Africa\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_6fd0e961c0e8077b3f96845770f30088.setIcon(div_icon_2f97acb83b93adf5fe72176e5bf65eb5);
+            
+    
+            var circle_marker_3acea25e526487f34def696acdc778fc = L.circleMarker(
+                [39.0742, 21.8243],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 34.0, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_268aaa1bc8c3bc436ac36cf3303c093b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f89bc6bd713cbf1126c87b464cb17639 = $(`<div id="html_f89bc6bd713cbf1126c87b464cb17639" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Greece</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 208<br>             <b>👥 Auteurs:</b> 182<br>             <b>🏛️ Labs:</b> 79         </div>         </div>`)[0];
+                popup_268aaa1bc8c3bc436ac36cf3303c093b.setContent(html_f89bc6bd713cbf1126c87b464cb17639);
+            
+        
+
+        circle_marker_3acea25e526487f34def696acdc778fc.bindPopup(popup_268aaa1bc8c3bc436ac36cf3303c093b)
+        ;
+
+        
+    
+    
+            circle_marker_3acea25e526487f34def696acdc778fc.bindTooltip(
+                `<div>
+                     Greece: 208 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b3c2dff9057cbff4437d8604b2401201 = L.marker(
+                [39.0742, 21.8243],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_9d881c254a94af5a78642b48b3518315 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Greece\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_b3c2dff9057cbff4437d8604b2401201.setIcon(div_icon_9d881c254a94af5a78642b48b3518315);
+            
+    
+            var circle_marker_407b46a782a261145f1574b69f50e02d = L.circleMarker(
+                [15.87, 100.9925],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 33.75, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_453ef63c1332d8cb4a6a2e0c6779b7ee = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_45a3d1715d9fc4ac156fa5c8228978f2 = $(`<div id="html_45a3d1715d9fc4ac156fa5c8228978f2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Thailand</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 206<br>             <b>👥 Auteurs:</b> 165<br>             <b>🏛️ Labs:</b> 77         </div>         </div>`)[0];
+                popup_453ef63c1332d8cb4a6a2e0c6779b7ee.setContent(html_45a3d1715d9fc4ac156fa5c8228978f2);
+            
+        
+
+        circle_marker_407b46a782a261145f1574b69f50e02d.bindPopup(popup_453ef63c1332d8cb4a6a2e0c6779b7ee)
+        ;
+
+        
+    
+    
+            circle_marker_407b46a782a261145f1574b69f50e02d.bindTooltip(
+                `<div>
+                     Thailand: 206 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a898cd3940569605632fe928cd7f95b5 = L.marker(
+                [15.87, 100.9925],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_d6093a71416ad463957a9f1ff93f2858 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Thailand\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_a898cd3940569605632fe928cd7f95b5.setIcon(div_icon_d6093a71416ad463957a9f1ff93f2858);
+            
+    
+            var circle_marker_538f07410b01301b6958c8419c0b3366 = L.circleMarker(
+                [46.603354, 1.888334],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 31.5, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_2419ec18f4c0a4322459e1235329372b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5aaa33e16c35658c4935a4e52685b977 = $(`<div id="html_5aaa33e16c35658c4935a4e52685b977" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">France</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 188<br>             <b>👥 Auteurs:</b> 146<br>             <b>🏛️ Labs:</b> 84         </div>         </div>`)[0];
+                popup_2419ec18f4c0a4322459e1235329372b.setContent(html_5aaa33e16c35658c4935a4e52685b977);
+            
+        
+
+        circle_marker_538f07410b01301b6958c8419c0b3366.bindPopup(popup_2419ec18f4c0a4322459e1235329372b)
+        ;
+
+        
+    
+    
+            circle_marker_538f07410b01301b6958c8419c0b3366.bindTooltip(
+                `<div>
+                     France: 188 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6dbda49f9e4c05d52974598f8cc81804 = L.marker(
+                [46.603354, 1.888334],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_cebe4f0022ff38673ec732db9f091147 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        France\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_6dbda49f9e4c05d52974598f8cc81804.setIcon(div_icon_cebe4f0022ff38673ec732db9f091147);
+            
+    
+            var circle_marker_dada84d9c51c0ed0efffb84559f3cd4c = L.circleMarker(
+                [32.4279, 53.688],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.875, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_ec027ba91231af716210112392de5568 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_dd2e7f6bb9b952e88eb6c7226004642a = $(`<div id="html_dd2e7f6bb9b952e88eb6c7226004642a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Iran</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 183<br>             <b>👥 Auteurs:</b> 145<br>             <b>🏛️ Labs:</b> 70         </div>         </div>`)[0];
+                popup_ec027ba91231af716210112392de5568.setContent(html_dd2e7f6bb9b952e88eb6c7226004642a);
+            
+        
+
+        circle_marker_dada84d9c51c0ed0efffb84559f3cd4c.bindPopup(popup_ec027ba91231af716210112392de5568)
+        ;
+
+        
+    
+    
+            circle_marker_dada84d9c51c0ed0efffb84559f3cd4c.bindTooltip(
+                `<div>
+                     Iran: 183 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1642d0aba32277de3963cec9025ad5a9 = L.marker(
+                [32.4279, 53.688],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_13544077b364b9b2bfd05807d24faaf5 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Iran\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_1642d0aba32277de3963cec9025ad5a9.setIcon(div_icon_13544077b364b9b2bfd05807d24faaf5);
+            
+    
+            var circle_marker_a4d9e4cb26de61ab924f1a27538a2027 = L.circleMarker(
+                [61.9241, 25.7482],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.0, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_a68d0593083c8314b1d0cb2b307ce0db = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f2fef9479b6951d732784f2aaaf0d129 = $(`<div id="html_f2fef9479b6951d732784f2aaaf0d129" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Finland</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 176<br>             <b>👥 Auteurs:</b> 147<br>             <b>🏛️ Labs:</b> 64         </div>         </div>`)[0];
+                popup_a68d0593083c8314b1d0cb2b307ce0db.setContent(html_f2fef9479b6951d732784f2aaaf0d129);
+            
+        
+
+        circle_marker_a4d9e4cb26de61ab924f1a27538a2027.bindPopup(popup_a68d0593083c8314b1d0cb2b307ce0db)
+        ;
+
+        
+    
+    
+            circle_marker_a4d9e4cb26de61ab924f1a27538a2027.bindTooltip(
+                `<div>
+                     Finland: 176 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8d52bc67acd7f1ee7e61215340605210 = L.marker(
+                [61.9241, 25.7482],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_6c24e53902aabd2d70cc3530591bc62a = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Finland\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_8d52bc67acd7f1ee7e61215340605210.setIcon(div_icon_6c24e53902aabd2d70cc3530591bc62a);
+            
+    
+            var circle_marker_0cd7fb50160e49811e704869323c3d03 = L.circleMarker(
+                [60.1282, 18.6435],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 28.875, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d4ec1950324ec703411e9464b70f8e2a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3f3d0169ce9520ddda4eb0afb335ee52 = $(`<div id="html_3f3d0169ce9520ddda4eb0afb335ee52" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Sweden</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 167<br>             <b>👥 Auteurs:</b> 127<br>             <b>🏛️ Labs:</b> 57         </div>         </div>`)[0];
+                popup_d4ec1950324ec703411e9464b70f8e2a.setContent(html_3f3d0169ce9520ddda4eb0afb335ee52);
+            
+        
+
+        circle_marker_0cd7fb50160e49811e704869323c3d03.bindPopup(popup_d4ec1950324ec703411e9464b70f8e2a)
+        ;
+
+        
+    
+    
+            circle_marker_0cd7fb50160e49811e704869323c3d03.bindTooltip(
+                `<div>
+                     Sweden: 167 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e4fc3f5a60708983aeab26e1be4ec40b = L.marker(
+                [60.1282, 18.6435],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_df09d902a3dacd897b5f5617cdb63e83 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Sweden\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_e4fc3f5a60708983aeab26e1be4ec40b.setIcon(div_icon_df09d902a3dacd897b5f5617cdb63e83);
+            
+    
+            var circle_marker_0e6aced7263abee97ffc9758d7728627 = L.circleMarker(
+                [60.472, 8.4689],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 28.375, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_6e2b9827b90cd2f3e2c54de87cdd70a2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_269f50519d2fa481beb9105e68f9cfb1 = $(`<div id="html_269f50519d2fa481beb9105e68f9cfb1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Norway</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 163<br>             <b>👥 Auteurs:</b> 114<br>             <b>🏛️ Labs:</b> 53         </div>         </div>`)[0];
+                popup_6e2b9827b90cd2f3e2c54de87cdd70a2.setContent(html_269f50519d2fa481beb9105e68f9cfb1);
+            
+        
+
+        circle_marker_0e6aced7263abee97ffc9758d7728627.bindPopup(popup_6e2b9827b90cd2f3e2c54de87cdd70a2)
+        ;
+
+        
+    
+    
+            circle_marker_0e6aced7263abee97ffc9758d7728627.bindTooltip(
+                `<div>
+                     Norway: 163 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_44e417e5b2f3530fb1123ff878014b82 = L.marker(
+                [60.472, 8.4689],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_f4098c46e68df56c6bafbfad27a59aa8 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Norway\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_44e417e5b2f3530fb1123ff878014b82.setIcon(div_icon_f4098c46e68df56c6bafbfad27a59aa8);
+            
+    
+            var circle_marker_d1f01a5327884fe9f1d65f4e55f46f5a = L.circleMarker(
+                [53.4129, -8.2439],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.75, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_3d5e5d1c74442dbf0b977d386e7d5971 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f80c3df0736632982a50dc85e06c949d = $(`<div id="html_f80c3df0736632982a50dc85e06c949d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Ireland</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 158<br>             <b>👥 Auteurs:</b> 135<br>             <b>🏛️ Labs:</b> 57         </div>         </div>`)[0];
+                popup_3d5e5d1c74442dbf0b977d386e7d5971.setContent(html_f80c3df0736632982a50dc85e06c949d);
+            
+        
+
+        circle_marker_d1f01a5327884fe9f1d65f4e55f46f5a.bindPopup(popup_3d5e5d1c74442dbf0b977d386e7d5971)
+        ;
+
+        
+    
+    
+            circle_marker_d1f01a5327884fe9f1d65f4e55f46f5a.bindTooltip(
+                `<div>
+                     Ireland: 158 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_56fc805d5f589e7021534b51e8a118bd = L.marker(
+                [53.4129, -8.2439],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_f9f77e60ca20777ac9f7ce322bf45258 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Ireland\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_56fc805d5f589e7021534b51e8a118bd.setIcon(div_icon_f9f77e60ca20777ac9f7ce322bf45258);
+            
+    
+            var circle_marker_d3243793a9074203b28b13b84cd64f9b = L.circleMarker(
+                [39.3999, -8.2245],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.375, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_8e02058cb00ff9e76b963210c64446a5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7a5d0af20158aeb0587ea733909c35d5 = $(`<div id="html_7a5d0af20158aeb0587ea733909c35d5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Portugal</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 155<br>             <b>👥 Auteurs:</b> 154<br>             <b>🏛️ Labs:</b> 62         </div>         </div>`)[0];
+                popup_8e02058cb00ff9e76b963210c64446a5.setContent(html_7a5d0af20158aeb0587ea733909c35d5);
+            
+        
+
+        circle_marker_d3243793a9074203b28b13b84cd64f9b.bindPopup(popup_8e02058cb00ff9e76b963210c64446a5)
+        ;
+
+        
+    
+    
+            circle_marker_d3243793a9074203b28b13b84cd64f9b.bindTooltip(
+                `<div>
+                     Portugal: 155 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_48e9b17d6f616938c56b8b70deac516b = L.marker(
+                [39.3999, -8.2245],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_c6dd271e6bb818f12a28ea8e213ac26d = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Portugal\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_48e9b17d6f616938c56b8b70deac516b.setIcon(div_icon_c6dd271e6bb818f12a28ea8e213ac26d);
+            
+    
+            var circle_marker_478e383f1d2124f71713df3a7646e608 = L.circleMarker(
+                [31.7917, -7.0926],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.0, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_1be398bbc982ebcc0389a3eaf2dda7df = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_acc2c825ec89c51b8c25897bb83fdd48 = $(`<div id="html_acc2c825ec89c51b8c25897bb83fdd48" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Morocco</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 152<br>             <b>👥 Auteurs:</b> 114<br>             <b>🏛️ Labs:</b> 57         </div>         </div>`)[0];
+                popup_1be398bbc982ebcc0389a3eaf2dda7df.setContent(html_acc2c825ec89c51b8c25897bb83fdd48);
+            
+        
+
+        circle_marker_478e383f1d2124f71713df3a7646e608.bindPopup(popup_1be398bbc982ebcc0389a3eaf2dda7df)
+        ;
+
+        
+    
+    
+            circle_marker_478e383f1d2124f71713df3a7646e608.bindTooltip(
+                `<div>
+                     Morocco: 152 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f6a2cff0ae619e5f4a67244c97821178 = L.marker(
+                [31.7917, -7.0926],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_6698898b2f7e9d4e3c3eef9d5ce979c7 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Morocco\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_f6a2cff0ae619e5f4a67244c97821178.setIcon(div_icon_6698898b2f7e9d4e3c3eef9d5ce979c7);
+            
+    
+            var circle_marker_647b25072974b3f0883c7e991be8a3f8 = L.circleMarker(
+                [1.3521, 103.8198],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23.75, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_9932bf6ebac95f7e56019b4f3230ad55 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2d865fc06c78d54d69133dc63d90b56d = $(`<div id="html_2d865fc06c78d54d69133dc63d90b56d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Singapore</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 126<br>             <b>👥 Auteurs:</b> 93<br>             <b>🏛️ Labs:</b> 46         </div>         </div>`)[0];
+                popup_9932bf6ebac95f7e56019b4f3230ad55.setContent(html_2d865fc06c78d54d69133dc63d90b56d);
+            
+        
+
+        circle_marker_647b25072974b3f0883c7e991be8a3f8.bindPopup(popup_9932bf6ebac95f7e56019b4f3230ad55)
+        ;
+
+        
+    
+    
+            circle_marker_647b25072974b3f0883c7e991be8a3f8.bindTooltip(
+                `<div>
+                     Singapore: 126 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_42d971fbe19007ce36f47773ed495abe = L.marker(
+                [1.3521, 103.8198],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_a66f7480f33925ef2531211587a6b77e = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Singapore\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_42d971fbe19007ce36f47773ed495abe.setIcon(div_icon_a66f7480f33925ef2531211587a6b77e);
+            
+    
+            var circle_marker_6816ac98441d9fb07d2c28a14b5c2519 = L.circleMarker(
+                [46.8182, 8.2275],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.875, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_9219a3cb26cc3873e8177807232cc4ac = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_c1b90a5c74dce45e4924ebedde29f061 = $(`<div id="html_c1b90a5c74dce45e4924ebedde29f061" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Switzerland</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 111<br>             <b>👥 Auteurs:</b> 92<br>             <b>🏛️ Labs:</b> 48         </div>         </div>`)[0];
+                popup_9219a3cb26cc3873e8177807232cc4ac.setContent(html_c1b90a5c74dce45e4924ebedde29f061);
+            
+        
+
+        circle_marker_6816ac98441d9fb07d2c28a14b5c2519.bindPopup(popup_9219a3cb26cc3873e8177807232cc4ac)
+        ;
+
+        
+    
+    
+            circle_marker_6816ac98441d9fb07d2c28a14b5c2519.bindTooltip(
+                `<div>
+                     Switzerland: 111 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c67bc9b97c0d96f02c4e65dd624807d9 = L.marker(
+                [46.8182, 8.2275],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_59453a7a49fde5faa85527eda4aa0e10 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Switzerland\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_c67bc9b97c0d96f02c4e65dd624807d9.setIcon(div_icon_59453a7a49fde5faa85527eda4aa0e10);
+            
+    
+            var circle_marker_4386c0025679f8e2f6d679aed101646c = L.circleMarker(
+                [50.5039, 4.4699],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.25, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_2d865029e59105c55fa2e59dfd7aa138 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e82cbf6c80ae312913873d1f8f6d529d = $(`<div id="html_e82cbf6c80ae312913873d1f8f6d529d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Belgium</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 106<br>             <b>👥 Auteurs:</b> 101<br>             <b>🏛️ Labs:</b> 50         </div>         </div>`)[0];
+                popup_2d865029e59105c55fa2e59dfd7aa138.setContent(html_e82cbf6c80ae312913873d1f8f6d529d);
+            
+        
+
+        circle_marker_4386c0025679f8e2f6d679aed101646c.bindPopup(popup_2d865029e59105c55fa2e59dfd7aa138)
+        ;
+
+        
+    
+    
+            circle_marker_4386c0025679f8e2f6d679aed101646c.bindTooltip(
+                `<div>
+                     Belgium: 106 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6edfbe8b87d55872b5f6c3d9ba521001 = L.marker(
+                [50.5039, 4.4699],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_14befb593d5aa810060676d54452656b = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Belgium\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_6edfbe8b87d55872b5f6c3d9ba521001.setIcon(div_icon_14befb593d5aa810060676d54452656b);
+            
+    
+            var circle_marker_f594fe726d78ebfce55c9c6852b47d66 = L.circleMarker(
+                [51.9194, 19.1451],
+                {"bubblingMouseEvents": true, "color": "#8b0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.625, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_4e960c28f1ab98ee15253fc42b478768 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4735564f746d92df5fb41d256ef4552e = $(`<div id="html_4735564f746d92df5fb41d256ef4552e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #8b0000;">Poland</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 101<br>             <b>👥 Auteurs:</b> 96<br>             <b>🏛️ Labs:</b> 51         </div>         </div>`)[0];
+                popup_4e960c28f1ab98ee15253fc42b478768.setContent(html_4735564f746d92df5fb41d256ef4552e);
+            
+        
+
+        circle_marker_f594fe726d78ebfce55c9c6852b47d66.bindPopup(popup_4e960c28f1ab98ee15253fc42b478768)
+        ;
+
+        
+    
+    
+            circle_marker_f594fe726d78ebfce55c9c6852b47d66.bindTooltip(
+                `<div>
+                     Poland: 101 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d8a17d04b16df64aad126587932019db = L.marker(
+                [51.9194, 19.1451],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_01fc08701cbeffa5776787b2047326c3 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Poland\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_d8a17d04b16df64aad126587932019db.setIcon(div_icon_01fc08701cbeffa5776787b2047326c3);
+            
+    
+            var circle_marker_d8807cefb33976476b13b06e6f0293af = L.circleMarker(
+                [31.0461, 34.8516],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.625, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d55e34d786afcdd146fdc4308ccd3510 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2dc042cb80ab0ad86452f296b6218619 = $(`<div id="html_2dc042cb80ab0ad86452f296b6218619" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Israel</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 93<br>             <b>👥 Auteurs:</b> 60<br>             <b>🏛️ Labs:</b> 32         </div>         </div>`)[0];
+                popup_d55e34d786afcdd146fdc4308ccd3510.setContent(html_2dc042cb80ab0ad86452f296b6218619);
+            
+        
+
+        circle_marker_d8807cefb33976476b13b06e6f0293af.bindPopup(popup_d55e34d786afcdd146fdc4308ccd3510)
+        ;
+
+        
+    
+    
+            circle_marker_d8807cefb33976476b13b06e6f0293af.bindTooltip(
+                `<div>
+                     Israel: 93 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_98f0129846e89aa4a53d6fd16da8c7ae = L.marker(
+                [31.0461, 34.8516],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_9d5d2268943aa8303f88bfc1d2414981 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Israel\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_98f0129846e89aa4a53d6fd16da8c7ae.setIcon(div_icon_9d5d2268943aa8303f88bfc1d2414981);
+            
+    
+            var circle_marker_6ede5c9d84d717d81aa1d73b9303ca5d = L.circleMarker(
+                [49.8175, 15.473],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.25, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_85207ec99cff6e8486c1ad45e44fc8bb = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_cf6e1e9fdce4110ca14c4d199df1ac75 = $(`<div id="html_cf6e1e9fdce4110ca14c4d199df1ac75" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Czech Republic</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 90<br>             <b>👥 Auteurs:</b> 57<br>             <b>🏛️ Labs:</b> 21         </div>         </div>`)[0];
+                popup_85207ec99cff6e8486c1ad45e44fc8bb.setContent(html_cf6e1e9fdce4110ca14c4d199df1ac75);
+            
+        
+
+        circle_marker_6ede5c9d84d717d81aa1d73b9303ca5d.bindPopup(popup_85207ec99cff6e8486c1ad45e44fc8bb)
+        ;
+
+        
+    
+    
+            circle_marker_6ede5c9d84d717d81aa1d73b9303ca5d.bindTooltip(
+                `<div>
+                     Czech Republic: 90 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4cd39d311e7d328255b32ec30bcef678 = L.marker(
+                [49.8175, 15.473],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_0b4401ba64624600844cfccd5d37b5ec = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Czech Republic\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_4cd39d311e7d328255b32ec30bcef678.setIcon(div_icon_0b4401ba64624600844cfccd5d37b5ec);
+            
+    
+            var circle_marker_bf77bd123e97c53928fc40bd379ccee5 = L.circleMarker(
+                [4.5709, -74.2973],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.125, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_87602d6ec94c95caf001ee97cba5455f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_11bf2e02021ef0e542b65159cabdea57 = $(`<div id="html_11bf2e02021ef0e542b65159cabdea57" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Colombia</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 89<br>             <b>👥 Auteurs:</b> 60<br>             <b>🏛️ Labs:</b> 36         </div>         </div>`)[0];
+                popup_87602d6ec94c95caf001ee97cba5455f.setContent(html_11bf2e02021ef0e542b65159cabdea57);
+            
+        
+
+        circle_marker_bf77bd123e97c53928fc40bd379ccee5.bindPopup(popup_87602d6ec94c95caf001ee97cba5455f)
+        ;
+
+        
+    
+    
+            circle_marker_bf77bd123e97c53928fc40bd379ccee5.bindTooltip(
+                `<div>
+                     Colombia: 89 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_aaa192eb14093ca0379585bc6319a951 = L.marker(
+                [4.5709, -74.2973],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_73d9b7d512de09dcf49dbadf3ce18859 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Colombia\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_aaa192eb14093ca0379585bc6319a951.setIcon(div_icon_73d9b7d512de09dcf49dbadf3ce18859);
+            
+    
+            var circle_marker_29192af5da161e870341cd1317afdb77 = L.circleMarker(
+                [33.8869, 9.5375],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.125, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_46bbfe8aa8ca844f7f7f15e68768f5a5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a3515d234d3310be30e1e24022fe9508 = $(`<div id="html_a3515d234d3310be30e1e24022fe9508" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Tunisia</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 89<br>             <b>👥 Auteurs:</b> 48<br>             <b>🏛️ Labs:</b> 27         </div>         </div>`)[0];
+                popup_46bbfe8aa8ca844f7f7f15e68768f5a5.setContent(html_a3515d234d3310be30e1e24022fe9508);
+            
+        
+
+        circle_marker_29192af5da161e870341cd1317afdb77.bindPopup(popup_46bbfe8aa8ca844f7f7f15e68768f5a5)
+        ;
+
+        
+    
+    
+            circle_marker_29192af5da161e870341cd1317afdb77.bindTooltip(
+                `<div>
+                     Tunisia: 89 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_671c07ca4c415a5aaec7f30946a1548c = L.marker(
+                [33.8869, 9.5375],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_c416107fea09a3976f3d3326a1cc4fd8 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Tunisia\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_671c07ca4c415a5aaec7f30946a1548c.setIcon(div_icon_c416107fea09a3976f3d3326a1cc4fd8);
+            
+    
+            var circle_marker_10d70eb3e7fe2a7cbd490dbe29a897e8 = L.circleMarker(
+                [47.5162, 14.5501],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.625, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_ae93449c5df1fac0e4fd7875a2ff8da0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a544901220b451aa741ce58dba3665a9 = $(`<div id="html_a544901220b451aa741ce58dba3665a9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Austria</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 85<br>             <b>👥 Auteurs:</b> 71<br>             <b>🏛️ Labs:</b> 41         </div>         </div>`)[0];
+                popup_ae93449c5df1fac0e4fd7875a2ff8da0.setContent(html_a544901220b451aa741ce58dba3665a9);
+            
+        
+
+        circle_marker_10d70eb3e7fe2a7cbd490dbe29a897e8.bindPopup(popup_ae93449c5df1fac0e4fd7875a2ff8da0)
+        ;
+
+        
+    
+    
+            circle_marker_10d70eb3e7fe2a7cbd490dbe29a897e8.bindTooltip(
+                `<div>
+                     Austria: 85 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_684447ffaad0655047a92cbb0c8192da = L.marker(
+                [47.5162, 14.5501],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_e8eaba7d5ffba1a6b00ce76a253693a3 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Austria\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_684447ffaad0655047a92cbb0c8192da.setIcon(div_icon_e8eaba7d5ffba1a6b00ce76a253693a3);
+            
+    
+            var circle_marker_8b8970271f87aabbe9ac4edba86579ea = L.circleMarker(
+                [47.1625, 19.5033],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.25, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d4a872723fd6692bc68db34f2def71eb = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9a52199ce095bdea9179c8bfbe78ddfe = $(`<div id="html_9a52199ce095bdea9179c8bfbe78ddfe" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Hungary</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 82<br>             <b>👥 Auteurs:</b> 60<br>             <b>🏛️ Labs:</b> 25         </div>         </div>`)[0];
+                popup_d4a872723fd6692bc68db34f2def71eb.setContent(html_9a52199ce095bdea9179c8bfbe78ddfe);
+            
+        
+
+        circle_marker_8b8970271f87aabbe9ac4edba86579ea.bindPopup(popup_d4a872723fd6692bc68db34f2def71eb)
+        ;
+
+        
+    
+    
+            circle_marker_8b8970271f87aabbe9ac4edba86579ea.bindTooltip(
+                `<div>
+                     Hungary: 82 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9cf8598a9f50c3de4f4d922519bf2c38 = L.marker(
+                [47.1625, 19.5033],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_980522807e6cb40d4ceb7593750ad93e = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Hungary\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_9cf8598a9f50c3de4f4d922519bf2c38.setIcon(div_icon_980522807e6cb40d4ceb7593750ad93e);
+            
+    
+            var circle_marker_15c627eb0669638f6adfdb3c4e0eeb86 = L.circleMarker(
+                [23.6345, -102.5528],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.75, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_5244281f3d7ef8984f6c8567c62b006b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0c88f13e0cf9e00f0f9cf93cd507466f = $(`<div id="html_0c88f13e0cf9e00f0f9cf93cd507466f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Mexico</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 78<br>             <b>👥 Auteurs:</b> 80<br>             <b>🏛️ Labs:</b> 35         </div>         </div>`)[0];
+                popup_5244281f3d7ef8984f6c8567c62b006b.setContent(html_0c88f13e0cf9e00f0f9cf93cd507466f);
+            
+        
+
+        circle_marker_15c627eb0669638f6adfdb3c4e0eeb86.bindPopup(popup_5244281f3d7ef8984f6c8567c62b006b)
+        ;
+
+        
+    
+    
+            circle_marker_15c627eb0669638f6adfdb3c4e0eeb86.bindTooltip(
+                `<div>
+                     Mexico: 78 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fb8138b41c8949392ed4bb4ae4cf58ad = L.marker(
+                [23.6345, -102.5528],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_2162df0cffe407475d3a365bf0b8e79e = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Mexico\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_fb8138b41c8949392ed4bb4ae4cf58ad.setIcon(div_icon_2162df0cffe407475d3a365bf0b8e79e);
+            
+    
+            var circle_marker_517b0f471859d4f4a30bd199e2096c8b = L.circleMarker(
+                [45.9432, 24.9668],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.5, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_03f0669be425f696b02ca9163dadeb03 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e266bb1e9dbfa7422c76230f18ae7784 = $(`<div id="html_e266bb1e9dbfa7422c76230f18ae7784" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Romania</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 76<br>             <b>👥 Auteurs:</b> 65<br>             <b>🏛️ Labs:</b> 31         </div>         </div>`)[0];
+                popup_03f0669be425f696b02ca9163dadeb03.setContent(html_e266bb1e9dbfa7422c76230f18ae7784);
+            
+        
+
+        circle_marker_517b0f471859d4f4a30bd199e2096c8b.bindPopup(popup_03f0669be425f696b02ca9163dadeb03)
+        ;
+
+        
+    
+    
+            circle_marker_517b0f471859d4f4a30bd199e2096c8b.bindTooltip(
+                `<div>
+                     Romania: 76 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_52c458d5b2c3102d3195e6088f3d5f37 = L.marker(
+                [45.9432, 24.9668],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_b82dfc486aa8285fe1609bfa9c4d2763 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Romania\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_52c458d5b2c3102d3195e6088f3d5f37.setIcon(div_icon_b82dfc486aa8285fe1609bfa9c4d2763);
+            
+    
+            var circle_marker_d4e8f8cfd0c39c36a354eccc66db2367 = L.circleMarker(
+                [56.2639, 9.5018],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.625, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_21010501ae46fd971750a122be572c25 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e4173a7a5e24b5074890746c6978cdcc = $(`<div id="html_e4173a7a5e24b5074890746c6978cdcc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Denmark</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 61<br>             <b>👥 Auteurs:</b> 51<br>             <b>🏛️ Labs:</b> 27         </div>         </div>`)[0];
+                popup_21010501ae46fd971750a122be572c25.setContent(html_e4173a7a5e24b5074890746c6978cdcc);
+            
+        
+
+        circle_marker_d4e8f8cfd0c39c36a354eccc66db2367.bindPopup(popup_21010501ae46fd971750a122be572c25)
+        ;
+
+        
+    
+    
+            circle_marker_d4e8f8cfd0c39c36a354eccc66db2367.bindTooltip(
+                `<div>
+                     Denmark: 61 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7e63573681b1a7b24cf2620d9555b5a0 = L.marker(
+                [56.2639, 9.5018],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_f38805557184d808bceace6d2243a917 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Denmark\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_7e63573681b1a7b24cf2620d9555b5a0.setIcon(div_icon_f38805557184d808bceace6d2243a917);
+            
+    
+            var circle_marker_6d341c30741c87fe2285be8105d6ab93 = L.circleMarker(
+                [-40.9006, 174.886],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.25, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_0c0655218476a338849f6d37c202fc1d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_cfc6bbce080432323868a72a0a4d16fc = $(`<div id="html_cfc6bbce080432323868a72a0a4d16fc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">New Zealand</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 58<br>             <b>👥 Auteurs:</b> 35<br>             <b>🏛️ Labs:</b> 18         </div>         </div>`)[0];
+                popup_0c0655218476a338849f6d37c202fc1d.setContent(html_cfc6bbce080432323868a72a0a4d16fc);
+            
+        
+
+        circle_marker_6d341c30741c87fe2285be8105d6ab93.bindPopup(popup_0c0655218476a338849f6d37c202fc1d)
+        ;
+
+        
+    
+    
+            circle_marker_6d341c30741c87fe2285be8105d6ab93.bindTooltip(
+                `<div>
+                     New Zealand: 58 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ffb2fb52700514d3bf449f9507dd1b97 = L.marker(
+                [-40.9006, 174.886],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_4e80e736a6cc7164f6cb4d233a779f59 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        New Zealand\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_ffb2fb52700514d3bf449f9507dd1b97.setIcon(div_icon_4e80e736a6cc7164f6cb4d233a779f59);
+            
+    
+            var circle_marker_c2268c182e609e42b84b5aeb27975ae1 = L.circleMarker(
+                [23.4241, 53.8478],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.0, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d5e6d0565e99603276497cfee2c0ef52 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_74e9d370ff83a4f9872b9cdbfbb0a48c = $(`<div id="html_74e9d370ff83a4f9872b9cdbfbb0a48c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">UAE</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 56<br>             <b>👥 Auteurs:</b> 48<br>             <b>🏛️ Labs:</b> 20         </div>         </div>`)[0];
+                popup_d5e6d0565e99603276497cfee2c0ef52.setContent(html_74e9d370ff83a4f9872b9cdbfbb0a48c);
+            
+        
+
+        circle_marker_c2268c182e609e42b84b5aeb27975ae1.bindPopup(popup_d5e6d0565e99603276497cfee2c0ef52)
+        ;
+
+        
+    
+    
+            circle_marker_c2268c182e609e42b84b5aeb27975ae1.bindTooltip(
+                `<div>
+                     UAE: 56 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_56eeb5044dc38bd59477aac73bf6cebf = L.marker(
+                [23.4241, 53.8478],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_2f29bd212e0d82665a99d0a6a021e3a3 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        UAE\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_56eeb5044dc38bd59477aac73bf6cebf.setIcon(div_icon_2f29bd212e0d82665a99d0a6a021e3a3);
+            
+    
+            var circle_marker_0d9ad9655c7db6962fdfd0a85f73968c = L.circleMarker(
+                [9.082, 8.6753],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffaa44", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.625, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_6ee5a4324c2151616697fc93297cc413 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_11c394ffbf2a409b9f3d211e18a73735 = $(`<div id="html_11c394ffbf2a409b9f3d211e18a73735" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #ff8c00;">Nigeria</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 53<br>             <b>👥 Auteurs:</b> 37<br>             <b>🏛️ Labs:</b> 19         </div>         </div>`)[0];
+                popup_6ee5a4324c2151616697fc93297cc413.setContent(html_11c394ffbf2a409b9f3d211e18a73735);
+            
+        
+
+        circle_marker_0d9ad9655c7db6962fdfd0a85f73968c.bindPopup(popup_6ee5a4324c2151616697fc93297cc413)
+        ;
+
+        
+    
+    
+            circle_marker_0d9ad9655c7db6962fdfd0a85f73968c.bindTooltip(
+                `<div>
+                     Nigeria: 53 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cd6fbaa8c341760b737939efc0558395 = L.marker(
+                [9.082, 8.6753],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_eaa07c28a3f55ad031401714618f5989 = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Nigeria\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_cd6fbaa8c341760b737939efc0558395.setIcon(div_icon_eaa07c28a3f55ad031401714618f5989);
+            
+    
+            var circle_marker_315657f99530b343c55370d285cd1add = L.circleMarker(
+                [-35.6751, -71.543],
+                {"bubblingMouseEvents": true, "color": "#4169e1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6495ed", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.75, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_83d75b643ab5543b269bbb183060f018 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_08fcb2ac5d53107b08e64a4cc775b0d7 = $(`<div id="html_08fcb2ac5d53107b08e64a4cc775b0d7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #4169e1;">Chile</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 46<br>             <b>👥 Auteurs:</b> 33<br>             <b>🏛️ Labs:</b> 21         </div>         </div>`)[0];
+                popup_83d75b643ab5543b269bbb183060f018.setContent(html_08fcb2ac5d53107b08e64a4cc775b0d7);
+            
+        
+
+        circle_marker_315657f99530b343c55370d285cd1add.bindPopup(popup_83d75b643ab5543b269bbb183060f018)
+        ;
+
+        
+    
+    
+            circle_marker_315657f99530b343c55370d285cd1add.bindTooltip(
+                `<div>
+                     Chile: 46 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_81bfcb9d3cc352645fba0e7326e315ca = L.marker(
+                [-35.6751, -71.543],
+                {
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+            var div_icon_136cb299c690f6d23df731a0d200ab5c = L.divIcon({
+  "html": "\n                    \u003cdiv style=\"font-size: 11pt; color: black; font-weight: bold; \n                                text-shadow: -1px -1px 0 white, 1px -1px 0 white, \n                                -1px 1px 0 white, 1px 1px 0 white;\"\u003e\n                        Chile\n                    \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_81bfcb9d3cc352645fba0e7326e315ca.setIcon(div_icon_136cb299c690f6d23df731a0d200ab5c);
+            
+    
+            var circle_marker_c72ea1a4f0642ed9922a5888a3ffe9d9 = L.circleMarker(
+                [55.3781, -3.436],
+                {"bubblingMouseEvents": true, "color": "#4169e1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6495ed", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.25, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_c3bc881f2db172ead6f16d9693f32088 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_715a6a041d49f5a4c7c95d83d3c7dd9d = $(`<div id="html_715a6a041d49f5a4c7c95d83d3c7dd9d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #4169e1;">UK</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 26<br>             <b>👥 Auteurs:</b> 24<br>             <b>🏛️ Labs:</b> 14         </div>         </div>`)[0];
+                popup_c3bc881f2db172ead6f16d9693f32088.setContent(html_715a6a041d49f5a4c7c95d83d3c7dd9d);
+            
+        
+
+        circle_marker_c72ea1a4f0642ed9922a5888a3ffe9d9.bindPopup(popup_c3bc881f2db172ead6f16d9693f32088)
+        ;
+
+        
+    
+    
+            circle_marker_c72ea1a4f0642ed9922a5888a3ffe9d9.bindTooltip(
+                `<div>
+                     UK: 26 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2236209f256b1c2ab7614fbdf3982c52 = L.circleMarker(
+                [-38.4161, -63.6167],
+                {"bubblingMouseEvents": true, "color": "#4169e1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6495ed", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.75, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_966174218fc854c1054f97c8bfd5ecf9 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f3cb7d9575f04ce46f91eabdbad91476 = $(`<div id="html_f3cb7d9575f04ce46f91eabdbad91476" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #4169e1;">Argentina</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 22<br>             <b>👥 Auteurs:</b> 15<br>             <b>🏛️ Labs:</b> 7         </div>         </div>`)[0];
+                popup_966174218fc854c1054f97c8bfd5ecf9.setContent(html_f3cb7d9575f04ce46f91eabdbad91476);
+            
+        
+
+        circle_marker_2236209f256b1c2ab7614fbdf3982c52.bindPopup(popup_966174218fc854c1054f97c8bfd5ecf9)
+        ;
+
+        
+    
+    
+            circle_marker_2236209f256b1c2ab7614fbdf3982c52.bindTooltip(
+                `<div>
+                     Argentina: 22 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49f5396029fc8a454efa89f1ea304b28 = L.circleMarker(
+                [52.1326, 5.2913],
+                {"bubblingMouseEvents": true, "color": "#20b2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7fffd4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_d2fe4107f43f7a87c5ef4af7a3ebed56 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_db4ba339d4fd308665248c8d8c73bac5 = $(`<div id="html_db4ba339d4fd308665248c8d8c73bac5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #20b2aa;">Netherlands</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 16<br>             <b>👥 Auteurs:</b> 12<br>             <b>🏛️ Labs:</b> 6         </div>         </div>`)[0];
+                popup_d2fe4107f43f7a87c5ef4af7a3ebed56.setContent(html_db4ba339d4fd308665248c8d8c73bac5);
+            
+        
+
+        circle_marker_49f5396029fc8a454efa89f1ea304b28.bindPopup(popup_d2fe4107f43f7a87c5ef4af7a3ebed56)
+        ;
+
+        
+    
+    
+            circle_marker_49f5396029fc8a454efa89f1ea304b28.bindTooltip(
+                `<div>
+                     Netherlands: 16 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81982993daa371a4741212dee577a5a5 = L.circleMarker(
+                [37.0902, -95.7129],
+                {"bubblingMouseEvents": true, "color": "#20b2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7fffd4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.875, "stroke": true, "weight": 2}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+    
+        var popup_1f5d9111a154e854710433d1d048ca09 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_03b9fd42a1c0864d9271bb8a6a333fc8 = $(`<div id="html_03b9fd42a1c0864d9271bb8a6a333fc8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 200px;">             <h4 style="margin: 0; color: #20b2aa;">US</h4>             <hr style="margin: 5px 0;">             <b>📚 Publications:</b> 15<br>             <b>👥 Auteurs:</b> 14<br>             <b>🏛️ Labs:</b> 8         </div>         </div>`)[0];
+                popup_1f5d9111a154e854710433d1d048ca09.setContent(html_03b9fd42a1c0864d9271bb8a6a333fc8);
+            
+        
+
+        circle_marker_81982993daa371a4741212dee577a5a5.bindPopup(popup_1f5d9111a154e854710433d1d048ca09)
+        ;
+
+        
+    
+    
+            circle_marker_81982993daa371a4741212dee577a5a5.bindTooltip(
+                `<div>
+                     US: 15 pubs
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_18c7e3b58501559caf7c784caa02ae8c);
+        
+</script>
+</html>

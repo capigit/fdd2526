@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# SQLite databases and generated data
+bd/*.db
+bd/*.sqlite
+*.db
+*.sqlite
+outputs_eda/
+analyse/EDA/stats_descriptives.csv
+analyse/clustering/*.csv
+analyse/clustering/*.pkl
+analyse/prediction/*.csv
+analyse/prediction/*.npz
+analyse/prediction/*.pkl
+analyse/prediction/*.joblib
+analyse/collaboration/*.gexf
+analyse/collaboration/centrality.csv
+analyse/collaboration/communities.csv
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.bak
+*.swp
+*.orig
+*.rej
+
+# Editors and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+thumbs.db
+desktop.ini
+
+# Frontend
+site/node_modules/
+site/dist/
+site/.netlify/
+.netlify/

@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-06-01T11:28:42.037558+00:00",
+  "counts": {
+    "articles": 10077,
+    "authors": 53493,
+    "labs": 30146,
+    "keywords": 159043,
+    "article_authors": 57162,
+    "author_labs": 60214
+  },
+  "coverage": {
+    "articlesWithKeywords": 10061,
+    "articlesWithCountry": 10052,
+    "graphNodes": 800,
+    "graphEdges": 5000
+  }
+}

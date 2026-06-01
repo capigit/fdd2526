@@ -1,0 +1,248 @@
+[
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2017,
+    "count": 5
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2017,
+    "count": 5
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2017,
+    "count": 11
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2017,
+    "count": 1
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2018,
+    "count": 59
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2018,
+    "count": 35
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2018,
+    "count": 73
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2018,
+    "count": 3
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2019,
+    "count": 204
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2019,
+    "count": 216
+  },
+  {
+    "source": "ieee_llm_articles.db",
+    "label": "LLM",
+    "year": 2019,
+    "count": 1
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2019,
+    "count": 203
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2019,
+    "count": 58
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2020,
+    "count": 347
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2020,
+    "count": 324
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2020,
+    "count": 385
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2020,
+    "count": 80
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2021,
+    "count": 333
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2021,
+    "count": 320
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2021,
+    "count": 362
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2021,
+    "count": 78
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2022,
+    "count": 412
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2022,
+    "count": 364
+  },
+  {
+    "source": "ieee_llm_articles.db",
+    "label": "LLM",
+    "year": 2022,
+    "count": 1
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2022,
+    "count": 317
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2022,
+    "count": 75
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2023,
+    "count": 631
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2023,
+    "count": 430
+  },
+  {
+    "source": "ieee_llm_articles.db",
+    "label": "LLM",
+    "year": 2023,
+    "count": 4
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2023,
+    "count": 382
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2023,
+    "count": 90
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2024,
+    "count": 1092
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2024,
+    "count": 591
+  },
+  {
+    "source": "ieee_llm_articles.db",
+    "label": "LLM",
+    "year": 2024,
+    "count": 87
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2024,
+    "count": 551
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2024,
+    "count": 145
+  },
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "year": 2025,
+    "count": 794
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "year": 2025,
+    "count": 349
+  },
+  {
+    "source": "ieee_llm_articles.db",
+    "label": "LLM",
+    "year": 2025,
+    "count": 183
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "year": 2025,
+    "count": 341
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "year": 2025,
+    "count": 121
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "Observatoire IEEE IA",
+  "short_name": "IEEE IA",
+  "description": "Dashboard interactif d'analyse d'articles IEEE sur l'IA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "source": "ieee_ai_articles.db",
+    "label": "Artificial intelligence",
+    "count": 3880
+  },
+  {
+    "source": "ieee_deep_learning.db",
+    "label": "Deep learning",
+    "count": 2640
+  },
+  {
+    "source": "ieee_machine_learning.db",
+    "label": "Machine learning",
+    "count": 2630
+  },
+  {
+    "source": "ieee_nlp.db",
+    "label": "NLP",
+    "count": 651
+  },
+  {
+    "source": "ieee_llm_articles.db",
+    "label": "LLM",
+    "count": 276
+  }
+]
