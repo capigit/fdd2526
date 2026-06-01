@@ -1,3 +1,5 @@
+<div align="center">
+
 # Observatoire IEEE IA
 
 Dashboard interactif de fouille de donnees scientifiques autour des articles IEEE lies a l'intelligence artificielle, au machine learning, au deep learning, au NLP et aux LLM.
@@ -11,6 +13,8 @@ Dashboard interactif de fouille de donnees scientifiques autour des articles IEE
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 **Demo live :** https://ai-articles-ieee.netlify.app/
+
+</div>
 
 ![Capture du dashboard Observatoire IEEE IA](AI-IEEE.png)
 
