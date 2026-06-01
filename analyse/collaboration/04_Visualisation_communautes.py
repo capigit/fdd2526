@@ -3,11 +3,13 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import community as community_louvain
 import matplotlib.colors as mcolors
+from pathlib import Path
 
 # Chemin des fichiers
-G_path = "analyse/collaboration/graphe_collaboration.gexf"
-comm_path = "analyse/collaboration/communities.csv"
-output_png = "analyse/collaboration/graph_communautes.png"
+OUTPUT_DIR = Path("outputs/collaboration")
+G_path = OUTPUT_DIR / "graphe_collaboration.gexf"
+comm_path = OUTPUT_DIR / "communities.csv"
+output_png = OUTPUT_DIR / "graph_communautes.png"
 
 # Chargement du graphe
 G = nx.read_gexf(G_path)
@@ -40,6 +42,7 @@ nx.draw_networkx_edges(G_sub, pos, alpha=0.1)
 plt.title("Visualisation des communautés (top 1000 auteurs les plus connectés)")
 plt.axis('off')
 plt.tight_layout()
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 plt.savefig(output_png, dpi=300)
 plt.show()
 

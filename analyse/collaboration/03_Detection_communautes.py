@@ -2,9 +2,12 @@ import networkx as nx
 import pandas as pd
 import community as community_louvain  # python-louvain
 import os
+from pathlib import Path
+
+OUTPUT_DIR = Path("outputs/collaboration")
 
 # Chemin du graphe construit précédemment
-graph_path = "analyse/collaboration/graphe_collaboration.gexf"
+graph_path = OUTPUT_DIR / "graphe_collaboration.gexf"
 
 # Vérifier que le fichier existe
 if not os.path.exists(graph_path):
@@ -24,6 +27,7 @@ print(f"Nombre de communautés détectées : {df_communities['community'].nuniqu
 print(f"Taille moyenne d'une communauté : {df_communities.groupby('community').size().mean():.2f} auteurs")
 
 # Export CSV
-output_path = "analyse/collaboration/communities.csv"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+output_path = OUTPUT_DIR / "communities.csv"
 df_communities.to_csv(output_path, index=False)
 print(f"Communautés exportées : {output_path}")

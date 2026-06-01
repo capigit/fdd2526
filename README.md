@@ -14,6 +14,8 @@ Le projet couvre toute la chaine :
 ## Structure
 
 ```text
+docs/                Documents de reference
+notebooks/           Notebooks d'exploration
 bdSource/             Fichiers JSON sources
 bd/                   Bases SQLite generees
 scripts_imports/      Import JSON vers SQLite
@@ -24,7 +26,8 @@ analyse/
   clustering/         TF-IDF, KMeans, preparation prediction
   prediction/         Pretraitement, entrainement, prediction
   collaboration/      Graphes de co-auteurs et communautes
-outputs_eda/          Sorties CSV et images d'analyse
+outputs/              Sorties generees non versionnees
+site/                 Application web Vite + React
 ```
 
 ## Installation
@@ -104,7 +107,7 @@ python analyse/clustering/01_Extraction_mots_cles_articles.py
 python analyse/clustering/02_TFIDF_et_features.py
 python analyse/clustering/03_Clustering_articles.py
 python analyse/clustering/04_Clustering_auteurs.py
-python analyse/clustering/Preparation_features_prediction.py.py
+python analyse/clustering/05_Preparation_features_prediction.py
 ```
 
 Sorties principales :
@@ -176,7 +179,7 @@ Checklist avant publication :
 
 - regenerer `site/public/data/*.json` apres toute modification de `bd/fusion_ieee.db`
 - lancer `npm run build` depuis `site/`
-- verifier que `bd/*.db`, `analyse/**/*.pkl`, `analyse/**/*.npz`, `site/node_modules/` et `site/dist/` ne sont pas versionnes
+- verifier que `bd/*.db`, `analyse/**/*.pkl`, `analyse/**/*.npz`, `outputs/`, `site/node_modules/` et `site/dist/` ne sont pas versionnes
 - garder `site/public/data/` versionne si le site doit etre deploye sans pipeline de donnees cote Netlify
 - tester localement `http://127.0.0.1:5173/` avant push
 
@@ -186,7 +189,6 @@ Checklist avant publication :
 - Les bases SQLite et plusieurs fichiers de sortie sont des artefacts generes.
 - Une sauvegarde locale de l'ancienne base fusionnee peut exister sous `bd/fusion_ieee.before_remap.db`.
 - Le fichier `analyse/EDA/impact_publications.py` est actuellement vide.
-- Le fichier `analyse/clustering/Preparation_features_prediction.py.py` conserve son nom actuel pour ne pas casser les commandes existantes.
 
 ## Licence
 

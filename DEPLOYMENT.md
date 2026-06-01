@@ -47,6 +47,7 @@ Les fichiers suivants doivent rester locaux :
 - `bd/*.db`
 - `analyse/**/*.pkl`
 - `analyse/**/*.npz`
+- `outputs/`
 - `site/node_modules/`
 - `site/dist/`
 - `.venv/`

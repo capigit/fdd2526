@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
@@ -17,7 +18,7 @@ bd/*.db
 bd/*.sqlite
 *.db
 *.sqlite
-outputs_eda/
+outputs/
 analyse/EDA/stats_descriptives.csv
 analyse/clustering/*.csv
 analyse/clustering/*.pkl
@@ -26,8 +27,11 @@ analyse/prediction/*.npz
 analyse/prediction/*.pkl
 analyse/prediction/*.joblib
 analyse/collaboration/*.gexf
+analyse/collaboration/*.html
+analyse/collaboration/*.png
 analyse/collaboration/centrality.csv
 analyse/collaboration/communities.csv
+inspectBdFusionnee/*.png
 
 # Logs and temporary files
 *.log
@@ -46,6 +50,7 @@ yarn-error.log*
 Thumbs.db
 thumbs.db
 desktop.ini
+**/desktop.ini
 
 # Frontend
 site/node_modules/

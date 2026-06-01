@@ -4,8 +4,12 @@ import networkx as nx
 from pyvis.network import Network
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
+from pathlib import Path
 
 DB_PATH = "bd/fusion_ieee.db"
+OUTPUT_DIR = Path("outputs/collaboration")
+GEXF_PATH = OUTPUT_DIR / "graphe_collaboration.gexf"
+HTML_PATH = OUTPUT_DIR / "graphe_collaboration.html"
 
 def load_data():
     conn = sqlite3.connect(DB_PATH)
@@ -36,7 +40,7 @@ def build_graph(df_aa, df_authors):
 
     return G
 
-def generate_html_graph(G, output_path="analyse/collaboration/graphe_collaboration.html"):
+def generate_html_graph(G, output_path=HTML_PATH):
     """
     Génère une visualisation HTML interactive du graphe avec des couleurs
     """
@@ -149,7 +153,9 @@ def generate_html_graph(G, output_path="analyse/collaboration/graphe_collaborati
         )
     
     # Sauvegarder le fichier HTML
-    net.save_graph(output_path)
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    net.save_graph(str(output_path))
     print(f"Graphe HTML genere : {output_path}")
     
     return output_path
@@ -198,8 +204,9 @@ if __name__ == "__main__":
     
     # Exporter en GEXF (format original)
     print("Export GEXF...")
-    nx.write_gexf(G, "analyse/collaboration/graphe_collaboration.gexf")
-    print("Export GEXF : analyse/collaboration/graphe_collaboration.gexf")
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    nx.write_gexf(G, GEXF_PATH)
+    print(f"Export GEXF : {GEXF_PATH}")
     
     # Générer la visualisation HTML
     print("\nGénération de la visualisation HTML...")

@@ -1,8 +1,11 @@
 import pandas as pd
 import sqlite3
 import networkx as nx
+from pathlib import Path
 
 DB_PATH = "bd/fusion_ieee.db"
+OUTPUT_DIR = Path("outputs/collaboration")
+GEXF_PATH = OUTPUT_DIR / "graphe_collaboration.gexf"
 
 def load_data():
     conn = sqlite3.connect(DB_PATH)
@@ -37,7 +40,8 @@ if __name__ == "__main__":
     df_aa, df_authors = load_data()
     G = build_graph(df_aa, df_authors)
 
-    nx.write_gexf(G, "analyse/collaboration/graphe_collaboration.gexf")
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    nx.write_gexf(G, GEXF_PATH)
 
     print("Graphe construit :", G.number_of_nodes(), "nœuds,", G.number_of_edges(), "arêtes.")
-    print("Export : analyse/collaboration/graphe_collaboration.gexf")
+    print(f"Export : {GEXF_PATH}")

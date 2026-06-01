@@ -1,8 +1,13 @@
 import networkx as nx
 import pandas as pd
+from pathlib import Path
+
+OUTPUT_DIR = Path("outputs/collaboration")
+GEXF_PATH = OUTPUT_DIR / "graphe_collaboration.gexf"
+CENTRALITY_PATH = OUTPUT_DIR / "centrality.csv"
 
 # Charger le graphe construit
-G = nx.read_gexf("analyse/collaboration/graphe_collaboration.gexf")
+G = nx.read_gexf(GEXF_PATH)
 print(f"Graphe chargé : {G.number_of_nodes()} nœuds, {G.number_of_edges()} arêtes")
 
 # Degree (nombre de connexions par auteur)
@@ -32,5 +37,6 @@ df_centrality = pd.DataFrame({
 })
 
 # Export CSV
-df_centrality.to_csv("analyse/collaboration/centrality.csv", index=False)
-print("Mesures de centralité exportées : analyse/collaboration/centrality.csv")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+df_centrality.to_csv(CENTRALITY_PATH, index=False)
+print(f"Mesures de centralité exportées : {CENTRALITY_PATH}")

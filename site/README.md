@@ -24,9 +24,10 @@ npm run dev
 
 Les donnees du site sont lues depuis `public/data/*.json`.
 
-Depuis la racine du projet :
+Depuis le dossier `site/` :
 
 ```bash
+cd ..
 python scripts_exports/export_site_data.py
 ```
 

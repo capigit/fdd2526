@@ -11,7 +11,7 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = PROJECT_ROOT / "bd" / "fusion_ieee.db"
-OUTPUT_PATH = PROJECT_ROOT / "analyse" / "collaboration" / "carte_vraies_collaborations.html"
+OUTPUT_PATH = PROJECT_ROOT / "outputs" / "collaboration" / "carte_vraies_collaborations.html"
 
 
 COUNTRY_COORDS = {
