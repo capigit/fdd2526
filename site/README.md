@@ -15,7 +15,7 @@ Application statique de restitution pour le projet de fouille de donnees IEEE.
 
 ## Developpement local
 
-```powershell
+```bash
 npm install
 npm run dev
 ```
@@ -26,13 +26,13 @@ Les donnees du site sont lues depuis `public/data/*.json`.
 
 Depuis la racine du projet :
 
-```powershell
-python .\scripts_exports\export_site_data.py
+```bash
+python scripts_exports/export_site_data.py
 ```
 
 ## Build
 
-```powershell
+```bash
 npm run build
 ```
 

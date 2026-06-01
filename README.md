@@ -31,17 +31,9 @@ outputs_eda/          Sorties CSV et images d'analyse
 
 Depuis la racine du projet :
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-```
-
-Sous Linux/WSL :
-
 ```bash
-python3 -m venv .venv-linux
-source .venv-linux/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
@@ -67,52 +59,52 @@ Les commandes peuvent etre lancees depuis la racine du projet.
 
 Chaque script recree sa base cible dans `bd/`.
 
-```powershell
-python .\scripts_imports\import_AI.py
-python .\scripts_imports\import_DL.py
-python .\scripts_imports\import_ML.py
-python .\scripts_imports\import_NLP.py
-python .\scripts_imports\import_ieee_to_sqlite.py
+```bash
+python scripts_imports/import_AI.py
+python scripts_imports/import_DL.py
+python scripts_imports/import_ML.py
+python scripts_imports/import_NLP.py
+python scripts_imports/import_ieee_to_sqlite.py
 ```
 
 ### 2. Fusionner et nettoyer
 
-```powershell
-python .\scripts_fusions\fusion_bases_v2.py
-python .\scripts_fusions\nettoyage_fusion.py
+```bash
+python scripts_fusions/fusion_bases_v2.py
+python scripts_fusions/nettoyage_fusion.py
 ```
 
 `fusion_bases_v2.py` remappe les IDs des articles, auteurs et laboratoires depuis les bases sources vers la base fusionnee. Cela evite les liens incorrects dans `article_authors` et `author_labs` apres fusion/dedoublonnage.
 
 ### 3. Inspecter la base
 
-```powershell
-python .\liste_bd.py
-python .\inspectBdFusionnee\descriptionBD.py
-python .\inspectBdFusionnee\analyse_fusion.py
+```bash
+python liste_bd.py
+python inspectBdFusionnee/descriptionBD.py
+python inspectBdFusionnee/analyse_fusion.py
 ```
 
 ### 4. Analyses exploratoires
 
-```powershell
-python .\analyse\EDA\01_Chargement_et_inspection.py
-python .\analyse\EDA\02_Verification_integrite_relationnelle.py
-python .\analyse\EDA\03_Statistiques_descriptives.py
-python .\analyse\EDA\04_Analyse_mots_cles.py
-python .\analyse\EDA\05_Analyse_auteurs_labs.py
-python .\analyse\EDA\06_Qualite_des_donnees.py
+```bash
+python analyse/EDA/01_Chargement_et_inspection.py
+python analyse/EDA/02_Verification_integrite_relationnelle.py
+python analyse/EDA/03_Statistiques_descriptives.py
+python analyse/EDA/04_Analyse_mots_cles.py
+python analyse/EDA/05_Analyse_auteurs_labs.py
+python analyse/EDA/06_Qualite_des_donnees.py
 ```
 
 Le script `03_Statistiques_descriptives.py` genere `analyse/EDA/stats_descriptives.csv`, utilise ensuite par le clustering.
 
 ### 5. Clustering
 
-```powershell
-python .\analyse\clustering\01_Extraction_mots_cles_articles.py
-python .\analyse\clustering\02_TFIDF_et_features.py
-python .\analyse\clustering\03_Clustering_articles.py
-python .\analyse\clustering\04_Clustering_auteurs.py
-python .\analyse\clustering\Preparation_features_prediction.py.py
+```bash
+python analyse/clustering/01_Extraction_mots_cles_articles.py
+python analyse/clustering/02_TFIDF_et_features.py
+python analyse/clustering/03_Clustering_articles.py
+python analyse/clustering/04_Clustering_auteurs.py
+python analyse/clustering/Preparation_features_prediction.py.py
 ```
 
 Sorties principales :
@@ -125,10 +117,10 @@ Sorties principales :
 
 ### 6. Prediction
 
-```powershell
-python .\analyse\prediction\01_Preprocess.py
-python .\analyse\prediction\02_Training.py
-python .\analyse\prediction\03_Predict.py
+```bash
+python analyse/prediction/01_Preprocess.py
+python analyse/prediction/02_Training.py
+python analyse/prediction/03_Predict.py
 ```
 
 Le preprocessing sauvegarde aussi les transformateurs requis par la prediction :
@@ -141,17 +133,17 @@ Le preprocessing sauvegarde aussi les transformateurs requis par la prediction :
 
 Pour construire le graphe de co-auteurs et detecter les communautes :
 
-```powershell
-python .\analyse\collaboration\01_Construction_graphe.py
-python .\analyse\collaboration\02_Mesures_centralite.py
-python .\analyse\collaboration\03_Detection_communautes.py
-python .\analyse\collaboration\04_Visualisation_communautes.py
+```bash
+python analyse/collaboration/01_Construction_graphe.py
+python analyse/collaboration/02_Mesures_centralite.py
+python analyse/collaboration/03_Detection_communautes.py
+python analyse/collaboration/04_Visualisation_communautes.py
 ```
 
 Une version HTML interactive peut etre generee avec :
 
-```powershell
-python .\analyse\collaboration\graph_html.py
+```bash
+python analyse/collaboration/graph_html.py
 ```
 
 ## Restitution web
@@ -160,13 +152,13 @@ Le dossier `site/` contient une application statique Vite + React + TypeScript d
 
 Les donnees publiques du site sont exportees depuis `bd/fusion_ieee.db` vers `site/public/data/` :
 
-```powershell
-python .\scripts_exports\export_site_data.py
+```bash
+python scripts_exports/export_site_data.py
 ```
 
 Depuis `site/` :
 
-```powershell
+```bash
 npm install
 npm run dev
 npm run build
