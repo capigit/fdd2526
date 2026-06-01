@@ -73,7 +73,7 @@ export function MethodologyPanel({ data }: MethodologyPanelProps) {
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           {[
             "Regenerer les JSON: python scripts_exports/export_site_data.py",
-            "Verifier le build: conda run -n claude-dev npm run build",
+            "Verifier le build: npm run build",
             "Base directory Netlify: site",
             "Build command: npm run build",
             "Publish directory: site/dist",

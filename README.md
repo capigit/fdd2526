@@ -37,6 +37,15 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+Sous Linux/WSL :
+
+```bash
+python3 -m venv .venv-linux
+source .venv-linux/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
 ## Base fusionnee actuelle
 
 La base principale est `bd/fusion_ieee.db`.
@@ -161,15 +170,6 @@ Depuis `site/` :
 npm install
 npm run dev
 npm run build
-```
-
-Si Node.js n'est disponible que dans un environnement Anaconda, utiliser par exemple :
-
-```powershell
-cd .\site
-conda run -n claude-dev npm install
-conda run -n claude-dev npm run dev -- --port 5173
-conda run -n claude-dev npm run build
 ```
 
 Deploiement Netlify :

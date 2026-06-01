@@ -15,18 +15,9 @@ Application statique de restitution pour le projet de fouille de donnees IEEE.
 
 ## Developpement local
 
-Avec Node.js disponible :
-
 ```powershell
 npm install
 npm run dev
-```
-
-Avec l'environnement Anaconda utilise sur ce poste :
-
-```powershell
-conda run -n claude-dev npm install
-conda run -n claude-dev npm run dev -- --port 5173
 ```
 
 ## Donnees
@@ -43,12 +34,6 @@ python .\scripts_exports\export_site_data.py
 
 ```powershell
 npm run build
-```
-
-Ou via conda :
-
-```powershell
-conda run -n claude-dev npm run build
 ```
 
 ## Netlify
