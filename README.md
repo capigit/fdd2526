@@ -1,25 +1,137 @@
-# Analyse d'articles scientifiques IEEE sur l'IA
+# Observatoire IEEE IA
 
-Projet Python de fouille de donnees autour d'articles IEEE lies a l'intelligence artificielle, au machine learning, au deep learning, au NLP et aux LLM.
+Dashboard interactif de fouille de donnees scientifiques autour des articles IEEE lies a l'intelligence artificielle, au machine learning, au deep learning, au NLP et aux LLM.
 
-Le projet couvre toute la chaine :
+[![Live demo](https://img.shields.io/badge/Live%20demo-online-00C7B7?logo=netlify&logoColor=white)](https://ai-articles-ieee.netlify.app/)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=111)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)
+![Netlify](https://img.shields.io/badge/Deploy-Netlify-00C7B7?logo=netlify&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+**Demo live :** https://ai-articles-ieee.netlify.app/
+
+![Capture du dashboard Observatoire IEEE IA](AI-IEEE.png)
+
+## Sommaire
+
+- [Vue d'ensemble](#vue-densemble)
+- [Objectifs](#objectifs)
+- [Resultats cles](#resultats-cles)
+- [Fonctionnalites](#fonctionnalites)
+- [Architecture du pipeline](#architecture-du-pipeline)
+- [Structure du depot](#structure-du-depot)
+- [Stack technique](#stack-technique)
+- [Installation locale](#installation-locale)
+- [Workflow data](#workflow-data)
+- [Application web](#application-web)
+- [Deploiement Netlify](#deploiement-netlify)
+- [Donnees et artefacts](#donnees-et-artefacts)
+- [Limites](#limites)
+- [Licence](#licence)
+
+## Vue d'ensemble
+
+Ce projet transforme un corpus brut d'exports IEEE en une application web statique permettant d'explorer les tendances, themes, auteurs, laboratoires, pays, clusters et collaborations scientifiques autour de l'IA.
+
+Le travail couvre toute la chaine :
 
 - import des fichiers JSON IEEE vers SQLite ;
 - fusion et harmonisation des bases ;
-- analyse exploratoire ;
+- controle qualite et analyses exploratoires ;
+- extraction de features textuelles ;
 - clustering d'articles et d'auteurs ;
-- analyse des collaborations ;
-- entrainement d'un modele de prediction de cluster.
+- analyse de graphes de collaboration ;
+- export de donnees JSON pour le frontend ;
+- restitution dans un dashboard React deploye sur Netlify.
 
-## Structure
+## Objectifs
+
+Le projet vise a rendre exploitable un corpus scientifique volumineux en repondant a plusieurs questions :
+
+- comment evoluent les publications IEEE liees a l'IA dans le temps ?
+- quels themes, mots-cles et sources dominent le corpus ?
+- quels auteurs, laboratoires et pays sont les plus representes ?
+- quelles collaborations apparaissent entre auteurs et entre pays ?
+- quels regroupements thematiques emergent via le clustering ?
+- quelles limites de qualite ou de couverture doivent etre prises en compte ?
+
+## Resultats cles
+
+La base fusionnee principale est `bd/fusion_ieee.db`.
+
+| Indicateur | Volume |
+| --- | ---: |
+| Articles | 10 077 |
+| Auteurs | 53 493 |
+| Laboratoires / affiliations | 30 146 |
+| Mots-cles | 159 043 |
+| Relations article-auteur | 57 162 |
+| Relations auteur-laboratoire | 60 214 |
+
+Ces donnees sont consolidees puis exportees dans `site/public/data/*.json` pour alimenter l'application web sans backend.
+
+## Fonctionnalites
+
+### Pipeline Python
+
+- Import de plusieurs corpus IEEE thematiques.
+- Creation de bases SQLite intermediaires.
+- Fusion relationnelle des articles, auteurs, laboratoires et mots-cles.
+- Remapping des IDs pour conserver les relations correctes apres fusion.
+- Nettoyage et diagnostic de la base fusionnee.
+- Generation de statistiques descriptives.
+- Extraction TF-IDF et creation de features.
+- Clustering d'articles et d'auteurs.
+- Preparation des donnees de prediction.
+- Construction de graphes de co-auteurs.
+- Calcul de centralites et detection de communautes.
+- Export des donnees publiques au format JSON.
+
+### Dashboard web
+
+- Synthese globale du corpus.
+- Courbes temporelles de publications.
+- Repartition par source IEEE.
+- Exploration des mots-cles dominants.
+- Table interactive des articles.
+- Profils d'auteurs, laboratoires et pays.
+- Carte et graphe des collaborations.
+- Vue des clusters thematiques.
+- Page methodologie et limites d'interpretation.
+
+## Architecture du pipeline
+
+```text
+bdSource/*.json
+    -> scripts_imports/
+    -> bd/*.db
+    -> scripts_fusions/
+    -> bd/fusion_ieee.db
+    -> analyse/
+       -> EDA
+       -> clustering
+       -> prediction
+       -> collaboration
+    -> scripts_exports/export_site_data.py
+    -> site/public/data/*.json
+    -> site/ React + Vite
+    -> Netlify
+```
+
+Le site ne lit pas SQLite directement. Il consomme uniquement des fichiers JSON statiques generes localement, ce qui rend le deploiement simple, rapide et sans serveur.
+
+## Structure du depot
 
 ```text
 docs/                Documents de reference
 notebooks/           Notebooks d'exploration
-bdSource/             Fichiers JSON sources
-bd/                   Bases SQLite generees
+bdSource/             Fichiers JSON IEEE sources
+bd/                   Bases SQLite locales generees
 scripts_imports/      Import JSON vers SQLite
 scripts_fusions/      Fusion et nettoyage des bases
+scripts_exports/      Export des donnees du site
 inspectBdFusionnee/   Scripts de diagnostic de la base fusionnee
 analyse/
   EDA/                Analyses exploratoires
@@ -27,10 +139,48 @@ analyse/
   prediction/         Pretraitement, entrainement, prediction
   collaboration/      Graphes de co-auteurs et communautes
 outputs/              Sorties generees non versionnees
-site/                 Application web Vite + React
+site/                 Application web Vite + React + TypeScript
 ```
 
-## Installation
+## Stack technique
+
+### Data
+
+- Python 3.11
+- SQLite
+- Pandas
+- NumPy
+- SciPy
+- Scikit-learn
+- Joblib
+- NetworkX
+- Python-Louvain
+- Matplotlib
+- Seaborn
+- WordCloud
+- Folium
+- PyVis
+
+### Frontend
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Apache ECharts
+- MapLibre GL JS
+- Sigma.js
+- Graphology
+- TanStack Table
+- Lucide React
+
+### Deploiement
+
+- Netlify
+- Build statique Vite
+- Donnees JSON versionnees dans `site/public/data/`
+
+## Installation locale
 
 Depuis la racine du projet :
 
@@ -41,24 +191,17 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-## Base fusionnee actuelle
+Verifier rapidement l'environnement Python :
 
-La base principale est `bd/fusion_ieee.db`.
+```bash
+python -c "import pandas, sklearn, networkx, folium; print('env ok')"
+```
 
-Etat observe :
+## Workflow data
 
-- `articles` : 10 077 lignes
-- `authors` : 53 493 lignes
-- `labs` : 30 146 lignes
-- `keywords` : 159 043 lignes
-- `article_authors` : 57 162 lignes
-- `author_labs` : 60 214 lignes
+Les commandes suivantes se lancent depuis la racine du depot.
 
-## Workflow complet
-
-Les commandes peuvent etre lancees depuis la racine du projet.
-
-### 1. Importer les JSON vers SQLite
+### 1. Importer les exports IEEE
 
 Chaque script recree sa base cible dans `bd/`.
 
@@ -77,7 +220,7 @@ python scripts_fusions/fusion_bases_v2.py
 python scripts_fusions/nettoyage_fusion.py
 ```
 
-`fusion_bases_v2.py` remappe les IDs des articles, auteurs et laboratoires depuis les bases sources vers la base fusionnee. Cela evite les liens incorrects dans `article_authors` et `author_labs` apres fusion/dedoublonnage.
+`fusion_bases_v2.py` remappe les IDs des articles, auteurs et laboratoires depuis les bases sources vers la base fusionnee. Cela evite les liens incorrects dans `article_authors` et `author_labs` apres dedoublonnage.
 
 ### 3. Inspecter la base
 
@@ -87,7 +230,7 @@ python inspectBdFusionnee/descriptionBD.py
 python inspectBdFusionnee/analyse_fusion.py
 ```
 
-### 4. Analyses exploratoires
+### 4. Lancer les analyses exploratoires
 
 ```bash
 python analyse/EDA/01_Chargement_et_inspection.py
@@ -98,9 +241,7 @@ python analyse/EDA/05_Analyse_auteurs_labs.py
 python analyse/EDA/06_Qualite_des_donnees.py
 ```
 
-Le script `03_Statistiques_descriptives.py` genere `analyse/EDA/stats_descriptives.csv`, utilise ensuite par le clustering.
-
-### 5. Clustering
+### 5. Generer les clusters
 
 ```bash
 python analyse/clustering/01_Extraction_mots_cles_articles.py
@@ -118,7 +259,7 @@ Sorties principales :
 - `analyse/clustering/clusters_auteurs.csv`
 - `analyse/prediction/features_prediction.csv`
 
-### 6. Prediction
+### 6. Entrainer et utiliser la prediction
 
 ```bash
 python analyse/prediction/01_Preprocess.py
@@ -126,15 +267,13 @@ python analyse/prediction/02_Training.py
 python analyse/prediction/03_Predict.py
 ```
 
-Le preprocessing sauvegarde aussi les transformateurs requis par la prediction :
+Le preprocessing sauvegarde notamment :
 
 - `tfidf_transformer.pkl`
 - `ohe_country.pkl`
 - `feature_config.pkl`
 
-## Collaboration
-
-Pour construire le graphe de co-auteurs et detecter les communautes :
+### 7. Analyser les collaborations
 
 ```bash
 python analyse/collaboration/01_Construction_graphe.py
@@ -143,53 +282,91 @@ python analyse/collaboration/03_Detection_communautes.py
 python analyse/collaboration/04_Visualisation_communautes.py
 ```
 
-Une version HTML interactive peut etre generee avec :
+Une visualisation HTML interactive peut aussi etre generee :
 
 ```bash
 python analyse/collaboration/graph_html.py
 ```
 
-## Restitution web
+Les sorties visuelles et fichiers lourds sont places dans `outputs/`.
 
-Le dossier `site/` contient une application statique Vite + React + TypeScript destinee a Netlify.
+## Application web
 
-Les donnees publiques du site sont exportees depuis `bd/fusion_ieee.db` vers `site/public/data/` :
+Les donnees publiques du site sont exportees depuis `bd/fusion_ieee.db` vers `site/public/data/`.
+
+Depuis la racine :
 
 ```bash
 python scripts_exports/export_site_data.py
 ```
 
-Depuis `site/` :
+Puis lancer le site localement :
 
 ```bash
+cd site
 npm install
 npm run dev
-npm run build
 ```
 
-Deploiement Netlify :
+URL locale par defaut :
 
-- base directory : `site`
-- build command : `npm run build`
-- publish directory : `dist`
+```text
+http://127.0.0.1:5173/
+```
 
-Le fichier `netlify.toml` situe a la racine donne ces parametres a Netlify. Le guide [DEPLOYMENT.md](DEPLOYMENT.md) resume les etapes de publication sans commande Git.
+Verifier le build de production :
 
-Checklist avant publication :
+```bash
+cd site && npm run build
+```
 
-- regenerer `site/public/data/*.json` apres toute modification de `bd/fusion_ieee.db`
-- lancer `npm run build` depuis `site/`
-- verifier que `bd/*.db`, `analyse/**/*.pkl`, `analyse/**/*.npz`, `outputs/`, `site/node_modules/` et `site/dist/` ne sont pas versionnes
-- garder `site/public/data/` versionne si le site doit etre deploye sans pipeline de donnees cote Netlify
-- tester localement `http://127.0.0.1:5173/` avant push
+## Deploiement Netlify
 
-## Notes
+Le projet est configure pour Netlify avec le fichier `netlify.toml` situe a la racine.
 
-- Les scripts ont ete rendus robustes aux chemins : ils deduisent la racine du projet depuis leur emplacement.
-- Les bases SQLite et plusieurs fichiers de sortie sont des artefacts generes.
-- Une sauvegarde locale de l'ancienne base fusionnee peut exister sous `bd/fusion_ieee.before_remap.db`.
-- Le fichier `analyse/EDA/impact_publications.py` est actuellement vide.
+```toml
+[build]
+  base = "site"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+```
+
+Parametres Netlify attendus :
+
+| Parametre | Valeur |
+| --- | --- |
+| Base directory | `site` |
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+| Node.js | `22` |
+
+Le guide de publication est detaille dans [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Donnees et artefacts
+
+Les fichiers suivants restent locaux et ne doivent pas etre versionnes :
+
+- `bd/*.db`
+- `analyse/**/*.pkl`
+- `analyse/**/*.npz`
+- `outputs/`
+- `site/node_modules/`
+- `site/dist/`
+- `.venv/`
+
+Les fichiers JSON dans `site/public/data/` sont volontairement versionnes afin que Netlify puisse construire et publier le site sans executer le pipeline Python.
+
+## Limites
+
+- Le corpus depend des exports IEEE disponibles dans `bdSource/`.
+- Les pays sont deduits des affiliations et peuvent rester ambigus pour certains laboratoires.
+- Les clusters sont exploratoires et ne remplacent pas une annotation scientifique manuelle.
+- Le graphe public est filtre pour conserver une navigation fluide.
+- Les tendances refletent ce corpus IEEE, pas l'ensemble de la litterature scientifique mondiale.
 
 ## Licence
 
-Projet distribue sous licence MIT.
+Projet distribue sous licence MIT. Voir [LICENSE](LICENSE).
